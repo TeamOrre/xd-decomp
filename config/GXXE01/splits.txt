@@ -13,48 +13,48 @@ Sections:
 	.sdata2     type:rodata align:16
 	.sbss2      type:bss align:16
 
-character.cpp:
+game/character.cpp:
 	.text       start:0x800056A0 end:0x800056A4
 	.sbss       start:0x804E87C0 end:0x804E87C8
 
-dbgMenuCamera.cpp:
+game/dbgMenuCamera.cpp:
 	.text       start:0x800056A4 end:0x80005798
 
-Runtime.PPCEABI.H/__va_arg.cpp:
+PowerPC_EABI_Support/Runtime/Src/__va_arg.c:
 	.text       start:0x800D9C30 end:0x800D9CF8
 
-Runtime.PPCEABI.H/CPlusLibPPC.cpp:
+PowerPC_EABI_Support/Runtime/Src/CPlusLibPPC.cp:
 	.text       start:0x800D9CF8 end:0x800D9D28
 
-Runtime.PPCEABI.H/NMWException.cpp:
+PowerPC_EABI_Support/Runtime/Src/NMWException.cp:
 	extab       start:0x80005600 end:0x80005640
 	extabindex  start:0x80005640 end:0x80005670
 	.text       start:0x800D9D28 end:0x800DA05C
 
-Runtime.PPCEABI.H/runtime.cpp:
+PowerPC_EABI_Support/Runtime/Src/runtime.c:
 	.text       start:0x800DA05C end:0x800DA88C
 	.rodata     start:0x802ECA18 end:0x802ECA30
 
-Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
+PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions.cpp:
 	.text       start:0x800DA8C0 end:0x800DA8FC
 	.ctors      start:0x802E9F80 end:0x802E9F84
 	.dtors      start:0x802EA000 end:0x802EA004
 	.sdata      start:0x804E82D0 end:0x804E82D4
 
-Runtime.PPCEABI.H/Gecko_ExceptionPPC.cpp:
+PowerPC_EABI_Support/Runtime/Src/Gecko_ExceptionPPC.cp:
 	.text       start:0x800DA8FC end:0x800DA964
 	.bss        start:0x804426A8 end:0x804426B8
 
-Runtime.PPCEABI.H/GCN_mem_alloc.cpp:
+PowerPC_EABI_Support/Runtime/Src/GCN_mem_alloc.c:
 	.text       start:0x800DA964 end:0x800DAA1C
 	.rodata     start:0x802ECA30 end:0x802ECAA8
 
-camera/camera.cpp:
+game/pxdvs/app/camera/camera.cpp:
 	.text       start:0x80196A14 end:0x8019AFFC
 	.ctors      start:0x802E9FD4 end:0x802E9FD8
 
-memcard/memcard.cpp:
+game/pxdvs/app/memcard/memcard.cpp:
 	.text       start:0x801C9968 end:0x801CE8FC
 
-Runtime.PPCEABI.H/__mem.cpp:
+PowerPC_EABI_Support/Runtime/Src/__mem.c:
 	.init       start:0x8000540C end:0x80005544
