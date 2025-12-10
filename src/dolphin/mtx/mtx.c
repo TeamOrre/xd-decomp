@@ -356,11 +356,11 @@ u32 C_MTXInverse(const Mtx src, Mtx inv) {
     } else {
         m = inv;
     }
-    det = ((((src[2][1] * (src[0][2] * src[1][0])) 
-          + ((src[2][2] * (src[0][0] * src[1][1])) 
-           + (src[2][0] * (src[0][1] * src[1][2])))) 
-           - (src[0][2] * (src[2][0] * src[1][1]))) 
-           - (src[2][2] * (src[1][0] * src[0][1]))) 
+    det = ((((src[2][1] * (src[0][2] * src[1][0]))
+          + ((src[2][2] * (src[0][0] * src[1][1]))
+           + (src[2][0] * (src[0][1] * src[1][2]))))
+           - (src[0][2] * (src[2][0] * src[1][1])))
+           - (src[2][2] * (src[1][0] * src[0][1])))
            - (src[1][2] * (src[0][0] * src[2][1]));
     if (0 == det) {
         return 0;
@@ -466,11 +466,11 @@ u32 C_MTXInvXpose(const Mtx src, Mtx invX) {
     } else {
         m = invX;
     }
-    det = ((((src[2][1] * (src[0][2] * src[1][0])) 
-          + ((src[2][2] * (src[0][0] * src[1][1])) 
-          +  (src[2][0] * (src[0][1] * src[1][2])))) 
-          -  (src[0][2] * (src[2][0] * src[1][1]))) 
-          -  (src[2][2] * (src[1][0] * src[0][1]))) 
+    det = ((((src[2][1] * (src[0][2] * src[1][0]))
+          + ((src[2][2] * (src[0][0] * src[1][1]))
+          +  (src[2][0] * (src[0][1] * src[1][2]))))
+          -  (src[0][2] * (src[2][0] * src[1][1])))
+          -  (src[2][2] * (src[1][0] * src[0][1])))
           -  (src[1][2] * (src[0][0] * src[2][1]));
     if (0 == det) {
         return 0;
@@ -1029,70 +1029,6 @@ void PSMTXQuat(register Mtx m, const register Quaternion* q) {
         psq_st tmp3, 24(m), 0, 0
         psq_st tmp9, 32(m), 0, 0
 	}
-}
-
-void C_MTXReflect(Mtx m, const Vec* p, const Vec* n) {
-    f32 vxy;
-    f32 vxz;
-    f32 vyz;
-    f32 pdotn;
-
-    vxy = -2 * n->x * n->y;
-    vxz = -2 * n->x * n->z;
-    vyz = -2 * n->y * n->z;
-    pdotn = 2 * C_VECDotProduct(p, n);
-    m[0][0] = (1 - (2 * n->x * n->x));
-    m[0][1] = vxy;
-    m[0][2] = vxz;
-    m[0][3] = (pdotn * n->x);
-    m[1][0] = vxy;
-    m[1][1] = (1 - (2 * n->y * n->y));
-    m[1][2] = vyz;
-    m[1][3] = (pdotn * n->y);
-    m[2][0] = vxz;
-    m[2][1] = vyz;
-    m[2][2] = (1 - (2 * n->z * n->z));
-    m[2][3] = (pdotn * n->z);
-}
-
-void PSMTXReflect(register Mtx m, const register Vec* p, const register Vec* n) {
-    register f32 c_one;
-    register f32 vn_xy, vn_z1;
-    register f32 n2vn_xy, n2vn_z1;
-    register f32 pdotn;
-    register f32 tmp0, tmp1, tmp2, tmp3;
-    register f32 tmp4, tmp5, tmp6, tmp7;
-
-    c_one = 1.0f;
-
-    asm {
-        psq_l vn_z1, 0x8(n), 1, 0
-        psq_l vn_xy, 0x0(n), 0, 0
-        psq_l tmp0, 0x0(p), 0, 0
-        ps_nmadd n2vn_z1, vn_z1, c_one, vn_z1
-        psq_l tmp1, 0x8(p), 1, 0
-        ps_nmadd n2vn_xy, vn_xy, c_one, vn_xy
-        ps_muls0 tmp4, vn_xy, n2vn_z1
-        ps_mul pdotn, n2vn_xy, tmp0
-        ps_muls0 tmp2, vn_xy, n2vn_xy
-        ps_sum0 pdotn, pdotn, pdotn, pdotn
-        ps_muls1 tmp3, vn_xy, n2vn_xy
-        psq_st tmp4, 0x20(m), 0, 0
-        ps_sum0 tmp2, tmp2, tmp2, c_one
-        ps_nmadd pdotn, n2vn_z1, tmp1, pdotn
-        ps_sum1 tmp3, c_one, tmp3, tmp3
-        psq_st tmp2, 0x0(m), 0, 0
-        ps_muls0 tmp5, vn_xy, pdotn
-        ps_merge00 tmp6, n2vn_z1, pdotn
-        psq_st tmp3, 0x10(m), 0, 0
-        ps_merge00 tmp7, tmp4, tmp5
-        ps_muls0 tmp6, tmp6, vn_z1
-        ps_merge11 tmp5, tmp4, tmp5
-        psq_st tmp7, 0x8(m), 0, 0
-        ps_sum0 tmp6, tmp6, tmp6, c_one
-        psq_st tmp5, 0x18(m), 0, 0
-        psq_st tmp6, 0x28(m), 0, 0
-    }
 }
 
 void C_MTXLookAt(Mtx m, const Point3d* camPos, const Vec* camUp, const Point3d* target) {

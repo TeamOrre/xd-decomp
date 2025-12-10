@@ -54,7 +54,6 @@ void C_MTXTransApply(const Mtx src, Mtx dst, f32 xT, f32 yT, f32 zT);
 void C_MTXScale(Mtx m, f32 xS, f32 yS, f32 zS);
 void C_MTXScaleApply(const Mtx src, Mtx dst, f32 xS, f32 yS, f32 zS);
 void C_MTXQuat(Mtx m, const Quaternion* q);
-void C_MTXReflect(Mtx m, const Vec* p, const Vec* n);
 
 // PS version
 void PSMTXIdentity(Mtx m);
@@ -72,7 +71,6 @@ void PSMTXTransApply(const Mtx src, Mtx dst, f32 xT, f32 yT, f32 zT);
 void PSMTXScale(Mtx m, f32 xS, f32 yS, f32 zS);
 void PSMTXScaleApply(const Mtx src, Mtx dst, f32 xS, f32 yS, f32 zS);
 void PSMTXQuat(Mtx m, const Quaternion* q);
-void PSMTXReflect(Mtx m, const Vec* p, const Vec* n);
 
 #ifdef DEBUG
 #define MTXIdentity   C_MTXIdentity
@@ -171,7 +169,6 @@ void PSMTX44Scale(Mtx44 m, f32 xS, f32 yS, f32 zS);
 void PSMTX44ScaleApply(const Mtx44 src, Mtx44 dst, f32 xS, f32 yS, f32 zS);
 void PSMTX44RotRad(Mtx44 m, char axis, f32 rad);
 void PSMTX44RotTrig(Mtx44 m, char axis, f32 sinA, f32 cosA);
-void PSMTX44RotAxisRad(Mtx44 m, const Vec* axis, f32 rad);
 
 #ifdef DEBUG
 #define MTX44Identity   C_MTX44Identity

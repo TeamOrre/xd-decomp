@@ -19,7 +19,6 @@ struct OSAlarm {
     OSTime start;
 };
 
-BOOL OSCheckAlarmQueue(void);
 void OSInitAlarm(void);
 void OSCreateAlarm(OSAlarm* alarm);
 void OSSetAlarm(OSAlarm* alarm, OSTime tick, OSAlarmHandler handler);
