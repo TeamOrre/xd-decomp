@@ -1,4 +1,14 @@
 # Pokémon XD: Gale of Darkness – TeamOrre Decompilation Project
+[![Build Status]][actions] [![Retail Code Progress]][retail progress] [![Retail Data Progress]][retail progress] [![Demo Code Progress]][demo progress] [![Demo Data Progress]][demo progress]
+
+[Build Status]: https://github.com/TeamOrre/xd-decomp/actions/workflows/build.yml/badge.svg
+[actions]: https://github.com/TeamOrre/xd-decomp/actions/workflows/build.yml
+[Retail Code Progress]: https://decomp.dev/TeamOrre/xd-decomp.svg?mode=shield&measure=code&label=Code%20(US)
+[Retail Data Progress]: https://decomp.dev/TeamOrre/xd-decomp.svg?mode=shield&measure=data&label=Data%20(US)
+[retail progress]: https://decomp.dev/TeamOrre/xd-decomp
+[Demo Code Progress]: https://decomp.dev/TeamOrre/xd-decomp/NXXJ01.svg?mode=shield&measure=code&label=Code%20(Demo)
+[Demo Data Progress]: https://decomp.dev/TeamOrre/xd-decomp/NXXJ01.svg?mode=shield&measure=data&label=Data%20(Demo)
+[demo progress]: https://decomp.dev/TeamOrre/xd-decomp/NXXJ01
 
 This repository is the home of the **Pokémon XD** decompilation effort under **TeamOrre**.
 
@@ -9,12 +19,6 @@ Work in progress:
 - `GXXE01`: Rev 0 (USA)
 - `NXXJ01`: Rev 0 (JP Demo Disc)
 
-## Status
-
-`GXXE01`: Porting symbols and preparing splits.
-
-`NXXJ01`: Symbols and splits mostly prepared.
-
 ## Project Goals
 
 - Reconstruct the game's code in C/C++.
@@ -23,23 +27,25 @@ Work in progress:
 
 ## Repository Organization
 
-- `src/` – Decompiled C/C++ sources  
-- `include/` – Reconstructed headers  
-- `config/` – Project configs, splits, and symbols  
+- `src/` – Decompiled C/C++ sources
+- `include/` – Reconstructed headers
+- `config/` – Project configs, splits, and symbols
 - `tools/` – Helper scripts and utilities
 - `docs/` – Documentation and notes
 
 ## Legal Notices
 
-This project does **not** contain game assets or proprietary data.  
+This project does **not** contain game assets or proprietary data.
 It is a reverse engineering effort for educational and archival purposes.
+
+An existing copy of the game is required.
 
 ## Dependencies
 
 Windows
 --------
 
-On Windows, it's **highly recommended** to use native tooling. WSL or msys2 are **not** required.  
+On Windows, it's **highly recommended** to use native tooling. WSL or msys2 are **not** required.
 When running under WSL, [objdiff](#diffing) is unable to get filesystem notifications for automatic rebuilds.
 
 - Install [Python](https://www.python.org/downloads/) and add it to `%PATH%`.
@@ -70,7 +76,7 @@ Linux
 - Clone the repository:
 
   ```sh
-  git clone https://github.com/TeamOrre/xd-decomp.git
+  git clone --recurse-submodules https://github.com/TeamOrre/xd-decomp.git
   ```
 
 - Copy your game's disc image to `orig/GXXE01`.
