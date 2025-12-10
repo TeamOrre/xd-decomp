@@ -269,7 +269,6 @@ cflags_dolphin = [
     "-warn pragmas",
     "-requireprotos",
     "-D__GEKKO__",
-    "-DSDK_REVISION=2",
     "-i include/libc",
     "-ir src/dolphin",
 ]
@@ -313,11 +312,11 @@ config.linker_version = "GC/2.6"
 
 
 # Helper function for Dolphin libraries
-def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+def DolphinLib(lib_name: str, objects: List[Object], patch=2 if config.version == "NXXJ01" else 1) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "GC/1.2.5n",
-        "cflags": cflags_dolphin,
+        "cflags": [*cflags_dolphin, f"-DSDK_REVISION={patch}"],
         "progress_category": "sdk",
         "objects": objects,
     }
