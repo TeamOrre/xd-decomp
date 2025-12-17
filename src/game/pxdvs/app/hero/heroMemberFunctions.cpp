@@ -1,4 +1,4 @@
-#include <game/pxdvs/app/hero/heroMemberFunctions.hpp>
+#include <game/pxdvs/app/hero/hero.hpp>
 #include <game/pxdvs/app/memcard/savedata.hpp>
 
 /*
