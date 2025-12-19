@@ -9,21 +9,21 @@ class Item;
 
 class Hero {
 private:
-  char16 heroName[11];              // 0x0
-  char16 heroNameCopy[11];          // heroName copy (need to verify), 0x16
+  char16 heroName[11];           // 0x0
+  char16 heroNameCopy[11];       // heroName copy (need to verify), 0x16
   u32 heroRnd;                   // OT ID, 0x2c
   Pokemon partyPokemon[6];       // 0x30
-  Item *normalItem[30];          // Items, 0x4c8
-  Item *extraItem[43];           // Key Items, 0x540
-  Item *itemBall[16];            // Balls, 0x5ec
-  Item *itemSkill[64];           // TMs/HMs, 0x62c
-  Item *itemSeed[46];            // Berries, 0x72c
-  Item *itemKoron[3];            // Cologne, 0x7e4
-  Item *disk[60];                // Battle CDs, 0x7f0
+  Item *items[30];               // Items, 0x4c8
+  Item *keyItems[43];            // Key Items, 0x540
+  Item *ballItems[16];           // Balls, 0x5ec
+  Item *TMHMItems[64];           // TMs/HMs, 0x62c
+  Item *berryItems[46];          // Berries, 0x72c
+  Item *cologneItems[3];         // Cologne, 0x7e4
+  Item *battleCDItems[60];       // Battle CDs, 0x7f0
   u8 sexDataID;                  // 0x8e0
   u8 homePlace;                  // 0x8e1
   u16 x8e2;                      // 0x8e2
-  u32 pokedoru;                  // 0x8e4
+  u32 pokedollars;               // 0x8e4
   u32 pokecoupons;               // 0x8e8
   u32 pokecouponsAll;            // 0x8ec
   u8 badge01Flag;                // 0x8f0
@@ -38,12 +38,12 @@ private:
   u8 x8f9;                       // 0x8f9
   Item *hizukiItems[10];         // 0x8fa
   u8 x922[20];                   // 0x922
-  u8 meetDarkPokemonCount;       // 0x938
+  u8 meetShadowPokemonCount;     // 0x938
   u8 followerID;                 // 0x939
-  s16 restertPosUnknownHalfWord; // 0x93a
-  f32 restertPosGSvecParam1;     // 0x93c
-  f32 restertPosGSvecParam2;     // 0x940
-  f32 restertPosGSvecParam3;     // 0x944
+  s16 restartPosUnknownHalfWord; // 0x93a
+  f32 restartPosGSvecParam1;     // 0x93c
+  f32 restartPosGSvecParam2;     // 0x940
+  f32 restartPosGSvecParam3;     // 0x944
   u32 footStep;                  // 0x948
   u32 followerResID;             // 0x94c
   u32 followerGrpID;             // 0x950
@@ -59,21 +59,21 @@ public:
   u8 getBattleResumeFloorIndex() const;
   void setBattleResumeFloorID(uint);
   u16 getBattleResumeFloorID() const;
-  void getHeroObjID(long, long);
+  u32 getHeroObjID(s32, s32);
   void setHeroStyle(u8, bool);
   u8 getHeroStyle() const;
   void pokemonGet(HeroPokemonGetParam *, bool);
-  void getLegendPokemonSize() const;
+  u32 getLegendPokemonSize() const;
   void itemQuantity(u16);
   Hero *getHeroPtr();
   void getRestertPos(GSvec *, short &) const;
   void setRestertPos();
-  void deletePokemon(long);
-  void setPokemon(const Pokemon *, long);
-  void addPokemon(const Pokemon *);
-  void getPokemon(long, bool &);
-  const Pokemon *getPokemon(long) const;
-  Pokemon *getPokemon(long);
+  bool deletePokemon(s32);
+  bool setPokemon(const Pokemon *, s32);
+  u32 addPokemon(const Pokemon *);
+  Pokemon *getPokemon(s32, bool &);
+  const Pokemon *getPokemon(s32) const;
+  Pokemon *getPokemon(s32);
   void setMeetDarkPokemonCount(u8);
   u8 getMeetDarkPokemonCount() const;
   Item **getDisk();
