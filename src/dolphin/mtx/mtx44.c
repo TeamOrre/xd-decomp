@@ -467,11 +467,11 @@ void C_MTX44TransApply(const Mtx44 src, Mtx44 dst, f32 xT, f32 yT, f32 zT) {
         dst[0][0] = src[0][0];
         dst[0][1] = src[0][1];
         dst[0][2] = src[0][2];
-
+    
         dst[1][0] = src[1][0];
         dst[1][1] = src[1][1];
         dst[1][2] = src[1][2];
-
+    
         dst[2][0] = src[2][0];
         dst[2][1] = src[2][1];
         dst[2][2] = src[2][2];
@@ -759,7 +759,7 @@ void PSMTX44RotTrig(register Mtx44 m, register char axis, register f32 sinA, reg
         psq_st ftmp2, 0x28(m), 0, 0
         psq_st ftmp3, 0x38(m), 0, 0
         psq_st ftmp4, 0x0(m), 0, 0
-    L_00001B54:
+    L_00001B54:    
     }
 }
 
@@ -811,4 +811,78 @@ void C_MTX44RotAxisRad(Mtx44 m, const Vec* axis, f32 rad) {
     m[3][1] = 0.0f;
     m[3][2] = 0.0f;
     m[3][3] = 1.0f;
+}
+
+static void __PSMTX44RotAxisRadInternal(register Mtx44 m, const register Vec* axis, register f32 sT, register f32 cT) {
+    register f32 tT;
+    register f32 fc0;
+    register f32 tmp0;
+    register f32 tmp1;
+    register f32 tmp2;
+    register f32 tmp3;
+    register f32 tmp4;
+    register f32 tmp5;
+    register f32 tmp6;
+    register f32 tmp7;
+    register f32 tmp8;
+    register f32 tmp9;
+
+    tmp9 = 0.5f;
+    tmp8 = 3.0f;
+
+    asm {
+        frsp cT, cT
+        psq_l tmp0, 0x0(axis), 0, 0
+        frsp sT, sT
+        lfs tmp1, 0x8(axis)
+        ps_mul tmp2, tmp0, tmp0
+        fadds tmp7, tmp9, tmp9
+        ps_madd tmp3, tmp1, tmp1, tmp2
+        fsubs fc0, tmp9, tmp9
+        ps_sum0 tmp4, tmp3, tmp1, tmp2
+        fsubs tT, tmp7, cT
+        frsqrte tmp5, tmp4
+        ps_merge00 tmp7, fc0, tmp7
+        fmuls tmp2, tmp5, tmp5
+        fmuls tmp3, tmp5, tmp9
+        psq_st fc0, 0x30(m), 0, 0
+        fnmsubs tmp2, tmp2, tmp4, tmp8
+        fmuls tmp5, tmp2, tmp3
+        psq_st tmp7, 0x38(m), 0, 0
+        ps_merge00 cT, cT, cT
+        ps_muls0 tmp0, tmp0, tmp5
+        ps_muls0 tmp1, tmp1, tmp5
+        ps_muls0 tmp4, tmp0, tT
+        ps_muls0 tmp9, tmp0, sT
+        ps_muls0 tmp5, tmp1, tT
+        ps_muls1 tmp3, tmp4, tmp0
+        ps_muls0 tmp2, tmp4, tmp0
+        ps_muls0 tmp4, tmp4, tmp1
+        fnmsubs tmp6, tmp1, sT, tmp3
+        fmadds tmp7, tmp1, sT, tmp3
+        ps_neg tmp0, tmp9
+        ps_sum0 tmp8, tmp4, fc0, tmp9
+        ps_sum0 tmp2, tmp2, tmp6, cT
+        ps_sum1 tmp3, cT, tmp7, tmp3
+        ps_sum0 tmp6, tmp0, fc0, tmp4
+        psq_st tmp8, 0x8(m), 0, 0
+        ps_sum0 tmp0, tmp4, tmp4, tmp0
+        psq_st tmp2, 0x0(m), 0, 0
+        ps_muls0 tmp5, tmp5, tmp1
+        psq_st tmp3, 0x10(m), 0, 0
+        ps_sum1 tmp4, tmp9, tmp0, tmp4
+        psq_st tmp6, 0x18(m), 0, 0
+        ps_sum0 tmp5, tmp5, fc0, cT
+        psq_st tmp4, 0x20(m), 0, 0
+        psq_st tmp5, 0x28(m), 0, 0
+    }
+}
+
+void PSMTX44RotAxisRad(Mtx44 m, const Vec* axis, f32 rad) {
+    f32 sinT, cosT;
+
+    sinT = sinf(rad);
+    cosT = cosf(rad);
+
+    __PSMTX44RotAxisRadInternal(m, axis, sinT, cosT);
 }

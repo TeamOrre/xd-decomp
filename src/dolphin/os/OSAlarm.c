@@ -22,6 +22,20 @@ static OSAlarmQueue AlarmQueue;
 #define ASSERTREPORT(line, cond) \
     if (!(cond)) { OSReport("OSCheckAlarmQueue: Failed " #cond " in %d", line); return 0; }
 
+BOOL OSCheckAlarmQueue(void) {
+    OSAlarm* alarm;
+
+    ASSERTREPORT(146, AlarmQueue.head == NULL && AlarmQueue.tail == NULL || AlarmQueue.head != NULL && AlarmQueue.tail != NULL);
+    ASSERTREPORT(147, AlarmQueue.head == NULL || AlarmQueue.head->prev == NULL);
+    ASSERTREPORT(148, AlarmQueue.tail == NULL || AlarmQueue.tail->next == NULL);
+
+    for(alarm = AlarmQueue.head; alarm; alarm = alarm->next) {
+        ASSERTREPORT(151, alarm->next == NULL || alarm->next->prev == alarm);
+        ASSERTREPORT(152, alarm->next != NULL || AlarmQueue.tail == alarm);
+    }
+    return TRUE;
+}
+
 static void SetTimer(OSAlarm* alarm) {
     OSTime delta = alarm->fire - __OSGetSystemTime();
 
@@ -50,26 +64,26 @@ void OSCreateAlarm(OSAlarm* alarm) {
 static void InsertAlarm(OSAlarm* alarm, OSTime fire, OSAlarmHandler handler) {
     OSAlarm* next;
     OSAlarm* prev;
-
+    
     if (0 < alarm->period) {
         OSTime time = __OSGetSystemTime();
-
+        
         fire = alarm->start;
         if (alarm->start < time) {
             fire += alarm->period * ((time - alarm->start) / alarm->period + 1);
         }
     }
-
+    
     ASSERTLINE(251, alarm->handler == 0);
-
+    
     alarm->handler = handler;
     alarm->fire = fire;
-
+    
     for (next = AlarmQueue.head; next; next = next->next) {
         if (next->fire <= fire) {
             continue;
         }
-
+        
         alarm->prev = next->prev;
         next->prev = alarm;
         alarm->next = next;
@@ -218,7 +232,7 @@ static void DecrementerExceptionCallback(register __OSException exception,
 #ifdef __GEKKO__
 static asm void DecrementerExceptionHandler(register __OSException exception,
                                             register OSContext* context) {
-    nofralloc
+    nofralloc 
     OS_EXCEPTION_SAVE_GPRS(context)
     stwu r1, -8(r1)
     b DecrementerExceptionCallback
