@@ -524,7 +524,7 @@ config.libs = [
     DolphinLib(
         "OdemuExi2",
         [
-            Object(NonMatching, "dolphin/OdemuExi2Lib/DebuggerDriver.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/OdemuExi2Lib/DebuggerDriver.c", extra_cflags=["-inline auto,deferred"]),
         ],
     ),
     DolphinLib(
