@@ -555,7 +555,7 @@ dolphin/vi/vi.c:
 dolphin/pad/Pad.c:
 	.text       start:0x800BA75C end:0x800BC12C
 	.data       start:0x803D29A8 end:0x803D2A00
-	.bss        start:0x8043E7F0 end:0x8043E830
+	.bss        start:0x8043E7F0 end:0x8043E840
 	.sdata      start:0x804E8198 end:0x804E81B8
 	.sbss       start:0x804EACB8 end:0x804EACE8
 
@@ -594,7 +594,7 @@ dolphin/dsp/dsp_task.c:
 dolphin/card/CARDBios.c:
 	.text       start:0x800BF348 end:0x800C07A0
 	.data       start:0x803D2C98 end:0x803D2D00
-	.bss        start:0x8043E830 end:0x8043EA80
+	.bss        start:0x8043E840 end:0x8043EA80
 	.sdata      start:0x804E81D8 end:0x804E81E0
 	.sbss       start:0x804EAD90 end:0x804EAD98
 
