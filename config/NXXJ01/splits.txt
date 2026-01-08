@@ -1243,7 +1243,7 @@ PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions.cpp:
 	.text       start:0x800D908C end:0x800D90FC
 	.ctors      start:0x802E6F80 end:0x802E6F84
 	.dtors      start:0x802E7000 end:0x802E7004
-	.sdata      start:0x804C9088 end:0x804C908C
+	.sdata      start:0x804C9088 end:0x804C9090
 
 PowerPC_EABI_Support/Runtime/Src/Gecko_ExceptionPPC.cp:
 	.text       start:0x800D90FC end:0x800D9164

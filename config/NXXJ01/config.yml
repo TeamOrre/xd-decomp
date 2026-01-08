@@ -9,3 +9,7 @@ ldscript_template: config/NXXJ01/module/ldscript.lcf
 
 symbols_known: false
 fill_gaps: true
+
+block_relocations:
+- target: .sdata:0x804C9378
+  end: .sdata:0x804C9380

@@ -174,174 +174,375 @@ game/sysvars.cpp:
 
 game/flashmenuTest.cpp:
 	.text       start:0x8000FDA8 end:0x8000FFF0
+	.sdata      start:0x804E7E68 end:0x804E7E80
+	.sbss       start:0x804EA6F0 end:0x804EA6F8
 
 game/menuWorldMapMX.cpp:
 	.text       start:0x8000FFF0 end:0x800136C8
+	.rodata     start:0x802EA3C0 end:0x802EA408
+	.data       start:0x80312278 end:0x803123B0
+	.bss        start:0x80428080 end:0x804280C0
+	.sdata      start:0x804E7E80 end:0x804E7EB8
+	.sbss       start:0x804EA6F8 end:0x804EA710
+	.sdata2     start:0x804EBEE0 end:0x804EBF48
+	.sbss2      start:0x804EFC90 end:0x804EFC98
 
 game/menuItemMX.cpp:
 	.text       start:0x800136C8 end:0x800136C8
+	.data       start:0x803123B0 end:0x80321DD8
 
 game/menuPokemon.cpp:
 	.text       start:0x800136C8 end:0x80016178
+	.rodata     start:0x802EA408 end:0x802EA430
+	.data       start:0x80321DD8 end:0x80321E80
+	.bss        start:0x804280C0 end:0x80428250
+	.sbss       start:0x804EA710 end:0x804EA718
+	.sdata2     start:0x804EBF48 end:0x804EBF80
 
 game/menuFightStatus.cpp:
 	.text       start:0x80016178 end:0x800178FC
+	.data       start:0x80321E80 end:0x80321F98
+	.sbss       start:0x804EA718 end:0x804EA728
+	.sdata2     start:0x804EBF80 end:0x804EBFE0
 
 game/menuFight.cpp:
 	.text       start:0x800178FC end:0x8001EC10
+	.rodata     start:0x802EA430 end:0x802EA4C8
+	.data       start:0x80321F98 end:0x80322460
+	.bss        start:0x80428250 end:0x80428260
+	.sdata      start:0x804E7EB8 end:0x804E7ED8
+	.sbss       start:0x804EA728 end:0x804EA748
+	.sdata2     start:0x804EBFE0 end:0x804EC010
 
 game/menuPocketTool.cpp:
 	.text       start:0x8001EC10 end:0x80022080
 	.text       start:0x80022080 end:0x8002208C
+	.data       start:0x80322460 end:0x80322498
+	.bss        start:0x80428260 end:0x804282A0
+	.sdata      start:0x804E7ED8 end:0x804E7EE8
+	.sbss       start:0x804EA748 end:0x804EA760
+	.sdata2     start:0x804EC010 end:0x804EC098
+	.sbss2      start:0x804EFC98 end:0x804EFCA0
 
 game/menuPocket.cpp:
 	.text       start:0x8002208C end:0x80026898
+	.rodata     start:0x802EA4C8 end:0x802EA788
+	.data       start:0x80322498 end:0x80322608
+	.bss        start:0x804282A0 end:0x80428338
+	.sdata      start:0x804E7EE8 end:0x804E7EF8
+	.sbss       start:0x804EA760 end:0x804EA768
+	.sdata2     start:0x804EC098 end:0x804EC0D0
+	.sbss2      start:0x804EFCA0 end:0x804EFCB0
 
 game/gbaPokemon.cpp:
 	.text       start:0x80026898 end:0x80027E84
+	.data       start:0x80322608 end:0x803226C0
 
 game/gbaCommand.cpp:
 	.text       start:0x80027E84 end:0x80028F98
+	.data       start:0x803226C0 end:0x803226E0
+	.bss        start:0x80428338 end:0x80428358
+	.sbss       start:0x804EA768 end:0x804EA780
 
 game/agbCommunication.cpp:
 	.text       start:0x80028F98 end:0x8002D8C0
+	.rodata     start:0x802EA788 end:0x802EA898
+	.data       start:0x803226E0 end:0x803228F0
+	.bss        start:0x80428358 end:0x804290D0
+	.sdata      start:0x804E7EF8 end:0x804E7F00
+	.sbss       start:0x804EA780 end:0x804EA790
 
 game/floorRead.cpp:
 	.text       start:0x8002D8C0 end:0x8002F1F0
 	.text       start:0x8002F1F0 end:0x8002F308
 	.ctors      start:0x802E9F84 end:0x802E9F88
+	.rodata     start:0x802EA898 end:0x802EA8A8
+	.bss        start:0x804290D0 end:0x80429170
+	.sbss       start:0x804EA790 end:0x804EA798
 
 game/menuTop.cpp:
 	.text       start:0x8002F308 end:0x80030330
 	.ctors      start:0x802E9F88 end:0x802E9F8C
+	.rodata     start:0x802EA8A8 end:0x802EA8F8
+	.data       start:0x803228F0 end:0x80322910
+	.bss        start:0x80429170 end:0x80429270
+	.sbss       start:0x804EA798 end:0x804EA7A0
+	.sdata2     start:0x804EC0D0 end:0x804EC110
 
 game/menuNameEntry.cpp:
 	.text       start:0x80030330 end:0x80033440
 	.ctors      start:0x802E9F8C end:0x802E9F90
+	.rodata     start:0x802EA8F8 end:0x802EA9F8
+	.data       start:0x80322910 end:0x80322948
+	.bss        start:0x80429270 end:0x804297C8
+	.sbss       start:0x804EA7A0 end:0x804EA7C8
+	.sdata2     start:0x804EC110 end:0x804EC190
 
 game/menuPokemonStatus.cpp:
 	.text       start:0x80033440 end:0x80037A48
 	.ctors      start:0x802E9F90 end:0x802E9F94
+	.rodata     start:0x802EA9F8 end:0x802EAA18
+	.data       start:0x80322948 end:0x80322CE8
+	.bss        start:0x804297C8 end:0x80429900
+	.sdata2     start:0x804EC190 end:0x804EC1C0
 
 game/menuItemTool.cpp:
 	.text       start:0x80037A48 end:0x80037A48
+	.data       start:0x80322CE8 end:0x8032E4E0
 
 game/menuSaveLoad.cpp:
 	.text       start:0x80037A48 end:0x80038104
+	.data       start:0x8032E4E0 end:0x8032E508
+	.sbss       start:0x804EA7C8 end:0x804EA7D0
+	.sdata2     start:0x804EC1C0 end:0x804EC1D0
 
 game/menuPda.cpp:
 	.text       start:0x80038104 end:0x8003AA1C
+	.rodata     start:0x802EAA18 end:0x802EAA58
+	.data       start:0x8032E508 end:0x8032E548
+	.bss        start:0x80429900 end:0x80429978
+	.sdata      start:0x804E7F00 end:0x804E7F28
+	.sbss       start:0x804EA7D0 end:0x804EA7F0
+	.sdata2     start:0x804EC1D0 end:0x804EC240
+	.sbss2      start:0x804EFCB0 end:0x804EFCB8
 
 game/menuReliveHall.cpp:
 	.text       start:0x8003AA1C end:0x80041C3C
+	.data       start:0x8032E548 end:0x8032E8B8
+	.bss        start:0x80429978 end:0x804299B8
+	.sdata      start:0x804E7F28 end:0x804E7F30
+	.sbss       start:0x804EA7F0 end:0x804EA800
+	.sdata2     start:0x804EC240 end:0x804EC320
+	.sbss2      start:0x804EFCB8 end:0x804EFCC0
 
 game/menuPdaSearcher.cpp:
 	.text       start:0x80041C3C end:0x80042CD0
+	.data       start:0x8032E8B8 end:0x8032E9F8
+	.bss        start:0x804299B8 end:0x804299C8
+	.sdata      start:0x804E7F30 end:0x804E7F38
+	.sbss       start:0x804EA800 end:0x804EA808
+	.sdata2     start:0x804EC320 end:0x804EC360
 
 game/menuPdaMailXD.cpp:
 	.text       start:0x80042CD0 end:0x80043304
+	.sbss       start:0x804EA808 end:0x804EA810
 
 game/menuPdaMailList.XD.cpp:
 	.text       start:0x80043304 end:0x8004429C
+	.rodata     start:0x802EAA58 end:0x802EAA70
+	.data       start:0x8032E9F8 end:0x8032EA68
+	.bss        start:0x804299C8 end:0x804299F8
+	.sbss       start:0x804EA810 end:0x804EA818
+	.sdata2     start:0x804EC360 end:0x804EC380
 
 game/menuColosseumBattle.cpp:
 	.text       start:0x8004429C end:0x80046598
 	.ctors      start:0x802E9F94 end:0x802E9F98
+	.rodata     start:0x802EAA70 end:0x802EAAD8
+	.data       start:0x8032EA68 end:0x8032EAE0
+	.bss        start:0x804299F8 end:0x80434FF0
+	.sdata      start:0x804E7F38 end:0x804E7F40
+	.sbss       start:0x804EA818 end:0x804EA828
+	.sdata2     start:0x804EC380 end:0x804EC3A8
 
 game/menuCB_BattleResult.cpp:
 	.text       start:0x80046598 end:0x80046D5C
+	.data       start:0x8032EAE0 end:0x8032EB08
+	.sdata      start:0x804E7F40 end:0x804E7F50
 
 game/menuCB_BattleStart.cpp:
 	.text       start:0x80046D5C end:0x800477F8
 	.ctors      start:0x802E9F98 end:0x802E9F9C
+	.rodata     start:0x802EAAD8 end:0x802EABF8
+	.bss        start:0x80434FF0 end:0x80435198
+	.sbss       start:0x804EA828 end:0x804EA830
+	.sdata2     start:0x804EC3A8 end:0x804EC3B0
 
 game/menuCB_Bios.cpp:
 	.text       start:0x800477F8 end:0x80049DA4
+	.rodata     start:0x802EABF8 end:0x802EAC08
+	.sbss       start:0x804EA830 end:0x804EA838
+	.sdata2     start:0x804EC3B0 end:0x804EC3B8
 
 game/menuCB_Common.cpp:
 	.text       start:0x80049DA4 end:0x8004A090
+	.bss        start:0x80435198 end:0x804351E0
 
 game/menuCB_Debug.cpp:
 	.text       start:0x8004A090 end:0x8004A0A8
+	.sdata      start:0x804E7F50 end:0x804E7F58
 
 game/menuCB_ItemList.cpp:
 	.text       start:0x8004A0A8 end:0x8004A0A8
+	.data       start:0x8032EB08 end:0x8032EB88
+	.sdata      start:0x804E7F58 end:0x804E7F60
 
 game/menuCB_PokemonEntry.cpp:
 	.text       start:0x8004A0A8 end:0x8004B7B4
+	.data       start:0x8032EB88 end:0x8032EBD8
+	.bss        start:0x804351E0 end:0x80435418
+	.sbss       start:0x804EA838 end:0x804EA840
+	.sdata2     start:0x804EC3B8 end:0x804EC3C8
 
 game/menuCB_Rule.cpp:
 	.text       start:0x8004B7B4 end:0x8004D394
+	.rodata     start:0x802EAC08 end:0x802EAE48
+	.bss        start:0x80435418 end:0x804354A8
 
 game/menuCB_Battle.cpp:
 	.text       start:0x8004D394 end:0x8004DB44
+	.rodata     start:0x802EAE48 end:0x802EAF30
+	.sdata2     start:0x804EC3C8 end:0x804EC3D0
 
 game/menuToolBattle.cpp:
 	.text       start:0x8004DB44 end:0x8004E54C
+	.rodata     start:0x802EAF30 end:0x802EAF98
+	.sdata2     start:0x804EC3D0 end:0x804EC3E0
 
 game/menuGBAC.cpp:
 	.text       start:0x8004E54C end:0x8004FB68
+	.rodata     start:0x802EAF98 end:0x802EB0B8
+	.data       start:0x8032EBD8 end:0x8032EC48
+	.bss        start:0x804354A8 end:0x804354F8
+	.sdata      start:0x804E7F60 end:0x804E7F80
+	.sbss       start:0x804EA840 end:0x804EA848
+	.sdata2     start:0x804EC3E0 end:0x804EC3F0
 
 game/menuPdaDPMonitor.cpp:
 	.text       start:0x8004FB68 end:0x80050A1C
+	.data       start:0x8032EC48 end:0x8032EC80
+	.sbss       start:0x804EA848 end:0x804EA850
+	.sdata2     start:0x804EC3F0 end:0x804EC400
 
 game/menuPdaDPMonitorList.cpp:
 	.text       start:0x80050A1C end:0x80052CBC
+	.rodata     start:0x802EB0B8 end:0x802EB0E0
+	.sbss       start:0x804EA850 end:0x804EA858
+	.sdata2     start:0x804EC400 end:0x804EC418
 
 game/menuPdaSub.cpp:
 	.text       start:0x80052CBC end:0x800531DC
+	.sdata2     start:0x804EC418 end:0x804EC438
 
 game/menuPdaMemoXD.cpp:
 	.text       start:0x800531DC end:0x80055428
+	.rodata     start:0x802EB0E0 end:0x802EB148
+	.bss        start:0x804354F8 end:0x80435510
+	.sbss       start:0x804EA858 end:0x804EA868
+	.sdata2     start:0x804EC438 end:0x804EC4A8
 
 game/menuPdaMemoListXD.cpp:
 	.text       start:0x80055428 end:0x80056FF8
+	.rodata     start:0x802EB148 end:0x802EB168
+	.data       start:0x8032EC80 end:0x8032ECE8
+	.sdata      start:0x804E7F80 end:0x804E7F88
+	.sbss       start:0x804EA868 end:0x804EA870
+	.sdata2     start:0x804EC4A8 end:0x804EC4C0
 
 game/menuPcBoxPokemon.cpp:
 	.text       start:0x80056FF8 end:0x8005B3D8
+	.data       start:0x8032ECE8 end:0x8032EE80
+	.sbss       start:0x804EA870 end:0x804EA878
+	.sdata2     start:0x804EC4C0 end:0x804EC4F8
 
 game/menuField.cpp:
 	.text       start:0x8005B3D8 end:0x8005C060
+	.bss        start:0x80435510 end:0x80435528
+	.sdata      start:0x804E7F88 end:0x804E7F98
+	.sbss       start:0x804EA878 end:0x804EA890
+	.sdata2     start:0x804EC4F8 end:0x804EC528
 
 game/pokecolo.cpp:
 	.text       start:0x8005C060 end:0x8005CC74
+	.rodata     start:0x802EB168 end:0x802EB230
+	.data       start:0x8032EE80 end:0x803C2418
+	.sdata      start:0x804E7F98 end:0x804E7FA8
+	.sbss       start:0x804EA890 end:0x804EA8D8
+	.sdata2     start:0x804EC528 end:0x804EC560
 
 game/menuScript.cpp:
 	.text       start:0x8005CC74 end:0x8005F524
+	.rodata     start:0x802EB230 end:0x802EB320
+	.data       start:0x803C2418 end:0x803C2598
+	.bss        start:0x80435528 end:0x80435570
+	.sdata      start:0x804E7FA8 end:0x804E7FB0
+	.sbss       start:0x804EA8D8 end:0x804EA8F0
+	.sdata2     start:0x804EC560 end:0x804EC578
 
 game/menuReliveMeter.cpp:
 	.text       start:0x8005F524 end:0x800605B8
+	.sdata      start:0x804E7FB0 end:0x804E7FB8
+	.sbss       start:0x804EA8F0 end:0x804EA8F8
+	.sdata2     start:0x804EC578 end:0x804EC588
 
 game/menuShop.cpp:
 	.text       start:0x800605B8 end:0x80063560
+	.rodata     start:0x802EB320 end:0x802EB330
+	.data       start:0x803C2598 end:0x803C25E0
+	.sdata      start:0x804E7FB8 end:0x804E7FC0
+	.sbss       start:0x804EA8F8 end:0x804EA928
+	.sdata2     start:0x804EC588 end:0x804EC5C0
+	.sbss2      start:0x804EFCC0 end:0x804EFCC8
 
 game/menuPocketCologne.cpp:
 	.text       start:0x80063560 end:0x80063D1C
+	.rodata     start:0x802EB330 end:0x802EB350
+	.sbss       start:0x804EA928 end:0x804EA938
+	.sdata2     start:0x804EC5C0 end:0x804EC5D0
+	.sbss2      start:0x804EFCC8 end:0x804EFCD0
 
 game/menuItemPda.cpp:
 	.text       start:0x80063D1C end:0x80063D1C
+	.data       start:0x803C25E0 end:0x803C58A0
 
 game/menuSub.cpp:
 	.text       start:0x80063D1C end:0x80065854
+	.bss        start:0x80435570 end:0x804355A0
+	.sdata      start:0x804E7FC0 end:0x804E7FD0
+	.sbss       start:0x804EA938 end:0x804EA940
+	.sdata2     start:0x804EC5D0 end:0x804EC600
 
 game/menuPdaMemoWaveXD.cpp:
 	.text       start:0x80065854 end:0x800665F4
+	.sbss       start:0x804EA940 end:0x804EA948
+	.sdata2     start:0x804EC600 end:0x804EC638
 
 game/menuInterrupt.cpp:
 	.text       start:0x800665F4 end:0x80066C48
+	.sdata      start:0x804E7FD0 end:0x804E7FD8
+	.sbss       start:0x804EA948 end:0x804EA950
+	.sdata2     start:0x804EC638 end:0x804EC650
 
 game/dbgMenuSub.cpp:
 	.text       start:0x80066C48 end:0x80068264
+	.rodata     start:0x802EB350 end:0x802EB5C0
+	.data       start:0x803C58A0 end:0x803C5960
+	.bss        start:0x804355A0 end:0x804355E0
+	.sbss       start:0x804EA950 end:0x804EA980
+	.sdata2     start:0x804EC650 end:0x804EC698
 
 game/menuPcBoxNew.cpp:
 	.text       start:0x80068264 end:0x80069300
 	.ctors      start:0x802E9F9C end:0x802E9FA0
+	.data       start:0x803C5960 end:0x803C5A38
+	.bss        start:0x804355E0 end:0x80435B40
+	.sdata      start:0x804E7FD8 end:0x804E7FE0
+	.sdata2     start:0x804EC698 end:0x804EC6A0
 
 game/menuPcBoxDouguNew.cpp:
 	.text       start:0x80069300 end:0x8006A854
+	.rodata     start:0x802EB5C0 end:0x802EB5D0
+	.sbss       start:0x804EA980 end:0x804EA9A8
+	.sdata2     start:0x804EC6A0 end:0x804EC6C0
+	.sbss2      start:0x804EFCD0 end:0x804EFCE0
 
 game/dbgMenuMenu.cpp:
 	.text       start:0x8006A854 end:0x8006C184
+	.rodata     start:0x802EB5D0 end:0x802EB670
+	.data       start:0x803C5A38 end:0x803C5A70
+	.bss        start:0x80435B40 end:0x80435B60
+	.sbss       start:0x804EA9A8 end:0x804EA9C0
+	.sdata2     start:0x804EC6C0 end:0x804EC6D0
 
 game/pokeconv.cpp:
 	.text       start:0x8006C184 end:0x8006C320
@@ -351,79 +552,176 @@ game/wazaconv.cpp:
 
 game/menuCB_externDB.cpp:
 	.text       start:0x8006C504 end:0x8007C870
+	.rodata     start:0x802EB670 end:0x802EB8B0
+	.data       start:0x803C5A70 end:0x803C7248
+	.bss        start:0x80435B60 end:0x80435C38
+	.sdata      start:0x804E7FE0 end:0x804E7FE8
+	.sbss       start:0x804EA9C0 end:0x804EA9C8
+	.sdata2     start:0x804EC6D0 end:0x804EC700
 
 game/menuDataBios.cpp:
 	.text       start:0x8007C870 end:0x8007CD64
 
 game/menuPanel.cpp:
 	.text       start:0x8007CD64 end:0x8007E350
+	.data       start:0x803C7248 end:0x803C7268
+	.bss        start:0x80435C38 end:0x80435C48
+	.sdata      start:0x804E7FE8 end:0x804E8000
 
 game/floorLayerConfig.cpp:
 	.text       start:0x8007E350 end:0x8007E5AC
 	.ctors      start:0x802E9FA0 end:0x802E9FA4
+	.rodata     start:0x802EB8B0 end:0x802EB920
+	.data       start:0x803C7268 end:0x803C7790
+	.sdata      start:0x804E8000 end:0x804E8018
+	.sbss       start:0x804EA9C8 end:0x804EA9D0
+	.sdata2     start:0x804EC700 end:0x804EC718
 
 game/menuCB_Sub1.cpp:
-	.text       start:0x8007E5AC end:0x80085FB8
+	.text       start:0x8007E5AC end:0x80085E3C
+	.rodata     start:0x802EB920 end:0x802EB950
+	.data       start:0x803C7790 end:0x803C7958
+	.bss        start:0x80435C48 end:0x80437068
+	.sdata      start:0x804E8018 end:0x804E8020
+	.sbss       start:0x804EA9D0 end:0x804EA9D8
+	.sdata2     start:0x804EC718 end:0x804EC768
 
 game/menuLogoDemo.cpp:
-	.text       start:0x80085FB8 end:0x80087B14
+	.text       start:0x80085E3C end:0x80087B14
+	.rodata     start:0x802EB950 end:0x802EB960
+	.data       start:0x803C7958 end:0x803C7A58
+	.bss        start:0x80437068 end:0x804396A8
+	.sdata      start:0x804E8020 end:0x804E8038
+	.sbss       start:0x804EA9D8 end:0x804EA9F8
+	.sdata2     start:0x804EC768 end:0x804EC7D0
 
 game/menuHologram.cpp:
 	.text       start:0x80087B14 end:0x8008A160
+	.rodata     start:0x802EB960 end:0x802EB980
+	.data       start:0x803C7A58 end:0x803C7DD8
+	.bss        start:0x804396A8 end:0x804396D8
+	.sdata      start:0x804E8038 end:0x804E8048
+	.sbss       start:0x804EA9F8 end:0x804EAA00
+	.sdata2     start:0x804EC7D0 end:0x804EC838
+	.sbss2      start:0x804EFCE0 end:0x804EFCF0
 
 game/menuBingo.cpp:
 	.text       start:0x8008A160 end:0x80098108
+	.rodata     start:0x802EB980 end:0x802EBA58
+	.data       start:0x803C7DD8 end:0x803C8198
+	.bss        start:0x804396D8 end:0x8043A318
+	.sdata      start:0x804E8048 end:0x804E8058
+	.sbss       start:0x804EAA00 end:0x804EAA10
+	.sdata2     start:0x804EC838 end:0x804EC8D8
+
+game/menuItemBT.c:
+	.data       start:0x803C8198 end:0x803CD0E8
 
 game/menuReliveHallTutorial.cpp:
-	.text       start:0x80098108 end:0x80098AD8
+	.text       start:0x80098108 end:0x80098B44
+	.rodata     start:0x802EBA58 end:0x802EBA68
+	.data       start:0x803CD0E8 end:0x803CD1C0
+	.sdata      start:0x804E8058 end:0x804E80A8
+	.sdata2     start:0x804EC8D8 end:0x804EC8E8
 
 game/menuPokemonChange.cpp:
-	.text       start:0x80098AD8 end:0x8009D4E8
+	.text       start:0x80098B44 end:0x8009D4E8
 	.ctors      start:0x802E9FA4 end:0x802E9FA8
+	.rodata     start:0x802EBA68 end:0x802EBA88
+	.data       start:0x803CD1C0 end:0x803CD268
+	.bss        start:0x8043A318 end:0x8043B070
+	.sdata      start:0x804E80A8 end:0x804E80B8
+	.sbss       start:0x804EAA10 end:0x804EAA18
+	.sdata2     start:0x804EC8E8 end:0x804EC938
 
 game/menuWorldMapMoveDemo.cpp:
 	.text       start:0x8009D4E8 end:0x8009D6B8
+	.data       start:0x803CD268 end:0x803CD2E0
+	.sbss       start:0x804EAA18 end:0x804EAA20
+	.sdata2     start:0x804EC938 end:0x804EC940
 
 game/menuWorldMapModel.cpp:
 	.text       start:0x8009D6B8 end:0x8009E664
+	.rodata     start:0x802EBA88 end:0x802EBB20
+	.data       start:0x803CD2E0 end:0x803CD2F0
+	.sdata2     start:0x804EC940 end:0x804EC960
+	.sbss2      start:0x804EFCF0 end:0x804EFCF8
+
+game/menuItem.c:
+	.data       start:0x803CD2F0 end:0x803CD3D0
 
 game/menuBattleDisk.cpp:
 	.text       start:0x8009E664 end:0x800A1494
 	.ctors      start:0x802E9FA8 end:0x802E9FAC
+	.data       start:0x803CD3D0 end:0x803CD508
+	.bss        start:0x8043B070 end:0x8043C930
+	.sdata2     start:0x804EC960 end:0x804EC998
+
+game/menuItemXD.c:
+	.data       start:0x803CD508 end:0x803CE730
 
 game/menuOrreColosseum.cpp:
 	.text       start:0x800A1494 end:0x800A3150
 	.ctors      start:0x802E9FAC end:0x802E9FB0
+	.rodata     start:0x802EBB20 end:0x802EBBB0
+	.bss        start:0x8043C930 end:0x8043D2A8
+	.sbss       start:0x804EAA20 end:0x804EAA30
+	.sdata2     start:0x804EC998 end:0x804EC9F8
 
 game/menuTitle.cpp:
 	.text       start:0x800A3150 end:0x800A423C
+	.rodata     start:0x802EBBB0 end:0x802EBBF8
+	.bss        start:0x8043D2A8 end:0x8043D2F8
+	.sdata      start:0x804E80B8 end:0x804E80C0
+	.sbss       start:0x804EAA30 end:0x804EAA68
+	.sdata2     start:0x804EC9F8 end:0x804ECA58
 
 game/menuUseItem.cpp:
 	.text       start:0x800A423C end:0x800A6138
+	.rodata     start:0x802EBBF8 end:0x802EBD60
+	.data       start:0x803CE730 end:0x803CE7B0
+	.sdata      start:0x804E80C0 end:0x804E80D8
+	.sdata2     start:0x804ECA58 end:0x804ECA78
+
+game/menuItemDebugRelease.c:
+	.data       start:0x803CE7B0 end:0x803D07C0
 
 game/menuMewWaza.cpp:
 	.text       start:0x800A6138 end:0x800A63DC
 
 game/menuMoveDemo.cpp:
 	.text       start:0x800A63DC end:0x800A6D54
+	.sdata      start:0x804E80D8 end:0x804E80F0
+	.sbss       start:0x804EAA68 end:0x804EAA78
+	.sdata2     start:0x804ECA78 end:0x804ECA88
 
 game/menuTitleOption.cpp:
 	.text       start:0x800A6D54 end:0x800A7614
+	.data       start:0x803D07C0 end:0x803D0818
+	.bss        start:0x8043D2F8 end:0x8043D330
+	.sdata2     start:0x804ECA88 end:0x804ECAA0
 
 game/pxdvs/GSAPI/GSmemman/GSmemman.cpp:
 	.text       start:0x800A7614 end:0x800A7BF8
+	.sdata      start:0x804E80F0 end:0x804E80F8
+	.sbss       start:0x804EAA78 end:0x804EAA80
 
 game/pxdvs/GSAPI/GSmemman/memOverride.cpp:
 	.text       start:0x800A7BF8 end:0x800A7CD8
 
 game/pxdvs/GSAPI/GSmemman/OSAlloc.cpp:
 	.text       start:0x800A7CD8 end:0x800A8E7C
+	.rodata     start:0x802EBD60 end:0x802EC1A8
+	.sdata      start:0x804E80F8 end:0x804E8100
+	.sbss       start:0x804EAA80 end:0x804EAA98
 
 game/pxdvs/GSAPI/GSmemman/sysdolmem.cpp:
 	.text       start:0x800A8E7C end:0x800A9118
+	.sbss       start:0x804EAA98 end:0x804EAAB0
 
 game/pxdvs/GSAPI/GSmemman/poolAlloc.cpp:
 	.text       start:0x800A9118 end:0x800A9574
+	.bss        start:0x8043D330 end:0x8043D6C0
 
 dolphin/base/PPCArch.c:
 	.text       start:0x800A9574 end:0x800A96AC
@@ -801,30 +1099,45 @@ runtime_libs/debugger/embedded/MetroTRK/Portable/mainloop.c:
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/nubevent.c:
 	.text       start:0x800D3AC8 end:0x800D3CF0
+	.bss        start:0x8043F9C8 end:0x8043F9F0
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/nubinit.c:
 	.text       start:0x800D3CF0 end:0x800D3E88
+	.rodata     start:0x802EC1D0 end:0x802EC200
+	.bss        start:0x8043F9F0 end:0x8043F9F8
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/msg.c:
 	.text       start:0x800D3E88 end:0x800D3ECC
+	.rodata     start:0x802EC200 end:0x802EC228
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/msgbuf.c:
 	.text       start:0x800D3ECC end:0x800D4708
+	.rodata     start:0x802EC228 end:0x802EC248
+	.bss        start:0x8043F9F8 end:0x804413A8
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/serpoll.c:
 	.text       start:0x800D4708 end:0x800D49C0
+	.rodata     start:0x802EC248 end:0x802EC3D8
+	.bss        start:0x804413A8 end:0x804413C0
+	.sbss       start:0x804EAE48 end:0x804EAE50
 
 runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/usr_put.c:
 	.text       start:0x800D49C0 end:0x800D4A4C
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/dispatch.c:
 	.text       start:0x800D4A4C end:0x800D4BC4
+	.rodata     start:0x802EC3D8 end:0x802EC418
+	.data       start:0x803D4320 end:0x803D4390
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/msghndlr.c:
 	.text       start:0x800D4BC4 end:0x800D5C34
+	.rodata     start:0x802EC418 end:0x802EC600
+	.data       start:0x803D4390 end:0x803D43C8
+	.bss        start:0x804413C0 end:0x804413C8
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/support.c:
 	.text       start:0x800D5C34 end:0x800D6348
+	.rodata     start:0x802EC600 end:0x802EC6A8
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/mutex_TRK.c:
 	.text       start:0x800D6348 end:0x800D6360
@@ -841,6 +1154,9 @@ runtime_libs/debugger/embedded/MetroTRK/Portable/mem_TRK.c:
 
 runtime_libs/debugger/embedded/MetroTRK/Processor/ppc/Generic/targimpl.c:
 	.text       start:0x800D64E8 end:0x800D8080
+	.rodata     start:0x802EC6A8 end:0x802EC740
+	.data       start:0x803D43C8 end:0x803D43F8
+	.bss        start:0x804413C8 end:0x80441948
 
 runtime_libs/debugger/embedded/MetroTRK/Processor/ppc/Export/targsupp.s:
 	.text       start:0x800D8080 end:0x800D80A0
@@ -854,18 +1170,26 @@ runtime_libs/debugger/embedded/MetroTRK/Processor/ppc/Generic/__exception.s:
 runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/dolphin_trk.c:
 	.init       start:0x800053E0 end:0x8000540C
 	.text       start:0x800D8410 end:0x800D8A4C
+	.data       start:0x803D43F8 end:0x803D4438
+	.bss        start:0x80441948 end:0x80441950
 
 runtime_libs/debugger/embedded/MetroTRK/Portable/main_TRK.c:
 	.text       start:0x800D8A4C end:0x800D8AA4
+	.rodata     start:0x802EC740 end:0x802EC750
+	.bss        start:0x80441950 end:0x80441958
 
 runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/dolphin_trk_glue.c:
 	.text       start:0x800D8AA4 end:0x800D8FFC
+	.rodata     start:0x802EC750 end:0x802EC858
+	.data       start:0x803D4438 end:0x803D4460
+	.bss        start:0x80441958 end:0x80441960
 
 runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/targcont.c:
 	.text       start:0x800D8FFC end:0x800D9030
 
 runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/target_options.c:
 	.text       start:0x800D9030 end:0x800D904C
+	.bss        start:0x80441960 end:0x80441968
 
 runtime_libs/debugger/embedded/MetroTRK/Export/mslsupp.c:
 	.text       start:0x800D904C end:0x800D9248
@@ -875,12 +1199,18 @@ runtime_libs/debugger/embedded/MetroTRK/Os/dolphin/UDP_Stubs.c:
 
 runtime_libs/gamedev/cust_connection/cc/exi2/GCN/EXI2_DDH_GCN/main_ddh.c:
 	.text       start:0x800D9290 end:0x800D95D4
+	.rodata     start:0x802EC858 end:0x802EC938
+	.bss        start:0x80441968 end:0x80442188
+	.sbss       start:0x804EAE50 end:0x804EAE58
 
 runtime_libs/gamedev/cust_connection/utils/common/CircleBuffer.c:
 	.text       start:0x800D95D4 end:0x800D983C
 
 runtime_libs/gamedev/cust_connection/cc/exi2/GCN/EXI2_GDEV_GCN/main_gdev.c:
 	.text       start:0x800D983C end:0x800D9B88
+	.rodata     start:0x802EC938 end:0x802ECA18
+	.bss        start:0x80442188 end:0x804426A8
+	.sbss       start:0x804EAE58 end:0x804EAE60
 
 runtime_libs/gamedev/cust_connection/utils/common/MWTrace.c:
 	.text       start:0x800D9B88 end:0x800D9BD8
@@ -907,7 +1237,7 @@ PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions.cpp:
 	.text       start:0x800DA88C end:0x800DA8FC
 	.ctors      start:0x802E9F80 end:0x802E9F84
 	.dtors      start:0x802EA000 end:0x802EA004
-	.sdata      start:0x804E82D0 end:0x804E82D4
+	.sdata      start:0x804E82D0 end:0x804E82D8
 
 PowerPC_EABI_Support/Runtime/Src/Gecko_ExceptionPPC.cp:
 	.text       start:0x800DA8FC end:0x800DA964
@@ -919,15 +1249,28 @@ PowerPC_EABI_Support/Runtime/Src/GCN_mem_alloc.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/abort_exit.c:
 	.text       start:0x800DAA1C end:0x800DAB0C
+	.bss        start:0x804426B8 end:0x804427B8
+	.sbss       start:0x804EAE60 end:0x804EAE70
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/alloc.c:
 	.text       start:0x800DAB0C end:0x800DAFC0
+	.rodata     start:0x802ECAA8 end:0x802ECAC0
+	.bss        start:0x804427B8 end:0x804427F0
+	.sbss       start:0x804EAE70 end:0x804EAE78
+
+PowerPC_EABI_Support/MSL_C/MSL_Common/Src/errno.c:
+	.sbss       start:0x804EAE78 end:0x804EAE80
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/ansi_files.c:
 	.text       start:0x800DAFC0 end:0x800DB0D8
+	.data       start:0x803D4460 end:0x803D45A0
+	.bss        start:0x804427F0 end:0x80442AF0
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Src/ansi_fp.c:
 	.text       start:0x800DB0D8 end:0x800DE6B4
+	.rodata     start:0x802ECAC0 end:0x802ECBA0
+	.data       start:0x803D45A0 end:0x803D4708
+	.sdata2     start:0x804ECD20 end:0x804ECD50
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/arith.c:
 	.text       start:0x800DE6B4 end:0x800DE6C4
@@ -940,6 +1283,11 @@ PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/critical_regions.gamecube.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/ctype.c:
 	.text       start:0x800DE7C8 end:0x800DE7EC
+	.data       start:0x803D4708 end:0x803D4A08
+
+PowerPC_EABI_Support/MSL_C/MSL_Common/Src/locale.c:
+	.rodata     start:0x802ECBA0 end:0x802ECBA8
+	.data       start:0x803D4A08 end:0x803D4A40
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/direct_io.c:
 	.text       start:0x800DE7EC end:0x800DEB74
@@ -952,6 +1300,7 @@ PowerPC_EABI_Support/MSL_C/MSL_Common/Src/FILE_POS.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/mbstring.c:
 	.text       start:0x800DF228 end:0x800DF340
+	.sdata2     start:0x804ECD50 end:0x804ECD58
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/mem.c:
 	.text       start:0x800DF340 end:0x800DF4B0
@@ -964,6 +1313,13 @@ PowerPC_EABI_Support/MSL_C/MSL_Common/Src/misc_io.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/printf.c:
 	.text       start:0x800DF790 end:0x800E1890
+	.rodata     start:0x802ECBA8 end:0x802ECBD0
+	.data       start:0x803D4A40 end:0x803D4C70
+	.sdata      start:0x804E82D8 end:0x804E82E0
+	.sdata2     start:0x804ECD58 end:0x804ECD60
+
+PowerPC_EABI_Support/MSL_C/MSL_Common/Src/float.c:
+	.sdata      start:0x804E82E0 end:0x804E8318
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/qsort.c:
 	.text       start:0x800E1890 end:0x800E19FC
@@ -976,81 +1332,112 @@ PowerPC_EABI_Support/MSL_C/MSL_Common/Src/string.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/strtold.c:
 	.text       start:0x800E1D68 end:0x800E2E00
+	.rodata     start:0x802ECBD0 end:0x802ECC08
+	.sdata2     start:0x804ECD60 end:0x804ECD78
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/strtoul.c:
 	.text       start:0x800E2E00 end:0x800E3238
+	.data       start:0x803D4C70 end:0x803D4CB8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common/Src/wchar_io.c:
 	.text       start:0x800E3238 end:0x800E32C0
 
 PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/uart_console_io_gcn.c:
 	.text       start:0x800E32C0 end:0x800E3390
+	.sbss       start:0x804EAE80 end:0x804EAE88
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_acos.c:
 	.text       start:0x800E3390 end:0x800E35CC
+	.sdata2     start:0x804ECD78 end:0x804ECE00
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_asin.c:
 	.text       start:0x800E35CC end:0x800E3804
+	.sdata2     start:0x804ECE00 end:0x804ECE88
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_atan2.c:
 	.text       start:0x800E3804 end:0x800E3A94
+	.sdata2     start:0x804ECE88 end:0x804ECEE0
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_exp.c:
 	.text       start:0x800E3A94 end:0x800E3CB8
+	.rodata     start:0x802ECC08 end:0x802ECC38
+	.sdata2     start:0x804ECEE0 end:0x804ECF58
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_fmod.c:
 	.text       start:0x800E3CB8 end:0x800E3FF4
+	.rodata     start:0x802ECC38 end:0x802ECC48
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_log.c:
 	.text       start:0x800E3FF4 end:0x800E4270
+	.sbss       start:0x804EAE88 end:0x804EAE90
+	.sdata2     start:0x804ECF58 end:0x804ECFD8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_pow.c:
 	.text       start:0x800E4270 end:0x800E4AA0
+	.rodata     start:0x802ECC48 end:0x802ECC78
+	.sdata2     start:0x804ECFD8 end:0x804ED0E8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_rem_pio2.c:
 	.text       start:0x800E4AA0 end:0x800E4E40
+	.rodata     start:0x802ECC78 end:0x802ECE00
+	.sdata2     start:0x804ED0E8 end:0x804ED140
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/k_cos.c:
 	.text       start:0x800E4E40 end:0x800E4F34
+	.sdata2     start:0x804ED140 end:0x804ED188
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/k_rem_pio2.c:
 	.text       start:0x800E4F34 end:0x800E5D88
+	.rodata     start:0x802ECE00 end:0x802ECE50
+	.sdata2     start:0x804ED188 end:0x804ED1C8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/k_sin.c:
 	.text       start:0x800E5D88 end:0x800E5E28
+	.sdata2     start:0x804ED1C8 end:0x804ED200
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/k_tan.c:
 	.text       start:0x800E5E28 end:0x800E603C
+	.rodata     start:0x802ECE50 end:0x802ECEB8
+	.sdata2     start:0x804ED200 end:0x804ED238
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_atan.c:
 	.text       start:0x800E603C end:0x800E6254
+	.rodata     start:0x802ECEB8 end:0x802ECF50
+	.sdata2     start:0x804ED238 end:0x804ED260
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_ceil.c:
 	.text       start:0x800E6254 end:0x800E6398
+	.sdata2     start:0x804ED260 end:0x804ED270
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_copysign.c:
 	.text       start:0x800E6398 end:0x800E63C0
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_cos.c:
 	.text       start:0x800E63C0 end:0x800E6494
+	.sdata2     start:0x804ED270 end:0x804ED278
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_floor.c:
 	.text       start:0x800E6494 end:0x800E65DC
+	.sdata2     start:0x804ED278 end:0x804ED288
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_frexp.c:
 	.text       start:0x800E65DC end:0x800E6668
+	.sdata2     start:0x804ED288 end:0x804ED290
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_ldexp.c:
 	.text       start:0x800E6668 end:0x800E682C
+	.sdata2     start:0x804ED290 end:0x804ED2B8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_modf.c:
 	.text       start:0x800E682C end:0x800E6928
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_sin.c:
 	.text       start:0x800E6928 end:0x800E6A00
+	.sdata2     start:0x804ED2B8 end:0x804ED2C0
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_tan.c:
 	.text       start:0x800E6A00 end:0x800E6A78
+	.sdata2     start:0x804ED2C0 end:0x804ED2C8
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_acos.c:
 	.text       start:0x800E6A78 end:0x800E6A98
@@ -1075,9 +1462,11 @@ PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_pow.c:
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_sqrt.c:
 	.text       start:0x800E6B58 end:0x800E6D7C
+	.sdata2     start:0x804ED2C8 end:0x804ED2D0
 
 PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/math_ppc.c:
 	.text       start:0x800E6D7C end:0x800E6F5C
+	.sdata2     start:0x804ED2D0 end:0x804ED2F0
 
 PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_sqrt.c:
 	.text       start:0x800E6F5C end:0x800E6F7C
@@ -1121,16 +1510,27 @@ dolphin/si/SISamplingRate.c:
 
 game/pxdvs/GSAPI/GScamera/GScamera.cpp:
 	.text       start:0x800EB3BC end:0x800EDC50
+	.rodata     start:0x802ECF50 end:0x802ECF70
+	.bss        start:0x80442DB0 end:0x80442DF0
+	.sbss       start:0x804EAED8 end:0x804EAEF0
+	.sdata2     start:0x804ED2F0 end:0x804ED358
 
 game/pxdvs/GSAPI/GSlight/GSlight.cpp:
 	.text       start:0x800EDC50 end:0x800EEC3C
+	.rodata     start:0x802ECF70 end:0x802ECF90
+	.sbss       start:0x804EAEF0 end:0x804EAF00
+	.sdata2     start:0x804ED358 end:0x804ED388
 
 game/pxdvs/GSAPI/GSmaterial/GSmaterial.cpp:
 	.text       start:0x800EEC3C end:0x800EF95C
+	.rodata     start:0x802ECF90 end:0x802ED068
+	.data       start:0x803D4F78 end:0x803D5028
+	.sdata2     start:0x804ED388 end:0x804ED398
 
 game/pxdvs/GSAPI/GSmath/GSmtx.cpp:
 	.text       start:0x800EF95C end:0x800EF9F8
 	.ctors      start:0x802E9FB0 end:0x802E9FB4
+	.bss        start:0x80442DF0 end:0x80442E20
 
 game/pxdvs/GSAPI/GSmath/GSmtx44.cpp:
 	.text       start:0x800EF9F8 end:0x800EFA38
@@ -1138,82 +1538,152 @@ game/pxdvs/GSAPI/GSmath/GSmtx44.cpp:
 game/pxdvs/GSAPI/GSmath/GSquat.cpp:
 	.text       start:0x800EFA38 end:0x800EFA58
 	.ctors      start:0x802E9FB4 end:0x802E9FB8
+	.bss        start:0x80442E20 end:0x80442E30
+	.sdata2     start:0x804ED398 end:0x804ED3A0
 
 game/pxdvs/GSAPI/GSmath/init.cpp:
 	.text       start:0x800EFA58 end:0x800EFAC0
 
 game/pxdvs/GSAPI/GSmath/GSbezier.cpp:
 	.text       start:0x800EFAC0 end:0x800EFBE8
+	.sdata2     start:0x804ED3A0 end:0x804ED3B0
 
 game/pxdvs/GSAPI/GSmath/GSlerp.cpp:
 	.text       start:0x800EFBE8 end:0x800EFCE8
+	.sdata2     start:0x804ED3B0 end:0x804ED3B8
 
 game/pxdvs/GSAPI/GSmath/GSutil.cpp:
 	.text       start:0x800EFCE8 end:0x800EFDA0
+	.bss        start:0x80442E30 end:0x80443108
+	.sdata2     start:0x804ED3B8 end:0x804ED3C8
 
 game/pxdvs/GSAPI/GSmath/GSvec.cpp:
 	.text       start:0x800EFDA0 end:0x800EFFCC
 	.ctors      start:0x802E9FB8 end:0x802E9FBC
+	.bss        start:0x80443108 end:0x80443148
+	.sdata2     start:0x804ED3C8 end:0x804ED3D8
 
 game/pxdvs/GSAPI/GSmodel/effects.cpp:
 	.text       start:0x800EFFCC end:0x800F0EE0
+	.data       start:0x803D5028 end:0x803D5040
+	.sbss       start:0x804EAF00 end:0x804EAF08
+	.sdata2     start:0x804ED3D8 end:0x804ED3E8
 
 game/pxdvs/GSAPI/GSmodel/blend.cpp:
 	.text       start:0x800F0EE0 end:0x800F1BD0
+	.sdata2     start:0x804ED3E8 end:0x804ED400
 
 game/pxdvs/GSAPI/GSmodel/bound.cpp:
 	.text       start:0x800F1BD0 end:0x800F1E74
+	.data       start:0x803D5040 end:0x803D5058
+	.sbss       start:0x804EAF08 end:0x804EAF10
+	.sdata2     start:0x804ED400 end:0x804ED408
 
 game/pxdvs/GSAPI/GSmodel/animation.cpp:
 	.text       start:0x800F1E74 end:0x800F6E30
+	.rodata     start:0x802ED068 end:0x802ED0A0
+	.data       start:0x803D5058 end:0x803D5080
+	.sdata2     start:0x804ED408 end:0x804ED468
 
 game/pxdvs/GSAPI/GSmodel/GSmodel.cpp:
 	.text       start:0x800F6E30 end:0x800F8998
+	.rodata     start:0x802ED0A0 end:0x802ED0C0
+	.sbss       start:0x804EAF10 end:0x804EAF20
+	.sdata2     start:0x804ED468 end:0x804ED498
 
 game/pxdvs/GSAPI/GSmodel/GSmodelExt.cpp:
 	.text       start:0x800F8998 end:0x800FB3A4
+	.rodata     start:0x802ED0C0 end:0x802ED0F8
+	.sbss       start:0x804EAF20 end:0x804EAF28
+	.sdata2     start:0x804ED498 end:0x804ED4D0
 
 game/pxdvs/GSAPI/GSmodel/parse.cpp:
 	.text       start:0x800FB3A4 end:0x800FC8A8
+	.rodata     start:0x802ED0F8 end:0x802ED130
+	.bss        start:0x80443148 end:0x80443358
+	.sbss       start:0x804EAF28 end:0x804EAF30
+	.sdata2     start:0x804ED4D0 end:0x804ED4F0
 
 game/pxdvs/GSAPI/GSmodel/part.cpp:
 	.text       start:0x800FC8A8 end:0x800FC9D0
+	.sbss       start:0x804EAF30 end:0x804EAF40
 
 game/pxdvs/GSAPI/GSmodel/save_state.cpp:
 	.text       start:0x800FC9D0 end:0x800FCD04
+	.rodata     start:0x802ED130 end:0x802ED140
+	.sdata2     start:0x804ED4F0 end:0x804ED508
 
 game/pxdvs/GSAPI/GSmodel/shadow.cpp:
 	.text       start:0x800FCD04 end:0x800FEEE0
+	.rodata     start:0x802ED140 end:0x802ED1A0
+	.bss        start:0x80443358 end:0x80443510
+	.sdata      start:0x804E8330 end:0x804E8340
+	.sbss       start:0x804EAF40 end:0x804EAF68
+	.sdata2     start:0x804ED508 end:0x804ED548
 
 game/pxdvs/GSAPI/GSmodel/bank.cpp:
 	.text       start:0x800FEEE0 end:0x800FF560
+	.sbss       start:0x804EAF68 end:0x804EAF70
 
 game/pxdvs/GSAPI/GSpart/GSpart.cpp:
 	.text       start:0x800FF560 end:0x801010B4
+	.rodata     start:0x802ED1A0 end:0x802ED1D0
+	.bss        start:0x80443510 end:0x80443570
+	.sbss       start:0x804EAF70 end:0x804EAFA0
+	.sdata2     start:0x804ED548 end:0x804ED570
 
 game/pxdvs/GSAPI/GSscratch/GSscratch.cpp:
 	.text       start:0x801010B4 end:0x801016D4
+	.bss        start:0x80443570 end:0x80443670
+	.sbss       start:0x804EAFA0 end:0x804EAFB8
 
 game/pxdvs/GSAPI/GStexture/GStexture.cpp:
 	.text       start:0x801016D4 end:0x8010315C
+	.rodata     start:0x802ED1D0 end:0x802ED240
+	.data       start:0x803D5080 end:0x803D5130
+	.bss        start:0x80443670 end:0x80444A70
+	.sbss       start:0x804EAFB8 end:0x804EAFC0
+	.sdata2     start:0x804ED570 end:0x804ED580
 
 game/pxdvs/GSAPI/GSthread/GSthread.cpp:
 	.text       start:0x8010315C end:0x80103F70
+	.rodata     start:0x802ED240 end:0x802ED2A0
+	.bss        start:0x80444A70 end:0x80444AF8
+	.sbss       start:0x804EAFC0 end:0x804EAFF8
 
 game/pxdvs/GSAPI/GSinput/GSinput.cpp:
 	.text       start:0x80103F70 end:0x80105840
+	.bss        start:0x80444AF8 end:0x80444D08
+	.sdata      start:0x804E8340 end:0x804E8348
+	.sbss       start:0x804EAFF8 end:0x804EB008
+	.sdata2     start:0x804ED580 end:0x804ED5C8
 
 game/pxdvs/GSAPI/GSres/GSres.cpp:
 	.text       start:0x80105840 end:0x80105FEC
+	.rodata     start:0x802ED2A0 end:0x802ED348
+	.sbss       start:0x804EB008 end:0x804EB010
 
 game/pxdvs/GSAPI/GSmsg/GSmsg.cpp:
 	.text       start:0x80105FEC end:0x8010B458
+	.rodata     start:0x802ED348 end:0x802F2E78
+	.data       start:0x803D5130 end:0x803D5190
+	.bss        start:0x80444D08 end:0x80445450
+	.sdata      start:0x804E8348 end:0x804E8350
+	.sbss       start:0x804EB010 end:0x804EB028
+	.sdata2     start:0x804ED5C8 end:0x804ED618
 
 game/pxdvs/GSAPI/GSmsg/sprite.cpp:
 	.text       start:0x8010B458 end:0x8010BD24
+	.data       start:0x803D5190 end:0x803D51C0
+	.sdata2     start:0x804ED618 end:0x804ED648
+
+game/pxdvs/app/kaisuu/kaisuuData.c:
+	.data       start:0x803D51C0 end:0x803D5210
+	.sdata      start:0x804E8350 end:0x804E8358
 
 game/pxdvs/GSAPI/GSgapp/GSgapp.cpp:
 	.text       start:0x8010BD24 end:0x8010C320
+	.sbss       start:0x804EB028 end:0x804EB050
 
 game/pxdvs/app/kaisuu/kaisuu.cpp:
 	.text       start:0x8010C320 end:0x8010C390
@@ -1223,31 +1693,65 @@ game/pxdvs/app/kaisuu/kaisuuBios.cpp:
 
 game/pxdvs/app/menu/winSprite.cpp:
 	.text       start:0x8010C3E4 end:0x8010E8C0
+	.rodata     start:0x802F2E78 end:0x802F2EA8
+	.data       start:0x803D5210 end:0x803D5280
+	.bss        start:0x80445450 end:0x804454D8
+	.sbss       start:0x804EB050 end:0x804EB060
+	.sdata2     start:0x804ED648 end:0x804ED670
 
 game/pxdvs/app/menu/menu.cpp:
 	.text       start:0x8010E8C0 end:0x80110A04
+	.rodata     start:0x802F2EA8 end:0x802F2F00
+	.data       start:0x803D5280 end:0x803FBFB0
+	.bss        start:0x804454D8 end:0x80445918
+	.sbss       start:0x804EB060 end:0x804EB078
+	.sdata2     start:0x804ED670 end:0x804ED690
 
 game/pxdvs/app/menu/menuFace.cpp:
 	.text       start:0x80110A04 end:0x80112114
+	.data       start:0x803FBFB0 end:0x803FC020
+	.bss        start:0x80445918 end:0x80445A08
+	.sbss       start:0x804EB078 end:0x804EB088
 
 game/pxdvs/app/menu/menuFaceBios.cpp:
 	.text       start:0x80112114 end:0x801121E8
+	.rodata     start:0x802F2F00 end:0x802F2F20
+	.data       start:0x803FC020 end:0x803FC038
 
 game/pxdvs/app/menu/menuModel.cpp:
 	.text       start:0x801121E8 end:0x801145EC
 	.ctors      start:0x802E9FBC end:0x802E9FC0
+	.rodata     start:0x802F2F20 end:0x802F2F80
+	.data       start:0x803FC038 end:0x803FC058
+	.bss        start:0x80445A08 end:0x80445A68
+	.sdata      start:0x804E8358 end:0x804E8378
+	.sbss       start:0x804EB088 end:0x804EB098
+	.sdata2     start:0x804ED690 end:0x804ED6E0
 
 game/pxdvs/app/menu/menuOffScreen.cpp:
 	.text       start:0x801145EC end:0x80114D30
+	.sdata      start:0x804E8378 end:0x804E8380
+	.sbss       start:0x804EB098 end:0x804EB0B8
+	.sdata2     start:0x804ED6E0 end:0x804ED708
 
 game/pxdvs/app/menu/window.cpp:
 	.text       start:0x80114D30 end:0x80116A90
+	.rodata     start:0x802F2F80 end:0x802F3028
+	.data       start:0x803FC058 end:0x803FC070
+	.bss        start:0x80445A68 end:0x80445BE0
+	.sdata2     start:0x804ED708 end:0x804ED718
+	.sbss2      start:0x804EFCF8 end:0x804EFD00
 
 game/pxdvs/app/menu/cursorBios.cpp:
 	.text       start:0x80116A90 end:0x80116BD4
+	.bss        start:0x80445BE0 end:0x80445C20
+	.sdata2     start:0x804ED718 end:0x804ED720
 
 game/pxdvs/app/menu/winMsg.cpp:
 	.text       start:0x80116BD4 end:0x80117614
+	.data       start:0x803FC070 end:0x803FC098
+	.sdata      start:0x804E8380 end:0x804E8388
+	.sbss       start:0x804EB0B8 end:0x804EB0C0
 
 game/pxdvs/app/zokusei/zokusei.cpp:
 	.text       start:0x80117614 end:0x80117A5C
@@ -1258,30 +1762,43 @@ game/pxdvs/app/zokusei/zokuseiBios.cpp:
 game/pxdvs/GSAPI/GScolsys/GScolsys2.cpp:
 	.text       start:0x80117B6C end:0x801186C4
 	.ctors      start:0x802E9FC0 end:0x802E9FC4
+	.rodata     start:0x802F3028 end:0x802F3038
+	.bss        start:0x80445C20 end:0x80446E60
+	.sbss       start:0x804EB0C0 end:0x804EB0C8
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Draw.cpp:
 	.text       start:0x801186C4 end:0x8011908C
+	.bss        start:0x80446E60 end:0x80446E70
+	.sdata2     start:0x804ED720 end:0x804ED750
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Walk.cpp:
 	.text       start:0x8011908C end:0x801197D8
+	.sdata2     start:0x804ED750 end:0x804ED760
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Hit.cpp:
 	.text       start:0x801197D8 end:0x8011A75C
+	.sdata2     start:0x804ED760 end:0x804ED780
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Util.cpp:
 	.text       start:0x8011A75C end:0x8011ADA4
+	.sdata2     start:0x804ED780 end:0x804ED790
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Human.cpp:
 	.text       start:0x8011ADA4 end:0x8011BC34
+	.sbss       start:0x804EB0C8 end:0x804EB0D0
+	.sdata2     start:0x804ED790 end:0x804ED7E8
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Thru.cpp:
 	.text       start:0x8011BC34 end:0x8011D49C
+	.sdata2     start:0x804ED7E8 end:0x804ED800
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Check.cpp:
 	.text       start:0x8011D49C end:0x8011D940
+	.sdata2     start:0x804ED800 end:0x804ED808
 
 game/pxdvs/GSAPI/GScolsys/GScolsys2Sun.cpp:
 	.text       start:0x8011D940 end:0x8011DDB0
+	.sdata2     start:0x804ED808 end:0x804ED818
 
 game/pxdvs/app/floor/floor.cpp:
 	.text       start:0x8011DDB0 end:0x80120FF4
@@ -1289,16 +1806,29 @@ game/pxdvs/app/floor/floor.cpp:
 	.text       start:0x80121018 end:0x801211B8
 	.text       start:0x801211B8 end:0x80121260
 	.ctors      start:0x802E9FC4 end:0x802E9FC8
+	.rodata     start:0x802F3038 end:0x802F3238
+	.data       start:0x803FC098 end:0x803FC178
+	.bss        start:0x80446E70 end:0x80446F90
+	.sbss       start:0x804EB0D0 end:0x804EB0F8
+	.sdata2     start:0x804ED818 end:0x804ED8A0
+	.sbss2      start:0x804EFD00 end:0x804EFD10
 
 game/pxdvs/app/floor/floorEvent.cpp:
 	.text       start:0x80121260 end:0x801224E0
+	.rodata     start:0x802F3238 end:0x802F3250
+	.data       start:0x803FC178 end:0x803FC190
+	.sbss       start:0x804EB0F8 end:0x804EB100
+	.sdata2     start:0x804ED8A0 end:0x804ED8C0
 
 game/pxdvs/app/floor/floorCharacterBios.cpp:
 	.text       start:0x801224E0 end:0x80122A34
 	.text       start:0x80122A34 end:0x80122A44
+	.bss        start:0x80446F90 end:0x80447000
+	.sdata2     start:0x804ED8C0 end:0x804ED8D0
 
 game/pxdvs/app/floor/floorDataBios.cpp:
 	.text       start:0x80122A44 end:0x8012324C
+	.sdata2     start:0x804ED8D0 end:0x804ED8E0
 
 game/pxdvs/app/floor/floorFieldCamera.cpp:
 	.text       start:0x8012324C end:0x801243BC
@@ -1308,15 +1838,25 @@ game/pxdvs/app/floor/floorFieldCamera.cpp:
 	.text       start:0x8012481C end:0x8012498C
 	.text       start:0x8012498C end:0x801249B0
 	.text       start:0x801249B0 end:0x80124A70
+	.rodata     start:0x802F3250 end:0x802F32A8
+	.bss        start:0x80447000 end:0x80447030
+	.sdata      start:0x804E8388 end:0x804E8398
+	.sbss       start:0x804EB100 end:0x804EB138
+	.sdata2     start:0x804ED8E0 end:0x804ED928
 
 game/pxdvs/app/floor/floorFieldCameraEditor.cpp:
 	.text       start:0x80124A70 end:0x8012530C
 	.text       start:0x8012530C end:0x8012566C
 	.text       start:0x8012566C end:0x80125684
 	.text       start:0x80125684 end:0x801256A0
+	.bss        start:0x80447030 end:0x80447058
+	.sdata2     start:0x804ED928 end:0x804ED948
 
 game/pxdvs/app/floor/floorOffscreen.cpp:
 	.text       start:0x801256A0 end:0x80125AE0
+	.bss        start:0x80447058 end:0x80447070
+	.sdata      start:0x804E8398 end:0x804E83A0
+	.sbss       start:0x804EB138 end:0x804EB150
 
 game/pxdvs/app/floor/floorManager.cpp:
 	.text       start:0x80125AE0 end:0x801279D8
@@ -1324,11 +1864,17 @@ game/pxdvs/app/floor/floorManager.cpp:
 	.text       start:0x80127D30 end:0x80127D44
 	.text       start:0x80127D44 end:0x80127DA4
 	.text       start:0x80127DA4 end:0x80127DAC
+	.rodata     start:0x802F32A8 end:0x802F33F0
+	.data       start:0x803FC190 end:0x803FC1B8
+	.sbss       start:0x804EB150 end:0x804EB158
+	.sdata2     start:0x804ED948 end:0x804ED958
 
 game/pxdvs/app/floor/floorModule.cpp:
 	.text       start:0x80127DAC end:0x8012959C
 	.text       start:0x8012959C end:0x801296B0
 	.text       start:0x801296B0 end:0x801296C0
+	.rodata     start:0x802F33F0 end:0x802F3538
+	.data       start:0x803FC1B8 end:0x803FC210
 
 game/pxdvs/app/floor/floorStack.cpp:
 	.text       start:0x801296C0 end:0x80129DE4
@@ -1336,52 +1882,92 @@ game/pxdvs/app/floor/floorStack.cpp:
 
 game/pxdvs/app/floor/floorLoad.cpp:
 	.text       start:0x80129E00 end:0x80129F7C
+	.rodata     start:0x802F3538 end:0x802F3550
 
 game/pxdvs/app/floor/floorScript.cpp:
 	.text       start:0x80129F7C end:0x8012A540
 	.text       start:0x8012A540 end:0x8012A550
+	.sbss       start:0x804EB158 end:0x804EB160
 
 game/pxdvs/app/floor/floorsound.cpp:
 	.text       start:0x8012A550 end:0x8012AD40
 	.text       start:0x8012AD40 end:0x8012AD50
 	.ctors      start:0x802E9FC8 end:0x802E9FCC
+	.rodata     start:0x802F3550 end:0x802F3590
+	.bss        start:0x80447070 end:0x80447090
+	.sbss       start:0x804EB160 end:0x804EB168
+	.sdata2     start:0x804ED958 end:0x804ED990
 
 game/pxdvs/GSAPI/GSparticle/GSparticle.cpp:
 	.text       start:0x8012AD50 end:0x8012DC3C
+	.rodata     start:0x802F3590 end:0x802F3718
+	.data       start:0x803FC210 end:0x803FC230
+	.bss        start:0x80447090 end:0x804470A0
+	.sbss       start:0x804EB168 end:0x804EB180
+	.sdata2     start:0x804ED990 end:0x804ED9A8
 
 game/pxdvs/GSAPI/GSparticle/peParticle.cpp:
 	.text       start:0x8012DC3C end:0x8012FAD8
+	.data       start:0x803FC230 end:0x803FC258
+	.sdata2     start:0x804ED9A8 end:0x804ED9E0
 
 game/pxdvs/GSAPI/GSparticle/peNode.cpp:
 	.text       start:0x8012FAD8 end:0x8013015C
+	.sdata2     start:0x804ED9E0 end:0x804ED9F0
 
 game/pxdvs/GSAPI/GSparticle/peBank.cpp:
 	.text       start:0x8013015C end:0x801322C4
+	.rodata     start:0x802F3718 end:0x802F3728
+	.data       start:0x803FC258 end:0x803FC278
+	.bss        start:0x804470A0 end:0x804470E8
+	.sbss       start:0x804EB180 end:0x804EB1A0
+	.sdata2     start:0x804ED9F0 end:0x804EDA28
 
 game/pxdvs/GSAPI/GSparticle/peEmitter.cpp:
 	.text       start:0x801322C4 end:0x801347C0
+	.data       start:0x803FC278 end:0x803FC2B8
+	.sdata2     start:0x804EDA28 end:0x804EDA68
 
 game/pxdvs/GSAPI/GSparticle/peModel.cpp:
 	.text       start:0x801347C0 end:0x801357BC
+	.data       start:0x803FC2B8 end:0x803FC2E0
+	.sbss       start:0x804EB1A0 end:0x804EB1A8
+	.sdata2     start:0x804EDA68 end:0x804EDAB0
 
 game/pxdvs/GSAPI/GSparticle/peContainer.cpp:
 	.text       start:0x801357BC end:0x80136154
+	.data       start:0x803FC2E0 end:0x803FC328
 
 game/pxdvs/GSAPI/GSparticle/peDistortion.cpp:
 	.text       start:0x80136154 end:0x80137628
+	.data       start:0x803FC328 end:0x803FC350
+	.sdata2     start:0x804EDAB0 end:0x804EDAE8
 
 game/pxdvs/GSAPI/GSparticle/peParticleStrip.cpp:
 	.text       start:0x80137628 end:0x80138724
+	.data       start:0x803FC350 end:0x803FC378
+	.sdata2     start:0x804EDAE8 end:0x804EDB00
 
 game/pxdvs/GSAPI/GSparticle/peSpline.cpp:
 	.text       start:0x80138724 end:0x80138B7C
+	.sdata2     start:0x804EDB00 end:0x804EDB10
 
 game/pxdvs/GSAPI/GSparticle/particleEngine.cpp:
 	.text       start:0x80138B7C end:0x8013A67C
 	.ctors      start:0x802E9FCC end:0x802E9FD0
+	.data       start:0x803FC378 end:0x803FC398
+	.bss        start:0x804470E8 end:0x804479C0
+	.sbss       start:0x804EB1A8 end:0x804EB1C8
 
 game/pxdvs/GSAPI/GSparticle/peShape.cpp:
 	.text       start:0x8013A67C end:0x8013C2D4
+	.data       start:0x803FC398 end:0x803FC3E0
+	.sdata2     start:0x804EDB10 end:0x804EDB48
+	.sbss2      start:0x804EFD10 end:0x804EFD20
+
+game/pxdvs/app/joutai/joutaiData.c:
+	.data       start:0x803FC3E0 end:0x803FCAB0
+	.sdata      start:0x804E83A0 end:0x804E83A8
 
 game/pxdvs/app/joutai/joutai.cpp:
 	.text       start:0x8013C2D4 end:0x8013CD98
@@ -1391,6 +1977,30 @@ game/pxdvs/app/joutai/joutaiBios.cpp:
 
 game/pxdvs/app/waza/waza.cpp:
 	.text       start:0x8013D03C end:0x8013D7B0
+	.data       start:0x803FCAB0 end:0x803FCC88
+
+game/pxdvs/app/waza/wazaFuncData.c:
+	.data       start:0x803FCC88 end:0x803FEFB0
+	.sdata      start:0x804E83A8 end:0x804E83B0
+
+game/pxdvs/app/pokemon/pokemonGrowData.c:
+	.data       start:0x803FEFB0 end:0x803FFC50
+	.sdata      start:0x804E83B0 end:0x804E83B8
+
+game/pxdvs/app/pokemon/pokemonTokuseiData.c:
+	.data       start:0x803FFC50 end:0x803FFFF8
+	.sdata      start:0x804E83B8 end:0x804E83C0
+
+game/pxdvs/app/pokemon/pokemonFriendFilterData.c:
+	.data       start:0x803FFFF8 end:0x80400018
+	.sdata      start:0x804E83C0 end:0x804E83C8
+
+game/pxdvs/app/pokemon/pokemonNakigoeData.c:
+	.data       start:0x80400018 end:0x80400630
+	.sdata      start:0x804E83C8 end:0x804E83D0
+
+game/pxdvs/app/pokemon/pokemonWaveDispData.c:
+	.data       start:0x80400630 end:0x80403B00
 
 game/pxdvs/app/waza/wazaBios.cpp:
 	.text       start:0x8013D7B0 end:0x8013E044
@@ -1400,15 +2010,24 @@ game/pxdvs/app/waza/wazaDB.cpp:
 
 game/pxdvs/app/pokemon/pokemon.cpp:
 	.text       start:0x8013E90C end:0x8014418C
+	.rodata     start:0x802F3728 end:0x802F37C0
+	.data       start:0x80403B00 end:0x80404418
+	.sdata2     start:0x804EDB48 end:0x804EDB80
 
 game/pxdvs/app/pokemon/pokemonBios.cpp:
 	.text       start:0x8014418C end:0x8014713C
+	.data       start:0x80404418 end:0x80404460
+	.sdata      start:0x804E83D0 end:0x804E83D8
+	.sbss2      start:0x804EFD20 end:0x804EFD28
 
 game/pxdvs/app/pokemon/pokemonDB.cpp:
 	.text       start:0x8014713C end:0x80149C0C
 
 game/pxdvs/app/pokemon/pokemonEvolution.cpp:
 	.text       start:0x80149C0C end:0x8014AA60
+	.rodata     start:0x802F37C0 end:0x802F37F0
+	.data       start:0x80404460 end:0x804044A8
+	.sdata2     start:0x804EDB80 end:0x804EDB88
 
 game/pxdvs/app/pokemon/pokemonStatusFightoutPokemon.cpp:
 	.text       start:0x8014AA60 end:0x8014AAC0
@@ -1418,15 +2037,27 @@ game/pxdvs/app/pokemon/pokemonStatusFightPokemon.cpp:
 
 game/pxdvs/app/pokemon/pokemonStatusPokemon.cpp:
 	.text       start:0x8014AAE0 end:0x8014BAB4
+	.sdata2     start:0x804EDB88 end:0x804EDB90
 
 game/pxdvs/app/pokemon/darkPokemon.cpp:
 	.text       start:0x8014BAB4 end:0x8014BF4C
+	.data       start:0x804044A8 end:0x804044E8
+	.sdata2     start:0x804EDB90 end:0x804EDBA0
+
+game/pxdvs/app/pokemon/darkPokemonList.c:
+	.data       start:0x804044E8 end:0x804045E8
+	.sdata      start:0x804E83D8 end:0x804E83E0
 
 game/pxdvs/app/pokemon/darkPokemonBios.cpp:
 	.text       start:0x8014BF4C end:0x8014C558
 
 game/pxdvs/app/hero/hero.cpp:
 	.text       start:0x8014C558 end:0x8014DC28
+	.rodata     start:0x802F37F0 end:0x802F3800
+	.data       start:0x804045E8 end:0x804046D8
+	.bss        start:0x804479C0 end:0x804479F0
+	.sbss       start:0x804EB1C8 end:0x804EB1D8
+	.sdata2     start:0x804EDBA0 end:0x804EDBB0
 
 game/pxdvs/app/hero/heroBios.cpp:
 	.text       start:0x8014DC28 end:0x8014E174
@@ -1434,39 +2065,83 @@ game/pxdvs/app/hero/heroBios.cpp:
 game/pxdvs/app/hero/heroMove.cpp:
 	.text       start:0x8014E174 end:0x8015224C
 	.ctors      start:0x802E9FD0 end:0x802E9FD4
+	.rodata     start:0x802F3800 end:0x802F38A8
+	.bss        start:0x804479F0 end:0x80448080
+	.sbss       start:0x804EB1D8 end:0x804EB1E8
+	.sdata2     start:0x804EDBB0 end:0x804EDC60
 
 game/pxdvs/app/hero/heroPokemonGet.cpp:
 	.text       start:0x8015224C end:0x801528C4
 
 game/pxdvs/app/hero/heroMemberFunctions.cpp:
 	.text       start:0x801528C4 end:0x80153188
+	.sdata2     start:0x804EDC60 end:0x804EDC68
 
 game/pxdvs/GSAPI/GSeffect/GSeffect.cpp:
 	.text       start:0x80153188 end:0x80153550
+	.rodata     start:0x802F38A8 end:0x802F38C8
+	.data       start:0x804046D8 end:0x804046F8
+	.sbss       start:0x804EB1E8 end:0x804EB1F0
+	.sdata2     start:0x804EDC68 end:0x804EDC70
+
+game/pxdvs/app/sex/sexdata.c:
+	.data       start:0x804046F8 end:0x80404710
+	.sdata      start:0x804E83E0 end:0x804E83E8
+
+game/pxdvs/app/msgctrl/msgctrlcode.c:
+	.data       start:0x80404710 end:0x80404A88
 
 game/pxdvs/app/sex/sex.cpp:
 	.text       start:0x80153550 end:0x80153564
 
 game/pxdvs/app/msgctrl/msgctrl.cpp:
 	.text       start:0x80153564 end:0x801553A0
+	.data       start:0x80404A88 end:0x80404C68
+	.bss        start:0x80448080 end:0x80448420
+	.sbss       start:0x804EB1F0 end:0x804EB2D8
+	.sdata2     start:0x804EDC70 end:0x804EDC78
 
 game/pxdvs/app/dbgMenu/dbgMenu.cpp:
 	.text       start:0x801553A0 end:0x801560EC
+	.sdata      start:0x804E83E8 end:0x804E83F0
+	.sbss       start:0x804EB2D8 end:0x804EB2E8
 
 game/pxdvs/app/pcbox/pcbox.cpp:
 	.text       start:0x801560EC end:0x801576DC
+	.sbss       start:0x804EB2E8 end:0x804EB2F0
+	.sdata2     start:0x804EDC78 end:0x804EDC88
 
 game/pxdvs/app/gamedata/gamedatasaveBios.cpp:
 	.text       start:0x801576DC end:0x80157A40
+	.sdata2     start:0x804EDC88 end:0x804EDC90
 
 game/pxdvs/app/gamedata/gamedataBios.cpp:
 	.text       start:0x80157A40 end:0x80157B5C
 
 game/pxdvs/app/gamedata/gamedata.cpp:
 	.text       start:0x80157B5C end:0x801586C0
+	.data       start:0x80404C68 end:0x80404CD8
+	.sdata2     start:0x804EDC90 end:0x804EDC98
 
 game/pxdvs/app/status/status.cpp:
 	.text       start:0x801586C0 end:0x80158908
+	.data       start:0x80404CD8 end:0x80404D28
+
+game/pxdvs/app/kouka/koukaData.c:
+	.data       start:0x80404D28 end:0x80404D88
+	.sdata      start:0x804E83F0 end:0x804E83F8
+
+game/pxdvs/app/kouka/koukaLinkData.c:
+	.data       start:0x80404D88 end:0x80404D98
+	.sdata      start:0x804E83F8 end:0x804E8400
+
+game/pxdvs/app/tenkou/tenkouData.c:
+	.data       start:0x80404D98 end:0x80404E28
+	.sdata      start:0x804E8400 end:0x804E8408
+
+game/pxdvs/app/tikei/tikeiData.c:
+	.data       start:0x80404E28 end:0x80404E98
+	.sdata      start:0x804E8408 end:0x804E8410
 
 game/pxdvs/app/kouka/kouka.cpp:
 	.text       start:0x80158908 end:0x80158BF8
@@ -1482,36 +2157,79 @@ game/pxdvs/app/tikei/tikeiBios.cpp:
 
 game/pxdvs/app/effects/filter.cpp:
 	.text       start:0x80158E64 end:0x801594C0
+	.rodata     start:0x802F38C8 end:0x802F3918
+	.data       start:0x80404E98 end:0x80404EC8
+	.sdata2     start:0x804EDC98 end:0x804EDCB0
 
 game/pxdvs/app/effects/envMap.cpp:
 	.text       start:0x801594C0 end:0x8015960C
+	.data       start:0x80404EC8 end:0x80404EE8
 
 game/pxdvs/app/effects/blur.cpp:
 	.text       start:0x8015960C end:0x80159E94
+	.data       start:0x80404EE8 end:0x80404F18
+	.sdata2     start:0x804EDCB0 end:0x804EDCE0
 
 game/pxdvs/app/effects/glow.cpp:
 	.text       start:0x80159E94 end:0x8015B018
+	.rodata     start:0x802F3918 end:0x802F3928
+	.data       start:0x80404F18 end:0x80404F38
+	.sdata      start:0x804E8410 end:0x804E8418
+	.sbss       start:0x804EB2F0 end:0x804EB2F8
+	.sdata2     start:0x804EDCE0 end:0x804EDD28
+
+game/pxdvs/app/item/itemBallData.c:
+	.data       start:0x80404F38 end:0x80405278
+	.sdata      start:0x804E8418 end:0x804E8420
+
+game/pxdvs/app/item/itemSoubiData.c:
+	.data       start:0x80405278 end:0x80405300
+	.sdata      start:0x804E8420 end:0x804E8428
+
+game/pxdvs/app/item/tasteData.c:
+	.data       start:0x80405300 end:0x804053A0
+	.sdata      start:0x804E8428 end:0x804E8430
+
+game/pxdvs/app/item/itemWazaMachineNo.c:
+	.data       start:0x804053A0 end:0x80405570
+	.sdata      start:0x804E8430 end:0x804E8438
+
+game/pxdvs/app/item/itemParam.c:
+	.data       start:0x80405570 end:0x80405970
+	.sdata      start:0x804E8438 end:0x804E8440
 
 game/pxdvs/app/item/item.cpp:
 	.text       start:0x8015B018 end:0x8015D960
+	.data       start:0x80405970 end:0x80405A80
+	.sbss       start:0x804EB2F8 end:0x804EB300
 
 game/pxdvs/app/item/itemBios.cpp:
 	.text       start:0x8015D960 end:0x8015EB84
+	.rodata     start:0x802F3928 end:0x802F3B28
+	.data       start:0x80405A80 end:0x80405B00
 
 game/pxdvs/app/item/itemDB.cpp:
 	.text       start:0x8015EB84 end:0x8015EFB0
 
 game/pxdvs/app/item/itemUse2Pokemon.cpp:
 	.text       start:0x8015EFB0 end:0x80161268
+	.sdata      start:0x804E8440 end:0x804E8448
 
 game/pxdvs/app/item/itemFightItem.cpp:
 	.text       start:0x80161268 end:0x80161308
 
 musyx/runtime/seq.c:
 	.text       start:0x80161308 end:0x80165244
+	.data       start:0x80405B00 end:0x80405B50
+	.bss        start:0x80448420 end:0x80455D60
+	.sbss       start:0x804EB300 end:0x804EB320
+	.sdata2     start:0x804EDD28 end:0x804EDD48
 
 musyx/runtime/synth.c:
 	.text       start:0x80165244 end:0x801686F0
+	.bss        start:0x80455D60 end:0x80457348
+	.sbss       start:0x804EB320 end:0x804EB368
+	.sdata2     start:0x804EDD48 end:0x804EDD88
 
 musyx/runtime/seq_api.c:
 	.text       start:0x801686F0 end:0x80168958
@@ -1521,57 +2239,108 @@ musyx/runtime/snd_synthapi.c:
 
 musyx/runtime/stream.c:
 	.text       start:0x80168E0C end:0x8016D330
+	.bss        start:0x80457348 end:0x80458D48
+	.sbss       start:0x804EB368 end:0x804EB378
+	.sdata2     start:0x804EDD88 end:0x804EDDA0
 
 musyx/runtime/synthdata.c:
 	.text       start:0x8016D330 end:0x8016EC94
+	.bss        start:0x80458D48 end:0x80467580
+	.sbss       start:0x804EB378 end:0x804EB3C8
 
 musyx/runtime/synthmacros.c:
 	.text       start:0x8016EC94 end:0x80173B7C
+	.data       start:0x80405B50 end:0x80405F98
+	.bss        start:0x80467580 end:0x804675A0
+	.sbss       start:0x804EB3C8 end:0x804EB3E8
+	.sdata2     start:0x804EDDA0 end:0x804EDDC8
 
 musyx/runtime/synthvoice.c:
 	.text       start:0x80173B7C end:0x801756A4
+	.bss        start:0x804675A0 end:0x80468560
+	.sbss       start:0x804EB3E8 end:0x804EB400
 
 musyx/runtime/synth_ac.c:
 	.text       start:0x801756A4 end:0x801757C4
+	.data       start:0x80405F98 end:0x80406398
+	.sdata2     start:0x804EDDC8 end:0x804EDDE0
+
+musyx/runtime/synth_dbtab.c:
+	.data       start:0x80406398 end:0x80406B20
 
 musyx/runtime/synth_adsr.c:
 	.text       start:0x801757C4 end:0x80175F84
+	.sdata2     start:0x804EDDE0 end:0x804EDE08
 
 musyx/runtime/synth_vsamples.c:
 	.text       start:0x80175F84 end:0x8017691C
+	.bss        start:0x80468560 end:0x804690B0
 
 musyx/runtime/s_data.c:
 	.text       start:0x8017691C end:0x801771DC
+	.bss        start:0x804690B0 end:0x804696C8
+	.sbss       start:0x804EB400 end:0x804EB410
 
 musyx/runtime/hw_dspctrl.c:
 	.text       start:0x801771DC end:0x8017A84C
+	.rodata     start:0x802F3B28 end:0x802F3B60
+	.data       start:0x80406B20 end:0x80408578
+	.bss        start:0x804696C8 end:0x80469DA8
+	.sbss       start:0x804EB410 end:0x804EB450
 
 musyx/runtime/hw_volconv.c:
 	.text       start:0x8017A84C end:0x8017AF3C
+	.data       start:0x80408578 end:0x804087A0
+	.sdata2     start:0x804EDE08 end:0x804EDE40
 
 musyx/runtime/snd3d.c:
 	.text       start:0x8017AF3C end:0x8017D260
+	.bss        start:0x80469DA8 end:0x8046AFF8
+	.sbss       start:0x804EB450 end:0x804EB470
+	.sdata2     start:0x804EDE40 end:0x804EDE90
 
 musyx/runtime/snd_init.c:
 	.text       start:0x8017D260 end:0x8017D3D4
 
 musyx/runtime/snd_math.c:
 	.text       start:0x8017D3D4 end:0x8017D794
+	.sdata2     start:0x804EDE90 end:0x804EDEB0
 
 musyx/runtime/snd_midictrl.c:
 	.text       start:0x8017D794 end:0x8017FAA4
+	.rodata     start:0x802F3B60 end:0x802F3C70
+	.data       start:0x804087A0 end:0x80408830
+	.bss        start:0x8046AFF8 end:0x80471DF8
+	.sbss       start:0x804EB470 end:0x804EB478
 
 musyx/runtime/snd_service.c:
 	.text       start:0x8017FAA4 end:0x8017FD78
+	.rodata     start:0x802F3C70 end:0x802F3CA0
+	.data       start:0x80408830 end:0x80409040
+	.sdata      start:0x804E8448 end:0x804E8450
+	.sdata2     start:0x804EDEB0 end:0x804EDEB8
 
 musyx/runtime/hardware.c:
 	.text       start:0x8017FD78 end:0x80180E58
+	.rodata     start:0x802F3CA0 end:0x802F3DA0
+	.bss        start:0x80471DF8 end:0x80471E08
+	.sdata      start:0x804E8450 end:0x804E8460
+	.sbss       start:0x804EB478 end:0x804EB480
+	.sdata2     start:0x804EDEB8 end:0x804EDEE0
+
+musyx/runtime/dsp_import.c:
+	.data       start:0x80409040 end:0x8040AF00
+	.sdata      start:0x804E8460 end:0x804E8468
 
 musyx/runtime/hw_aramdma.c:
 	.text       start:0x80180E58 end:0x80181BE0
+	.bss        start:0x80471E08 end:0x80472720
+	.sbss       start:0x804EB480 end:0x804EB4A0
 
 musyx/runtime/hw_dolphin.c:
 	.text       start:0x80181BE0 end:0x80182130
+	.bss        start:0x80472720 end:0x80474780
+	.sbss       start:0x804EB4A0 end:0x804EB4D0
 
 musyx/runtime/hw_memory.c:
 	.text       start:0x80182130 end:0x801821BC
@@ -1581,128 +2350,261 @@ musyx/runtime/StdReverb/reverb_fx.c:
 
 musyx/runtime/StdReverb/reverb.c:
 	.text       start:0x801822B0 end:0x80183140
+	.data       start:0x8040AF00 end:0x8040AF20
+	.sdata2     start:0x804EDEE0 end:0x804EDF30
 
 game/pxdvs/app/sound/sound.cpp:
 	.text       start:0x80183140 end:0x80183A58
+	.rodata     start:0x802F3DA0 end:0x802F3DD8
+	.sbss       start:0x804EB4D0 end:0x804EB4D8
+	.sdata2     start:0x804EDF30 end:0x804EDF40
 
 game/pxdvs/GSAPI/GSsnd/GSsnd.cpp:
 	.text       start:0x80183A58 end:0x80186BC0
+	.rodata     start:0x802F3DD8 end:0x802F3E20
+	.data       start:0x8040AF20 end:0x8040AF80
+	.bss        start:0x80474780 end:0x80474960
+	.sdata      start:0x804E8468 end:0x804E8470
+	.sbss       start:0x804EB4D8 end:0x804EB520
+	.sdata2     start:0x804EDF40 end:0x804EDF60
 
 game/pxdvs/GSAPI/GSsnd/sndStream.cpp:
 	.text       start:0x80186BC0 end:0x801879A4
+	.rodata     start:0x802F3E20 end:0x802F3E40
+	.sdata2     start:0x804EDF60 end:0x804EDF90
 
 game/pxdvs/GSAPI/GSdvd/GSdvd.cpp:
 	.text       start:0x801879A4 end:0x8018838C
+	.rodata     start:0x802F3E40 end:0x802F3E88
+	.data       start:0x8040AF80 end:0x8040AFE0
+	.sdata      start:0x804E8470 end:0x804E84A0
+	.sbss       start:0x804EB520 end:0x804EB540
+	.sdata2     start:0x804EDF90 end:0x804EDFB0
 
 game/pxdvs/GSAPI/GSfilter/GSfilter.cpp:
 	.text       start:0x8018838C end:0x80188B50
+	.rodata     start:0x802F3E88 end:0x802F3EA8
+	.bss        start:0x80474960 end:0x80474DC0
+	.sbss       start:0x804EB540 end:0x804EB548
+	.sdata2     start:0x804EDFB0 end:0x804EDFC8
 
 game/maximum/GSAPI/particle/pslist.cpp:
 	.text       start:0x80188B50 end:0x80189250
+	.rodata     start:0x802F3EA8 end:0x802F3F10
+	.bss        start:0x80474DC0 end:0x80474E80
+	.sbss       start:0x804EB548 end:0x804EB550
 
 game/maximum/GSAPI/particle/particle.cpp:
 	.text       start:0x80189250 end:0x8018A868
+	.rodata     start:0x802F3F10 end:0x802F3FA8
+	.data       start:0x8040AFE0 end:0x8040B020
+	.bss        start:0x80474E80 end:0x804754A0
+	.sbss       start:0x804EB550 end:0x804EB560
+	.sdata2     start:0x804EDFC8 end:0x804EDFD8
 
 game/maximum/GSAPI/particle/psappsrt.cpp:
 	.text       start:0x8018A868 end:0x8018ADB8
+	.sbss       start:0x804EB560 end:0x804EB568
+	.sdata2     start:0x804EDFD8 end:0x804EDFE0
 
 game/maximum/GSAPI/particle/psdisp.cpp:
 	.text       start:0x8018ADB8 end:0x8018F0FC
+	.rodata     start:0x802F3FA8 end:0x802F4090
+	.data       start:0x8040B020 end:0x8040B040
+	.bss        start:0x804754A0 end:0x80475580
+	.sdata      start:0x804E84A0 end:0x804E84A8
+	.sbss       start:0x804EB568 end:0x804EB5B0
+	.sdata2     start:0x804EDFE0 end:0x804EE040
 
 game/maximum/GSAPI/particle/psdisptev.cpp:
 	.text       start:0x8018F0FC end:0x8018F910
+	.sbss       start:0x804EB5B0 end:0x804EB5B8
 
 game/maximum/GSAPI/particle/psinterpret.cpp:
 	.text       start:0x8018F910 end:0x80193B94
+	.rodata     start:0x802F4090 end:0x802F40A0
+	.data       start:0x8040B040 end:0x8040B240
+	.sbss       start:0x804EB5B8 end:0x804EB5C0
+	.sdata2     start:0x804EE040 end:0x804EE0C8
 
 game/maximum/GSAPI/particle/generator.cpp:
 	.text       start:0x80193B94 end:0x801964F4
+	.rodata     start:0x802F40A0 end:0x802F40F0
+	.data       start:0x8040B240 end:0x8040B2A8
+	.sdata      start:0x804E84A8 end:0x804E84B0
+	.sbss       start:0x804EB5C0 end:0x804EB5E0
+	.sdata2     start:0x804EE0C8 end:0x804EE138
 
 game/pxdvs/GSAPI/GSspline/GSspline.cpp:
 	.text       start:0x801964F4 end:0x80196A14
+	.rodata     start:0x802F40F0 end:0x802F4478
 
 game/pxdvs/app/camera/camera.cpp:
 	.text       start:0x80196A14 end:0x8019B01C
 	.ctors      start:0x802E9FD4 end:0x802E9FD8
+	.rodata     start:0x802F4478 end:0x802F44B8
+	.data       start:0x8040B2A8 end:0x8040B2F0
+	.bss        start:0x80475580 end:0x80475940
+	.sdata      start:0x804E84B0 end:0x804E84B8
+	.sbss       start:0x804EB5E0 end:0x804EB5E8
+	.sdata2     start:0x804EE138 end:0x804EE1C8
 
 game/pxdvs/GSAPI/GSfsys/fsysStream.cpp:
 	.text       start:0x8019B01C end:0x8019B2AC
 
 game/pxdvs/GSAPI/GSfsys/fsysBlock.cpp:
 	.text       start:0x8019B2AC end:0x8019B6B4
+	.sbss       start:0x804EB5E8 end:0x804EB600
 
 game/pxdvs/GSAPI/GSfsys/fsysCache.cpp:
 	.text       start:0x8019B6B4 end:0x8019C130
+	.bss        start:0x80475940 end:0x80478140
+	.sbss       start:0x804EB600 end:0x804EB638
 
 game/pxdvs/GSAPI/GSfsys/fsysRead.cpp:
 	.text       start:0x8019C130 end:0x8019D10C
+	.rodata     start:0x802F44B8 end:0x802F44C8
 
 game/pxdvs/GSAPI/GSfsys/fsysAlloc.cpp:
 	.text       start:0x8019D10C end:0x8019D5F4
+	.sbss       start:0x804EB638 end:0x804EB640
+	.sdata2     start:0x804EE1C8 end:0x804EE1D0
 
 game/pxdvs/GSAPI/GSfsys/GSfsys2.cpp:
 	.text       start:0x8019D5F4 end:0x801A02F0
+	.rodata     start:0x802F44C8 end:0x802F47E0
+	.data       start:0x8040B2F0 end:0x8040B4A0
+	.bss        start:0x80478140 end:0x80478170
+	.sdata      start:0x804E84B8 end:0x804E84C0
+	.sbss       start:0x804EB640 end:0x804EB680
+	.sdata2     start:0x804EE1D0 end:0x804EE1E8
 
 game/pxdvs/GSAPI/GSflag/GSflag.cpp:
 	.text       start:0x801A02F0 end:0x801A0904
+	.rodata     start:0x802F47E0 end:0x802F4A50
+	.data       start:0x8040B4A0 end:0x8040B528
 
 game/pxdvs/GSAPI/GSbound/GSbound.cpp:
 	.text       start:0x801A0904 end:0x801A25F4
+	.sdata2     start:0x804EE1E8 end:0x804EE220
 
 game/pxdvs/app/battleGrid/battleGrid.cpp:
 	.text       start:0x801A25F4 end:0x801A37DC
+	.rodata     start:0x802F4A50 end:0x802F4A78
+	.bss        start:0x80478170 end:0x804781D0
+	.sbss       start:0x804EB680 end:0x804EB688
+	.sdata2     start:0x804EE220 end:0x804EE268
 
 game/pxdvs/app/battleGrid/wazaSequenceCamera.cpp:
 	.text       start:0x801A37DC end:0x801A57F8
+	.data       start:0x8040B528 end:0x8040B548
+	.bss        start:0x804781D0 end:0x804781F0
+	.sdata      start:0x804E84C0 end:0x804E84C8
+	.sbss       start:0x804EB688 end:0x804EB690
+	.sdata2     start:0x804EE268 end:0x804EE380
 
 game/pxdvs/app/battleGrid/wazaSequenceCameraData.cpp:
 	.text       start:0x801A57F8 end:0x801A594C
+	.data       start:0x8040B548 end:0x8040B990
+	.sdata2     start:0x804EE380 end:0x804EE388
 
 game/pxdvs/app/battleGrid/battleCamera.cpp:
 	.text       start:0x801A594C end:0x801A7684
+	.data       start:0x8040B990 end:0x8040B9C0
+	.sdata      start:0x804E84C8 end:0x804E84D8
+	.sbss       start:0x804EB690 end:0x804EB698
+	.sdata2     start:0x804EE388 end:0x804EE418
 
 game/pxdvs/app/fade/fade.cpp:
 	.text       start:0x801A7684 end:0x801A8164
+	.bss        start:0x804781F0 end:0x80478210
+	.sbss       start:0x804EB698 end:0x804EB6A0
+	.sdata2     start:0x804EE418 end:0x804EE448
 
 game/pxdvs/app/fade/fade_effect.cpp:
 	.text       start:0x801A8164 end:0x801B715C
 	.ctors      start:0x802E9FD8 end:0x802E9FDC
+	.bss        start:0x80478210 end:0x80478A88
+	.sdata      start:0x804E84D8 end:0x804E84E0
+	.sbss       start:0x804EB6A0 end:0x804EB6C0
+	.sdata2     start:0x804EE448 end:0x804EE658
 
 game/pxdvs/app/fade/fade_fluid.cpp:
 	.text       start:0x801B715C end:0x801B8474
+	.rodata     start:0x802F4A78 end:0x802F4AB8
+	.bss        start:0x80478A88 end:0x80478AC8
+	.sbss       start:0x804EB6C0 end:0x804EB6C8
+	.sdata2     start:0x804EE658 end:0x804EE6B8
 
 game/pxdvs/app/script/appScript.cpp:
 	.text       start:0x801B8474 end:0x801BE3CC
+	.rodata     start:0x802F4AB8 end:0x802F4C50
+	.data       start:0x8040B9C0 end:0x8040BCD0
+	.sdata2     start:0x804EE6B8 end:0x804EE700
 
 game/pxdvs/app/script/objCamera.cpp:
 	.text       start:0x801BE3CC end:0x801C057C
+	.rodata     start:0x802F4C50 end:0x802F4C68
+	.data       start:0x8040BCD0 end:0x8040BD90
+	.sdata2     start:0x804EE700 end:0x804EE708
 
 game/pxdvs/app/script/objFloor.cpp:
 	.text       start:0x801C057C end:0x801C1930
+	.rodata     start:0x802F4C68 end:0x802F4C80
+	.data       start:0x8040BD90 end:0x8040BE60
+	.sdata2     start:0x804EE708 end:0x804EE710
 
 game/pxdvs/app/script/objHero.cpp:
 	.text       start:0x801C1930 end:0x801C2928
+	.rodata     start:0x802F4C80 end:0x802F4CA8
+	.data       start:0x8040BE60 end:0x8040BF38
 
 game/pxdvs/app/script/objMenu.cpp:
 	.text       start:0x801C2928 end:0x801C3EA8
+	.rodata     start:0x802F4CA8 end:0x802F4CC0
+	.data       start:0x8040BF38 end:0x8040C038
+	.sdata2     start:0x804EE710 end:0x804EE718
 
 game/pxdvs/app/script/objPeople.cpp:
 	.text       start:0x801C3EA8 end:0x801C5BE0
+	.rodata     start:0x802F4CC0 end:0x802F4CE8
+	.data       start:0x8040C038 end:0x8040C268
+	.bss        start:0x80478AC8 end:0x80478AD8
+	.sbss       start:0x804EB6C8 end:0x804EB6D0
+	.sdata2     start:0x804EE718 end:0x804EE730
 
 game/pxdvs/app/script/script.cpp:
 	.text       start:0x801C5BE0 end:0x801C9018
+	.rodata     start:0x802F4CE8 end:0x802F4D08
+	.data       start:0x8040C268 end:0x8040C298
+	.bss        start:0x80478AD8 end:0x80478B00
+	.sdata      start:0x804E84E0 end:0x804E84E8
+	.sbss       start:0x804EB6D0 end:0x804EB6D8
+	.sdata2     start:0x804EE730 end:0x804EE790
 
 game/pxdvs/app/script/scriptModel.cpp:
 	.text       start:0x801C9018 end:0x801C986C
+	.sbss       start:0x804EB6D8 end:0x804EB6E0
+	.sdata2     start:0x804EE790 end:0x804EE7A0
 
 game/pxdvs/app/script/contSave.cpp:
 	.text       start:0x801C986C end:0x801C9968
 
 game/pxdvs/app/memcard/memcard.cpp:
 	.text       start:0x801C9968 end:0x801CE8FC
+	.rodata     start:0x802F4D08 end:0x802F8770
+	.data       start:0x8040C298 end:0x8040C4F8
+	.bss        start:0x80478B00 end:0x80478D20
+	.sbss       start:0x804EB6E0 end:0x804EB6F8
+	.sdata2     start:0x804EE7A0 end:0x804EE7C0
 
 game/pxdvs/app/memcard/savedata.cpp:
 	.text       start:0x801CE8FC end:0x801CF11C
+	.rodata     start:0x802F8770 end:0x802F87E0
+	.data       start:0x8040C4F8 end:0x8040C570
+	.bss        start:0x80478D20 end:0x804A14F0
+	.sbss       start:0x804EB6F8 end:0x804EB700
+	.sdata2     start:0x804EE7C0 end:0x804EE7C8
 
 game/pxdvs/app/memcard/savedataBios.cpp:
 	.text       start:0x801CF11C end:0x801CF348
@@ -1712,97 +2614,213 @@ game/pxdvs/app/recovery/recovery.cpp:
 
 game/pxdvs/app/recovery/recoveryEvent.cpp:
 	.text       start:0x801CF404 end:0x801CF7A4
+	.data       start:0x8040C570 end:0x8040C5A8
+	.sdata2     start:0x804EE7C8 end:0x804EE7E0
 
 game/pxdvs/app/mail/mailMain.cpp:
 	.text       start:0x801CF7A4 end:0x801CFCA8
+	.data       start:0x8040C5A8 end:0x8040C5C8
+	.bss        start:0x804A14F0 end:0x804A1500
+	.sdata2     start:0x804EE7E0 end:0x804EE7F8
+
+game/pxdvs/app/wazaSequence/wazaViewer.c:
+	.bss        start:0x804A1500 end:0x804A1538
+
+game/pxdvs/app/wazaSequence/wazaWZXData.c:
+	.data       start:0x8040C5C8 end:0x8040CE88
+	.sdata      start:0x804E84E8 end:0x804E84F0
+
+game/pxdvs/app/wazaSequence/trainerPKXData.c:
+	.data       start:0x8040CE88 end:0x8040D0A8
+	.sdata      start:0x804E84F0 end:0x804E84F8
+
+game/pxdvs/app/wazaSequence/pokemonPKXData.c:
+	.data       start:0x8040D0A8 end:0x8040DDC0
+	.sdata      start:0x804E84F8 end:0x804E8500
+
+game/pxdvs/app/wazaSequence/wazaGenericWZXData.c:
+	.data       start:0x8040DDC0 end:0x8040E048
+	.sdata      start:0x804E8500 end:0x804E8508
+
+game/pxdvs/app/wazaSequence/wazaExtWZXData.c:
+	.data       start:0x8040E048 end:0x8040E1F8
+	.sdata      start:0x804E8508 end:0x804E8510
+
+game/pxdvs/app/wazaSequence/pokemonWazaWZXData.c:
+	.data       start:0x8040E1F8 end:0x8040FD08
+
+game/pxdvs/app/wazaSequence/unknownPokemonPKXData.c:
+	.data       start:0x8040FD08 end:0x8040FDE8
+	.sdata      start:0x804E8510 end:0x804E8518
+
+game/pxdvs/app/wazaSequence/rarePokemonPKXData.c:
+	.data       start:0x8040FDE8 end:0x8040FF90
+	.sdata      start:0x804E8518 end:0x804E8520
 
 game/pxdvs/app/mail/mail.cpp:
 	.text       start:0x801CFCA8 end:0x801D0230
 
 game/pxdvs/app/wazaSequence/wazaSequence.cpp:
 	.text       start:0x801D0230 end:0x801D1AD4
+	.data       start:0x8040FF90 end:0x80410008
+	.sdata2     start:0x804EE7F8 end:0x804EE818
 
 game/pxdvs/app/wazaSequence/wazaSequenceSys.cpp:
 	.text       start:0x801D1AD4 end:0x801D42C4
+	.rodata     start:0x802F87E0 end:0x802F87F8
+	.data       start:0x80410008 end:0x80410090
+	.bss        start:0x804A1538 end:0x804A1578
+	.sbss       start:0x804EB700 end:0x804EB728
+	.sdata2     start:0x804EE818 end:0x804EE838
 
 game/pxdvs/app/wazaSequence/modelSequence.cpp:
 	.text       start:0x801D42C4 end:0x801D9DFC
+	.data       start:0x80410090 end:0x804100C0
+	.sdata2     start:0x804EE838 end:0x804EE890
 
 game/pxdvs/app/wazaSequence/nullSequence.cpp:
 	.text       start:0x801D9DFC end:0x801DA28C
+	.data       start:0x804100C0 end:0x804100F0
+	.sdata2     start:0x804EE890 end:0x804EE898
+
+game/pxdvs/app/wazaSequence/wazaResourceData.c:
+	.data       start:0x804100F0 end:0x80412CA8
 
 game/pxdvs/app/wazaSequence/wazaSequenceEntry.cpp:
 	.text       start:0x801DA28C end:0x801DE268
+	.rodata     start:0x802F87F8 end:0x802F8818
+	.data       start:0x80412CA8 end:0x80412F60
+	.sbss       start:0x804EB728 end:0x804EB730
+	.sdata2     start:0x804EE898 end:0x804EE8C8
+
+game/pxdvs/app/wazaSequence/deoxyspokemonPKXData.c:
+	.data       start:0x80412F60 end:0x80412F80
+	.sdata      start:0x804E8520 end:0x804E8528
+
+game/pxdvs/app/wazaSequence/rareDeoxysPokemonPKXData.c:
+	.data       start:0x80412F80 end:0x80412FA0
+	.sdata      start:0x804E8528 end:0x804E8530
 
 game/pxdvs/app/wazaSequence/pachiru.cpp:
 	.text       start:0x801DE268 end:0x801DE698
+	.rodata     start:0x802F8818 end:0x802F8840
+	.sdata      start:0x804E8530 end:0x804E8538
+	.sdata2     start:0x804EE8C8 end:0x804EE8D8
 
 game/pxdvs/app/wazaSequence/leaffx.cpp:
 	.text       start:0x801DE698 end:0x801DF42C
+	.rodata     start:0x802F8840 end:0x802F8880
+	.data       start:0x80412FA0 end:0x80412FC0
+	.sdata2     start:0x804EE8D8 end:0x804EE900
 
 game/pxdvs/app/wazaSequence/billboard.cpp:
 	.text       start:0x801DF42C end:0x801DF9AC
+	.data       start:0x80412FC0 end:0x80412FE0
+	.sdata2     start:0x804EE900 end:0x804EE918
 
 game/pxdvs/app/wazaSequence/wazaeffects.cpp:
 	.text       start:0x801DF9AC end:0x801DFD70
+	.sdata2     start:0x804EE918 end:0x804EE920
 
 game/pxdvs/app/wazaSequence/boneFill.cpp:
 	.text       start:0x801DFD70 end:0x801E016C
+	.data       start:0x80412FE0 end:0x80413000
+	.sdata2     start:0x804EE920 end:0x804EE930
 
 game/pxdvs/app/etctools/etctools.cpp:
 	.text       start:0x801E016C end:0x801E01A8
 
 game/pxdvs/GSAPI/GSvtr/GSvtr.cpp:
 	.text       start:0x801E01A8 end:0x801E07B8
+	.bss        start:0x804A1578 end:0x804A15A0
+	.sbss       start:0x804EB730 end:0x804EB750
+	.sdata2     start:0x804EE930 end:0x804EE988
 
 game/pxdvs/GSAPI/GSmovie/movieStream.cpp:
 	.text       start:0x801E07B8 end:0x801E21E0
+	.rodata     start:0x802F8880 end:0x802F88A0
+	.sdata2     start:0x804EE988 end:0x804EE998
 
 game/pxdvs/GSAPI/GSmovie/GSmovie.cpp:
 	.text       start:0x801E21E0 end:0x801E425C
+	.rodata     start:0x802F88A0 end:0x802F88D0
+	.data       start:0x80413000 end:0x80413030
+	.sdata      start:0x804E8538 end:0x804E8540
+	.sbss       start:0x804EB750 end:0x804EB780
+	.sdata2     start:0x804EE998 end:0x804EE9B8
 
 game/pxdvs/GSAPI/GSmovie/THPDraw.cpp:
 	.text       start:0x801E425C end:0x801E51CC
+	.sbss       start:0x804EB780 end:0x804EB7A0
+	.sdata2     start:0x804EE9B8 end:0x804EE9E0
 
 game/pxdvs/GSAPI/GSmovie/THPDec.cpp:
 	.text       start:0x801E51CC end:0x801EC734
+	.rodata     start:0x802F88D0 end:0x802F8960
+	.data       start:0x80413030 end:0x80413078
+	.bss        start:0x804A15A0 end:0x804A16D0
+	.sdata      start:0x804E8540 end:0x804E8548
+	.sbss       start:0x804EB7A0 end:0x804EB8B8
+	.sdata2     start:0x804EE9E0 end:0x804EEA00
 
 game/pxdvs/GSAPI/GSmovie/THPAudio.cpp:
 	.text       start:0x801EC734 end:0x801ECBB0
 
 game/pxdvs/app/sodateya/sodateya.cpp:
 	.text       start:0x801ECBB0 end:0x801ED628
+	.sbss       start:0x804EB8B8 end:0x804EB8C0
+	.sdata2     start:0x804EEA00 end:0x804EEA08
 
 game/pxdvs/GSAPI/GSlensFlare/GSlensFlare.cpp:
 	.text       start:0x801ED628 end:0x801EEBE4
+	.rodata     start:0x802F8960 end:0x802F8980
+	.bss        start:0x804A16D0 end:0x804A16E0
+	.sbss       start:0x804EB8C0 end:0x804EB8C8
+	.sdata2     start:0x804EEA08 end:0x804EEA58
 
 game/pxdvs/app/fight/fightMain.cpp:
 	.text       start:0x801EEBE4 end:0x801EF640
+	.data       start:0x80413078 end:0x804130D0
+	.bss        start:0x804A16E0 end:0x804A1710
+	.sdata      start:0x804E8548 end:0x804E8550
+	.sbss       start:0x804EB8C8 end:0x804EB8D0
+	.sdata2     start:0x804EEA58 end:0x804EEA70
 
 game/pxdvs/app/fight/fightKind.cpp:
 	.text       start:0x801EF640 end:0x801EFA74
 
 game/pxdvs/app/fight/fightTarget.cpp:
 	.text       start:0x801EFA74 end:0x801F0208
+	.data       start:0x804130D0 end:0x80413108
 
 game/pxdvs/app/fight/fightType.cpp:
 	.text       start:0x801F0208 end:0x801F0324
 
 game/pxdvs/app/fight/fightWaza.cpp:
 	.text       start:0x801F0324 end:0x801F09D8
+	.rodata     start:0x802F8980 end:0x802F8990
 
 game/pxdvs/app/fight/fightWazaBios.cpp:
 	.text       start:0x801F09D8 end:0x801F0D18
 
 game/pxdvs/app/fight/fightEncount.cpp:
 	.text       start:0x801F0D18 end:0x801F14C8
+	.bss        start:0x804A1710 end:0x804A1730
+	.sdata2     start:0x804EEA70 end:0x804EEA78
 
 game/pxdvs/app/fight/fightEncountBios.cpp:
 	.text       start:0x801F14C8 end:0x801F19F8
+	.sdata2     start:0x804EEA78 end:0x804EEA80
 
 game/pxdvs/app/fight/fightFloor.cpp:
 	.text       start:0x801F19F8 end:0x801F5B38
 	.ctors      start:0x802E9FDC end:0x802E9FE0
+	.rodata     start:0x802F8990 end:0x802F89B8
+	.data       start:0x80413108 end:0x80413400
+	.bss        start:0x804A1730 end:0x804AFA48
+	.sdata      start:0x804E8550 end:0x804E8558
+	.sbss       start:0x804EB8D0 end:0x804EB8D8
+	.sdata2     start:0x804EEA80 end:0x804EEA88
 
 game/pxdvs/app/fight/fightFloorBios.cpp:
 	.text       start:0x801F5B38 end:0x801F6280
@@ -1815,18 +2833,27 @@ game/pxdvs/app/fight/fightSideBios.cpp:
 
 game/pxdvs/app/fight/fightSide.cpp:
 	.text       start:0x801F81D4 end:0x801F8CF0
+	.data       start:0x80413400 end:0x80413448
 
 game/pxdvs/app/fight/fightSideDB.cpp:
 	.text       start:0x801F8CF0 end:0x801F8DDC
 
 game/pxdvs/app/fight/fightTrainer.cpp:
 	.text       start:0x801F8DDC end:0x801FD794
+	.rodata     start:0x802F89B8 end:0x802F89F0
+	.data       start:0x80413448 end:0x80413710
+	.sdata      start:0x804E8558 end:0x804E8560
+	.sbss       start:0x804EB8D8 end:0x804EB8E0
+	.sdata2     start:0x804EEA88 end:0x804EEAA8
+	.sbss2      start:0x804EFD28 end:0x804EFD30
 
 game/pxdvs/app/fight/fightTrainerBios.cpp:
 	.text       start:0x801FD794 end:0x801FDA48
+	.data       start:0x80413710 end:0x80413730
 
 game/pxdvs/app/fight/fightTrainerDB.cpp:
 	.text       start:0x801FDA48 end:0x802000F0
+	.data       start:0x80413730 end:0x80413750
 
 game/pxdvs/app/fight/fightTrainerEnemy.cpp:
 	.text       start:0x802000F0 end:0x802004EC
@@ -1839,6 +2866,9 @@ game/pxdvs/app/fight/fightItem.cpp:
 
 game/pxdvs/app/fight/fightPokemon.cpp:
 	.text       start:0x80200644 end:0x80207010
+	.rodata     start:0x802F89F0 end:0x802F8A98
+	.sbss       start:0x804EB8E0 end:0x804EB8E8
+	.sdata2     start:0x804EEAA8 end:0x804EEAC0
 
 game/pxdvs/app/fight/fightPokemonBios.cpp:
 	.text       start:0x80207010 end:0x802080C4
@@ -1851,9 +2881,15 @@ game/pxdvs/app/fight/fightActionBios.cpp:
 
 game/pxdvs/app/fight/fightAction.cpp:
 	.text       start:0x802084D8 end:0x80208C54
+	.bss        start:0x804AFA48 end:0x804B0048
+	.sbss       start:0x804EB8E8 end:0x804EB8F0
 
 game/pxdvs/app/fight/fightActionFlow.cpp:
 	.text       start:0x80208C54 end:0x8020BF78
+	.data       start:0x80413750 end:0x80413760
+	.sdata      start:0x804E8560 end:0x804E8568
+	.sbss       start:0x804EB8F0 end:0x804EB908
+	.sdata2     start:0x804EEAC0 end:0x804EEAD0
 
 game/pxdvs/app/fight/fightActionDisp.cpp:
 	.text       start:0x8020BF78 end:0x8020C018
@@ -1866,6 +2902,7 @@ game/pxdvs/app/fight/fightKoukaBios.cpp:
 
 game/pxdvs/app/fight/fightJouken.cpp:
 	.text       start:0x8020C1F0 end:0x8020C590
+	.data       start:0x80413760 end:0x80413780
 
 game/pxdvs/app/fight/fightJoukenBios.cpp:
 	.text       start:0x8020C590 end:0x8020C88C
@@ -1876,52 +2913,146 @@ game/pxdvs/app/fight/fightAbicnt.cpp:
 game/pxdvs/app/fight/fight.cpp:
 	.text       start:0x8020C9B0 end:0x8020D858
 	.ctors      start:0x802E9FE0 end:0x802E9FE4
+	.rodata     start:0x802F8A98 end:0x802F8AF8
+	.data       start:0x80413780 end:0x804137C0
+	.bss        start:0x804B0048 end:0x804B0A20
+	.sbss       start:0x804EB908 end:0x804EB918
+	.sdata2     start:0x804EEAD0 end:0x804EEAE0
+
+game/pxdvs/app/fight/fightEncountWipeData.c:
+	.data       start:0x804137C0 end:0x804138F8
+	.sdata      start:0x804E8568 end:0x804E8570
+
+game/pxdvs/app/fight/fightJoukenData.c:
+	.data       start:0x804138F8 end:0x804139B8
+	.sdata      start:0x804E8570 end:0x804E8578
+
+game/pxdvs/app/fight/fightJoukenLinkData.c:
+	.sdata      start:0x804E8578 end:0x804E8588
+
+game/pxdvs/app/fight/fightTargetData.c:
+	.data       start:0x804139B8 end:0x80413AA8
+	.sdata      start:0x804E8588 end:0x804E8590
+
+game/pxdvs/app/fight/fightActionKindData.c:
+	.data       start:0x80413AA8 end:0x80413B98
+	.sdata      start:0x804E8590 end:0x804E8598
+
+game/pxdvs/app/fight/fightActionData_waza.c:
+	.data       start:0x80413B98 end:0x80413BA8
+
+game/pxdvs/app/fight/fightKoukaData.c:
+	.data       start:0x80413BA8 end:0x80413BB8
+	.sdata      start:0x804E8598 end:0x804E85A0
+
+game/pxdvs/app/fight/fightWazaCriticalData.c:
+	.sdata      start:0x804E85A0 end:0x804E85B0
+
+game/pxdvs/app/fight/fightActionData_kaisi.c:
+	.data       start:0x80413BB8 end:0x80413C00
+
+game/pxdvs/app/fight/fightAbicntData.c:
+	.data       start:0x80413C00 end:0x80413C20
+	.sdata      start:0x804E85B0 end:0x804E85B8
+
+game/pxdvs/app/fight/fightActionData_turn.c:
+	.data       start:0x80413C20 end:0x80413C60
+
+game/pxdvs/app/fight/fightActionData_item.c:
+	.data       start:0x80413C60 end:0x80413C70
+
+game/pxdvs/app/fight/fightActionData_syuuryou.c:
+	.data       start:0x80413C70 end:0x80413CC0
+
+game/pxdvs/app/fight/fightWazaHitKakurituData.c:
+	.data       start:0x80413CC0 end:0x80413CE0
+	.sdata      start:0x804E85B8 end:0x804E85C0
+
+game/pxdvs/app/fight/fightTrainerAi_ComboId.c:
+	.data       start:0x80413CE0 end:0x80413F40
+
+game/pxdvs/app/fight/fightSeq/fightSeqItem.c:
+	.data       start:0x80413F40 end:0x80414090
+
+game/pxdvs/app/fight/fightSeq/fightSeqWaza.c:
+	.data       start:0x80414090 end:0x80418248
 
 game/pxdvs/app/fight/fightSeq/fightSeqWSWaza.cpp:
 	.text       start:0x8020D858 end:0x8020FD6C
+	.rodata     start:0x802F8AF8 end:0x802F8EF8
 
 game/pxdvs/app/fight/fightSeq/fightSeqBasis.cpp:
 	.text       start:0x8020FD6C end:0x80218C08
+	.rodata     start:0x802F8EF8 end:0x802F8F10
+	.data       start:0x80418248 end:0x80418438
 
 game/pxdvs/app/fight/fightSeq/fightSeqItemseq.cpp:
 	.text       start:0x80218C08 end:0x80219878
+	.data       start:0x80418438 end:0x80418470
+	.sdata2     start:0x804EEAE0 end:0x804EEAE8
+
+game/pxdvs/app/fight/fightSeq/fightSeqMsg.c:
+	.rodata     start:0x802F8F10 end:0x802F9110
+	.sdata2     start:0x804EEAE8 end:0x804EEB90
 
 game/pxdvs/app/fight/fightSeq/fightSeqSpAction.cpp:
 	.text       start:0x80219878 end:0x8021B8C8
+	.data       start:0x80418470 end:0x80418490
 
 game/pxdvs/app/fight/fightSeq/fightSeqStatus.cpp:
 	.text       start:0x8021B8C8 end:0x8021BC10
 
 game/pxdvs/app/fight/fightSeq/fightSeqWazaseq.cpp:
 	.text       start:0x8021BC10 end:0x8022364C
+	.data       start:0x80418490 end:0x804184B0
+	.sdata2     start:0x804EEB90 end:0x804EEB98
 
 game/pxdvs/app/fight/fightSeq/fightSeq.cpp:
 	.text       start:0x8022364C end:0x8022B1F4
+	.rodata     start:0x802F9110 end:0x802F9270
+	.data       start:0x804184B0 end:0x80418790
+	.bss        start:0x804B0A20 end:0x804B0A40
+	.sdata      start:0x804E85C0 end:0x804E85E0
+	.sbss       start:0x804EB918 end:0x804EB978
+	.sdata2     start:0x804EEB98 end:0x804EEBB8
 
 game/pxdvs/app/fight/fightSeq/fightWazaWzx.cpp:
 	.text       start:0x8022B1F4 end:0x8022C628
+	.sbss       start:0x804EB978 end:0x804EB980
 
 game/pxdvs/app/fight/fightTrainerAi2.cpp:
 	.text       start:0x8022C628 end:0x8022CD24
 
 game/pxdvs/app/fight/fightTrainerAiWazaHit.cpp:
 	.text       start:0x8022CD24 end:0x80231AB4
+	.sdata2     start:0x804EEBB8 end:0x804EEBC8
 
 game/pxdvs/app/toolentry/toolentry.cpp:
 	.text       start:0x80231AB4 end:0x80232774
+	.sdata      start:0x804E85E0 end:0x804E85E8
+	.sbss       start:0x804EB980 end:0x804EB988
 
 game/pxdvs/app/tableRes/tableResBios.cpp:
 	.text       start:0x80232774 end:0x802327CC
+	.rodata     start:0x802F9270 end:0x802F9298
+	.data       start:0x80418790 end:0x804187A8
 
 game/pxdvs/app/pokemon/pokemonRelive.cpp:
 	.text       start:0x802327CC end:0x80233B20
 	.ctors      start:0x802E9FE4 end:0x802E9FE8
+	.sdata      start:0x804E85E8 end:0x804E8600
+	.sbss       start:0x804EB988 end:0x804EB9A8
+	.sdata2     start:0x804EEBC8 end:0x804EEBE0
 
 game/pxdvs/app/pokemon/pokemonWazaSequenceDisplay.cpp:
 	.text       start:0x80233B20 end:0x80233C8C
+	.sdata2     start:0x804EEBE0 end:0x804EEBE8
 
 gba/GBA.c:
 	.text       start:0x80233C8C end:0x80233F7C
+	.data       start:0x804187A8 end:0x804187B8
+	.bss        start:0x804B0A40 end:0x804B0F40
+	.sbss       start:0x804EB9A8 end:0x804EB9B0
 
 gba/GBARead.c:
 	.text       start:0x80233F7C end:0x802340DC
@@ -1934,199 +3065,394 @@ gba/GBAXfer.c:
 
 game/pxdvs/app/memo/memo.cpp:
 	.text       start:0x80234578 end:0x80234E58
+	.sdata2     start:0x804EEBE8 end:0x804EEC20
 
 game/pxdvs/app/evolution/evolution.cpp:
 	.text       start:0x80234E58 end:0x80236114
+	.rodata     start:0x802F9298 end:0x802F92D8
+	.bss        start:0x804B0F40 end:0x804B0F60
+	.sdata2     start:0x804EEC20 end:0x804EEC38
 
 game/pxdvs/app/charName/charNameBios.cpp:
 	.text       start:0x80236114 end:0x80236240
+	.rodata     start:0x802F92D8 end:0x802F9300
+	.data       start:0x804187B8 end:0x804187D0
 
 game/pxdvs/app/fight/fightGSfloor.cpp:
 	.text       start:0x80236240 end:0x80236A04
 
 game/pxdvs/app/fight/fightMenu.cpp:
 	.text       start:0x80236A04 end:0x80239504
+	.data       start:0x804187D0 end:0x804187E0
+	.sbss       start:0x804EB9B0 end:0x804EB9B8
+	.sdata2     start:0x804EEC38 end:0x804EEC50
 
 game/pxdvs/app/fight/fightTimer/fightTimer.cpp:
 	.text       start:0x80239504 end:0x802399D4
+	.bss        start:0x804B0F60 end:0x804B0F80
+	.sdata2     start:0x804EEC50 end:0x804EEC70
 
 game/pxdvs/app/d2present/d2present.cpp:
 	.text       start:0x802399D4 end:0x80239A10
+	.sbss       start:0x804EB9B8 end:0x804EB9C0
 
 game/pxdvs/GSAPI/GSScript/tiga.cpp:
 	.text       start:0x80239A10 end:0x8023EF20
 	.text       start:0x8023EF20 end:0x8023EF28
 	.text       start:0x8023EF28 end:0x8023EFCC
+	.rodata     start:0x802F9300 end:0x802F93C8
+	.data       start:0x804187E0 end:0x80418980
+	.sbss       start:0x804EB9C0 end:0x804EB9C8
+	.sdata2     start:0x804EEC70 end:0x804EED18
 
 game/pxdvs/GSAPI/GSScript/tvariant.cpp:
 	.text       start:0x8023EFCC end:0x802424B4
 	.ctors      start:0x802E9FE8 end:0x802E9FEC
+	.rodata     start:0x802F93C8 end:0x802F9748
+	.data       start:0x80418980 end:0x80418A10
+	.bss        start:0x804B0F80 end:0x804B1D98
+	.sbss       start:0x804EB9C8 end:0x804EB9D8
+	.sdata2     start:0x804EED18 end:0x804EED60
 
 game/pxdvs/GSAPI/GSScript/chank.cpp:
 	.text       start:0x802424B4 end:0x802426B4
 
 game/pxdvs/GSAPI/GSScript/defobj.cpp:
 	.text       start:0x802426B4 end:0x802434E8
+	.rodata     start:0x802F9748 end:0x802F9770
+	.data       start:0x80418A10 end:0x80418B08
+	.sdata2     start:0x804EED60 end:0x804EED80
 
 game/pxdvs/GSAPI/GSnetwork/GSnetwork.cpp:
 	.text       start:0x802434E8 end:0x802434F0
 
 game/pxdvs/app/effectEditor/effectEditor.cpp:
 	.text       start:0x802434F0 end:0x802434FC
+	.bss        start:0x804B1D98 end:0x804B1DC8
 
 game/maximum/GSAPI/baselib/wobj.cpp:
 	.text       start:0x802434FC end:0x80243E38
+	.rodata     start:0x802F9770 end:0x802F97B0
+	.data       start:0x80418B08 end:0x80418B50
+	.sbss       start:0x804EB9D8 end:0x804EB9E0
+	.sdata2     start:0x804EED80 end:0x804EEDB0
 
 game/maximum/GSAPI/baselib/archive.cpp:
 	.text       start:0x80243E38 end:0x80244048
+	.rodata     start:0x802F97B0 end:0x802F97F8
 
 game/maximum/GSAPI/baselib/bytecode.cpp:
 	.text       start:0x80244048 end:0x80245688
+	.rodata     start:0x802F97F8 end:0x802F9898
+	.sdata2     start:0x804EEDB0 end:0x804EEDF8
 
 game/maximum/GSAPI/baselib/class.cpp:
 	.text       start:0x80245688 end:0x80245AB8
+	.rodata     start:0x802F9898 end:0x802F9930
+	.data       start:0x80418B50 end:0x80418B90
+	.sbss       start:0x804EB9E0 end:0x804EB9F0
+	.sdata2     start:0x804EEDF8 end:0x804EEE00
 
 game/maximum/GSAPI/baselib/cobj.cpp:
 	.text       start:0x80245AB8 end:0x80247D08
+	.rodata     start:0x802F9930 end:0x802F9988
+	.data       start:0x80418B90 end:0x80418C30
+	.sbss       start:0x804EB9F0 end:0x804EB9F8
+	.sdata2     start:0x804EEE00 end:0x804EEE60
 
 game/maximum/GSAPI/baselib/debug.cpp:
 	.text       start:0x80247D08 end:0x80247EDC
+	.rodata     start:0x802F9988 end:0x802F99B8
+	.bss        start:0x804B1DC8 end:0x804B2090
+	.sbss       start:0x804EB9F8 end:0x804EBA00
+	.sdata2     start:0x804EEE60 end:0x804EEE68
 
 game/maximum/GSAPI/baselib/displayfunc.cpp:
 	.text       start:0x80247EDC end:0x802494F0
+	.rodata     start:0x802F99B8 end:0x802F99F0
+	.sbss       start:0x804EBA00 end:0x804EBA08
+	.sdata2     start:0x804EEE68 end:0x804EEEA0
 
 game/maximum/GSAPI/baselib/dobj.cpp:
 	.text       start:0x802494F0 end:0x80249CDC
+	.rodata     start:0x802F99F0 end:0x802F9A40
+	.data       start:0x80418C30 end:0x80418C78
+	.sbss       start:0x804EBA08 end:0x804EBA10
+	.sdata2     start:0x804EEEA0 end:0x804EEEB8
 
 game/maximum/GSAPI/baselib/fobj.cpp:
 	.text       start:0x80249CDC end:0x8024BDC4
+	.rodata     start:0x802F9A40 end:0x802F9AA0
+	.bss        start:0x804B2090 end:0x804B20C0
+	.sdata2     start:0x804EEEB8 end:0x804EEEE8
 
 game/maximum/GSAPI/baselib/fog.cpp:
 	.text       start:0x8024BDC4 end:0x8024C088
+	.rodata     start:0x802F9AA0 end:0x802F9AC0
+	.sdata2     start:0x804EEEE8 end:0x804EEF10
+	.sbss2      start:0x804EFD30 end:0x804EFD38
 
 game/maximum/GSAPI/baselib/hash.cpp:
 	.text       start:0x8024C088 end:0x8024C188
+	.rodata     start:0x802F9AC0 end:0x802F9AD8
+	.sdata2     start:0x804EEF10 end:0x804EEF18
 
 game/maximum/GSAPI/baselib/id.cpp:
 	.text       start:0x8024C188 end:0x8024C43C
+	.bss        start:0x804B20C0 end:0x804B2280
+	.sdata2     start:0x804EEF18 end:0x804EEF28
 
 game/maximum/GSAPI/baselib/initialize.cpp:
 	.text       start:0x8024C43C end:0x8024C9E4
+	.rodata     start:0x802F9AD8 end:0x802F9C90
+	.bss        start:0x804B2280 end:0x804B2298
+	.sdata      start:0x804E8600 end:0x804E8608
+	.sbss       start:0x804EBA10 end:0x804EBA30
+	.sdata2     start:0x804EEF28 end:0x804EEF90
 
 game/maximum/GSAPI/baselib/jobj.cpp:
 	.text       start:0x8024C9E4 end:0x80253338
+	.rodata     start:0x802F9C90 end:0x802F9F48
+	.data       start:0x80418C78 end:0x80418DB8
+	.sbss       start:0x804EBA30 end:0x804EBA48
+	.sdata2     start:0x804EEF90 end:0x804EF010
 
 game/maximum/GSAPI/baselib/list.cpp:
 	.text       start:0x80253338 end:0x80253594
+	.bss        start:0x804B2298 end:0x804B22F0
+	.sdata2     start:0x804EF010 end:0x804EF028
 
 game/maximum/GSAPI/baselib/lobj.cpp:
 	.text       start:0x80253594 end:0x80255DAC
+	.rodata     start:0x802F9F48 end:0x802FA000
+	.data       start:0x80418DB8 end:0x80418EA0
+	.bss        start:0x804B22F0 end:0x804B2318
+	.sbss       start:0x804EBA48 end:0x804EBA68
+	.sdata2     start:0x804EF028 end:0x804EF078
 
 game/maximum/GSAPI/baselib/memory.cpp:
 	.text       start:0x80255DAC end:0x80255EB8
+	.rodata     start:0x802FA000 end:0x802FA028
+	.bss        start:0x804B2318 end:0x804B2330
 
 game/maximum/GSAPI/baselib/mobj.cpp:
 	.text       start:0x80255EB8 end:0x80257830
+	.rodata     start:0x802FA028 end:0x802FA080
+	.data       start:0x80418EA0 end:0x80418F30
+	.sdata      start:0x804E8608 end:0x804E8610
+	.sbss       start:0x804EBA68 end:0x804EBA78
+	.sdata2     start:0x804EF078 end:0x804EF0A8
 
 game/maximum/GSAPI/baselib/mtx_base.cpp:
 	.text       start:0x80257830 end:0x802594C0
+	.data       start:0x80418F30 end:0x80418F60
+	.bss        start:0x804B2330 end:0x804B2388
+	.sdata2     start:0x804EF0A8 end:0x804EF0F8
 
 game/maximum/GSAPI/baselib/objalloc.cpp:
 	.text       start:0x802594C0 end:0x802596A4
+	.rodata     start:0x802FA080 end:0x802FA0B8
+	.data       start:0x80418F60 end:0x80418F70
+	.sbss       start:0x804EBA78 end:0x804EBA80
+	.sdata2     start:0x804EF0F8 end:0x804EF100
 
 game/maximum/GSAPI/baselib/object.cpp:
 	.text       start:0x802596A4 end:0x802596E8
+	.rodata     start:0x802FA0B8 end:0x802FA0D0
+	.data       start:0x80418F70 end:0x80418FB0
+	.sdata2     start:0x804EF100 end:0x804EF108
 
 game/maximum/GSAPI/baselib/pobj.cpp:
 	.text       start:0x802596E8 end:0x8025C54C
+	.rodata     start:0x802FA0D0 end:0x802FA358
+	.data       start:0x80418FB0 end:0x80419068
+	.bss        start:0x804B2388 end:0x804B2398
+	.sbss       start:0x804EBA80 end:0x804EBAA0
+	.sdata2     start:0x804EF108 end:0x804EF168
 
 game/maximum/GSAPI/baselib/quatlib.cpp:
 	.text       start:0x8025C54C end:0x8025C940
+	.sdata2     start:0x804EF168 end:0x804EF190
 
 game/maximum/GSAPI/baselib/random.cpp:
 	.text       start:0x8025C940 end:0x8025CA38
+	.sdata      start:0x804E8610 end:0x804E8618
+	.sdata2     start:0x804EF190 end:0x804EF1A0
 
 game/maximum/GSAPI/baselib/robj.cpp:
 	.text       start:0x8025CA38 end:0x8025EE68
+	.rodata     start:0x802FA358 end:0x802FA4B0
+	.data       start:0x80419068 end:0x804190A8
+	.bss        start:0x804B2398 end:0x804B23F0
+	.sbss       start:0x804EBAA0 end:0x804EBAA8
+	.sdata2     start:0x804EF1A0 end:0x804EF208
 
 game/maximum/GSAPI/baselib/shadow_base.cpp:
 	.text       start:0x8025EE68 end:0x802601F8
+	.rodata     start:0x802FA4B0 end:0x802FA580
+	.data       start:0x804190A8 end:0x80419198
+	.bss        start:0x804B23F0 end:0x804B2420
+	.sbss       start:0x804EBAA8 end:0x804EBAB0
+	.sdata2     start:0x804EF208 end:0x804EF258
 
 game/maximum/GSAPI/baselib/spline.cpp:
 	.text       start:0x802601F8 end:0x80260E38
+	.sdata2     start:0x804EF258 end:0x804EF2A8
 
 game/maximum/GSAPI/baselib/state.cpp:
 	.text       start:0x80260E38 end:0x80261790
+	.data       start:0x80419198 end:0x804192F8
+	.bss        start:0x804B2420 end:0x804B2438
+	.sdata      start:0x804E8618 end:0x804E8620
+	.sbss       start:0x804EBAB0 end:0x804EBAF0
+	.sdata2     start:0x804EF2A8 end:0x804EF2B8
 
 game/maximum/GSAPI/baselib/tev.cpp:
 	.text       start:0x80261790 end:0x80262808
+	.data       start:0x804192F8 end:0x80419568
+	.bss        start:0x804B2438 end:0x804B24E0
+	.sbss       start:0x804EBAF0 end:0x804EBB10
+	.sdata2     start:0x804EF2B8 end:0x804EF2C8
 
 game/maximum/GSAPI/baselib/texp.cpp:
 	.text       start:0x80262808 end:0x80265A84
+	.rodata     start:0x802FA580 end:0x802FA7C8
+	.data       start:0x80419568 end:0x80419690
+	.sdata2     start:0x804EF2C8 end:0x804EF300
 
 game/maximum/GSAPI/baselib/texpdag.cpp:
 	.text       start:0x80265A84 end:0x80266A94
+	.rodata     start:0x802FA7C8 end:0x802FA810
+	.data       start:0x80419690 end:0x804196C0
+	.sdata2     start:0x804EF300 end:0x804EF308
+	.sbss2      start:0x804EFD38 end:0x804EFD40
 
 game/maximum/GSAPI/baselib/texpopt.cpp:
 	.text       start:0x80266A94 end:0x802694E0
+	.data       start:0x804196C0 end:0x80419700
+	.sdata      start:0x804E8620 end:0x804E8628
 
 game/maximum/GSAPI/baselib/tobj.cpp:
 	.text       start:0x802694E0 end:0x8026CA60
+	.rodata     start:0x802FA810 end:0x802FA8D0
+	.data       start:0x80419700 end:0x80419AA8
+	.sbss       start:0x804EBB10 end:0x804EBB18
+	.sdata2     start:0x804EF308 end:0x804EF378
 
 game/maximum/GSAPI/baselib/util.cpp:
 	.text       start:0x8026CA60 end:0x8026CC2C
+	.data       start:0x80419AA8 end:0x80419AD0
+	.sdata2     start:0x804EF378 end:0x804EF388
 
 game/maximum/GSAPI/baselib/aobj.cpp:
 	.text       start:0x8026CC2C end:0x8026F478
+	.rodata     start:0x802FA8D0 end:0x802FA940
+	.data       start:0x80419AD0 end:0x80419FB8
+	.bss        start:0x804B24E0 end:0x804B2510
+	.sbss       start:0x804EBB18 end:0x804EBB28
+	.sdata2     start:0x804EF388 end:0x804EF3A0
 
 game/pxdvs/app/flashmenu/flashmenu.cpp:
 	.text       start:0x8026F478 end:0x802723FC
+	.rodata     start:0x802FA940 end:0x802FAC20
+	.data       start:0x80419FB8 end:0x8041A1C8
+	.sdata      start:0x804E8628 end:0x804E8630
+	.sdata2     start:0x804EF3A0 end:0x804EF3D0
 
 game/pxdvs/app/flashmenu/flashcalc.cpp:
 	.text       start:0x802723FC end:0x80272BA4
+	.sdata2     start:0x804EF3D0 end:0x804EF3F8
 
 game/pxdvs/app/flashmenu/vecGraph.cpp:
 	.text       start:0x80272BA4 end:0x80276370
+	.rodata     start:0x802FAC20 end:0x802FAC68
+	.data       start:0x8041A1C8 end:0x8041A248
+	.bss        start:0x804B2510 end:0x804DFC28
+	.sdata      start:0x804E8630 end:0x804E8650
+	.sdata2     start:0x804EF3F8 end:0x804EF448
 
 game/pxdvs/app/flashmenu/flashsystem.cpp:
 	.text       start:0x80276370 end:0x80277BB4
+	.bss        start:0x804DFC28 end:0x804DFC78
 
 game/maximum/app/gimmick/gimmickBox.cpp:
 	.text       start:0x80277BB4 end:0x8027C208
 	.ctors      start:0x802E9FEC end:0x802E9FF0
+	.data       start:0x8041A248 end:0x8041A278
+	.bss        start:0x804DFC78 end:0x804DFDD8
+	.sdata      start:0x804E8650 end:0x804E8660
+	.sbss       start:0x804EBB28 end:0x804EBB40
+	.sdata2     start:0x804EF448 end:0x804EF520
 
 game/pxdvs/GSAPI/GSprim/GSprim.cpp:
 	.text       start:0x8027C208 end:0x8027C920
+	.bss        start:0x804DFDD8 end:0x804DFDF0
+	.sdata2     start:0x804EF520 end:0x804EF540
 
 game/pxdvs/GSAPI/GSprim/2d.cpp:
 	.text       start:0x8027C920 end:0x8027DBB4
+	.sdata2     start:0x804EF540 end:0x804EF550
 
 game/pxdvs/GSAPI/GSprim/text.cpp:
 	.text       start:0x8027DBB4 end:0x8027E4F0
+	.data       start:0x8041A278 end:0x8041A6C8
+	.bss        start:0x804DFDF0 end:0x804DFEF0
+	.sdata      start:0x804E8660 end:0x804E8670
+	.sdata2     start:0x804EF550 end:0x804EF560
 
 game/pxdvs/GSAPI/GSshape/shapeAnim.cpp:
 	.text       start:0x8027E4F0 end:0x802806A0
+	.sdata2     start:0x804EF560 end:0x804EF580
+	.sbss2      start:0x804EFD40 end:0x804EFD50
 
 game/pxdvs/GSAPI/GSshape/shapeObject.cpp:
 	.text       start:0x802806A0 end:0x80287C00
+	.rodata     start:0x802FAC68 end:0x802FAC98
+	.data       start:0x8041A6C8 end:0x8041A770
+	.sdata2     start:0x804EF580 end:0x804EF618
 
 game/pxdvs/GSAPI/GSshape/shapeRender.cpp:
 	.text       start:0x80287C00 end:0x8028A1D4
+	.rodata     start:0x802FAC98 end:0x802FACC8
+	.sbss       start:0x804EBB40 end:0x804EBB48
+	.sdata2     start:0x804EF618 end:0x804EF630
 
 game/pxdvs/GSAPI/GSshape/GSshape.cpp:
 	.text       start:0x8028A1D4 end:0x8028ABF4
+	.rodata     start:0x802FACC8 end:0x802FACE8
+	.sdata      start:0x804E8670 end:0x804E8678
+	.sbss       start:0x804EBB48 end:0x804EBB58
+	.sdata2     start:0x804EF630 end:0x804EF658
 
 game/pxdvs/app/deck/deck.cpp:
 	.text       start:0x8028ABF4 end:0x8028BFB8
+	.rodata     start:0x802FACE8 end:0x802FAD00
+	.data       start:0x8041A770 end:0x8041A790
+	.sbss       start:0x804EBB58 end:0x804EBB80
+	.sdata2     start:0x804EF658 end:0x804EF690
+
+game/pxdvs/app/deck/deckGroupData.c:
+	.data       start:0x8041A790 end:0x8041A7B0
+	.sdata      start:0x804E8678 end:0x804E8680
 
 game/pxdvs/app/deck/deckDataVirtualBios.cpp:
 	.text       start:0x8028BFB8 end:0x8028C400
 
 game/pxdvs/app/reliveHall/reliveHall.cpp:
 	.text       start:0x8028C400 end:0x8028E7E4
+	.rodata     start:0x802FAD00 end:0x802FAD38
+	.data       start:0x8041A7B0 end:0x8041A890
+	.sdata      start:0x804E8680 end:0x804E86A0
+	.sbss       start:0x804EBB80 end:0x804EBB88
+	.sdata2     start:0x804EF690 end:0x804EF6A0
 
 game/pxdvs/app/ant/ant.cpp:
 	.text       start:0x8028E7E4 end:0x80292298
+	.rodata     start:0x802FAD38 end:0x802FAE18
+	.bss        start:0x804DFEF0 end:0x804E0A38
+	.sdata      start:0x804E86A0 end:0x804E86B0
+	.sbss       start:0x804EBB88 end:0x804EBB90
+	.sdata2     start:0x804EF6A0 end:0x804EF6D8
 
 game/pxdvs/app/mball/mballBios.cpp:
 	.text       start:0x80292298 end:0x802922C4
@@ -2139,151 +3465,275 @@ game/pxdvs/app/ribbon/exribbon.cpp:
 
 game/pxdvs/app/light/lightEditor.cpp:
 	.text       start:0x8029245C end:0x80294190
+	.rodata     start:0x802FAE18 end:0x802FAE98
+	.data       start:0x8041A890 end:0x8041A8B0
+	.sdata2     start:0x804EF6D8 end:0x804EF790
 
 game/pxdvs/app/light/light.cpp:
 	.text       start:0x80294190 end:0x80294414
+	.bss        start:0x804E0A38 end:0x804E0A68
+	.sbss       start:0x804EBB90 end:0x804EBBA8
+	.sdata2     start:0x804EF790 end:0x804EF798
 
 game/pxdvs/app/esaba/esaba.cpp:
 	.text       start:0x80294414 end:0x80295BE0
+	.rodata     start:0x802FAE98 end:0x802FAEA8
+	.sbss       start:0x804EBBA8 end:0x804EBBB0
 
 game/pxdvs/app/underTaker/undertaker.cpp:
 	.text       start:0x80295BE0 end:0x802966C0
+	.rodata     start:0x802FAEA8 end:0x802FAEB8
 
 game/pxdvs/app/underTaker/undertakerBios.cpp:
 	.text       start:0x802966C0 end:0x8029677C
 
 game/maximum/app/bingo/bingoBios.cpp:
 	.text       start:0x8029677C end:0x80296D4C
+	.rodata     start:0x802FAEB8 end:0x802FAED8
+	.sbss       start:0x804EBBB0 end:0x804EBBB8
 
 game/pxdvs/app/people/peopleInfoBios.cpp:
 	.text       start:0x80296D4C end:0x80297054
+	.data       start:0x8041A8B0 end:0x8041A8D8
+	.sdata2     start:0x804EF798 end:0x804EF7A8
 
 game/pxdvs/app/people/peopleBios.cpp:
 	.text       start:0x80297054 end:0x802979AC
+	.sbss       start:0x804EBBB8 end:0x804EBBC0
 
 game/pxdvs/app/people/people.cpp:
 	.text       start:0x802979AC end:0x802A0518
+	.rodata     start:0x802FAED8 end:0x802FAF20
+	.data       start:0x8041A8D8 end:0x8041A8F0
+	.bss        start:0x804E0A68 end:0x804E0A98
+	.sdata      start:0x804E86B0 end:0x804E86B8
+	.sbss       start:0x804EBBC0 end:0x804EBC18
+	.sdata2     start:0x804EF7A8 end:0x804EF8B0
 
 game/pxdvs/app/people/peopleViewer.cpp:
 	.text       start:0x802A0518 end:0x802A1644
 	.ctors      start:0x802E9FF0 end:0x802E9FF4
+	.rodata     start:0x802FAF20 end:0x802FBA58
+	.data       start:0x8041A8F0 end:0x8041C780
+	.bss        start:0x804E0A98 end:0x804E0CC8
+	.sdata      start:0x804E86B8 end:0x804E86C0
+	.sbss       start:0x804EBC18 end:0x804EBC60
+	.sdata2     start:0x804EF8B0 end:0x804EF908
+
+game/pxdvs/app/mewwaza/mewwazadata.c:
+	.data       start:0x8041C780 end:0x8041CB10
 
 game/pxdvs/app/people/peoplePartAnimation.cpp:
 	.text       start:0x802A1644 end:0x802A1A74
+	.sdata2     start:0x804EF908 end:0x804EF928
 
 game/pxdvs/app/people/peopleSave.cpp:
 	.text       start:0x802A1A74 end:0x802A2E58
+	.rodata     start:0x802FBA58 end:0x802FBA88
 
 game/pxdvs/app/people/peopleTalk.cpp:
 	.text       start:0x802A2E58 end:0x802A3820
+	.rodata     start:0x802FBA88 end:0x802FBAC8
+	.sbss       start:0x804EBC60 end:0x804EBC70
+	.sdata2     start:0x804EF928 end:0x804EF950
 
 game/pxdvs/app/people/peopleWalkList.cpp:
 	.text       start:0x802A3820 end:0x802A3B40
 
 game/pxdvs/app/people/peopleMemberFunc.cpp:
 	.text       start:0x802A3B40 end:0x802A3F8C
+	.sdata2     start:0x804EF950 end:0x804EF958
 
 game/pxdvs/app/people/peopleColision.cpp:
 	.text       start:0x802A3F8C end:0x802A49F0
+	.sdata2     start:0x804EF958 end:0x804EF970
 
 game/pxdvs/app/mewwaza/mewwaza.cpp:
 	.text       start:0x802A49F0 end:0x802A6220
+	.rodata     start:0x802FBAC8 end:0x802FBAE0
+	.data       start:0x8041CB10 end:0x8041CBA0
+	.bss        start:0x804E0CC8 end:0x804E0CE0
 
 game/pxdvs/GSAPI/GSstream/GSstream.cpp:
 	.text       start:0x802A6220 end:0x802A6484
 
 game/pxdvs/GSAPI/GSlogM/GSlog.cpp:
 	.text       start:0x802A6484 end:0x802A6E90
+	.rodata     start:0x802FBAE0 end:0x802FBB68
+	.data       start:0x8041CBA0 end:0x8041CC28
+	.bss        start:0x804E0CE0 end:0x804E0E58
+	.sdata      start:0x804E86C0 end:0x804E86C8
+	.sbss       start:0x804EBC70 end:0x804EBC90
+	.sdata2     start:0x804EF970 end:0x804EF988
 
 game/pxdvs/GSAPI/GSgfxM/backfb.cpp:
 	.text       start:0x802A6E90 end:0x802A72F8
+	.bss        start:0x804E0E58 end:0x804E0EA8
+	.sbss       start:0x804EBC90 end:0x804EBC98
 
 game/pxdvs/GSAPI/GSgfxM/GSgfx.cpp:
 	.text       start:0x802A72F8 end:0x802A74BC
+	.rodata     start:0x802FBB68 end:0x802FBBA0
+	.bss        start:0x804E0EA8 end:0x804E1B10
+	.sbss       start:0x804EBC98 end:0x804EBCA0
+	.sdata2     start:0x804EF988 end:0x804EF990
 
 game/pxdvs/GSAPI/GSgfxM/layer.cpp:
 	.text       start:0x802A74BC end:0x802AAF90
+	.rodata     start:0x802FBBA0 end:0x802FBC98
+	.data       start:0x8041CC28 end:0x8041CC58
+	.bss        start:0x804E1B10 end:0x804E1B60
+	.sdata      start:0x804E86C8 end:0x804E86E0
+	.sbss       start:0x804EBCA0 end:0x804EBCB0
+	.sdata2     start:0x804EF990 end:0x804EFA80
 
 game/pxdvs/GSAPI/GSgfxM/render.cpp:
 	.text       start:0x802AAF90 end:0x802ABFE4
+	.bss        start:0x804E1B60 end:0x804E2240
+	.sbss       start:0x804EBCB0 end:0x804EBCC8
+	.sdata2     start:0x804EFA80 end:0x804EFA90
+	.sbss2      start:0x804EFD50 end:0x804EFD58
 
 game/pxdvs/GSAPI/GSgfxM/perfbar.cpp:
 	.text       start:0x802ABFE4 end:0x802AD060
+	.rodata     start:0x802FBC98 end:0x802FBD30
+	.bss        start:0x804E2240 end:0x804E66D0
+	.sdata      start:0x804E86E0 end:0x804E86E8
+	.sbss       start:0x804EBCC8 end:0x804EBCF8
+	.sdata2     start:0x804EFA90 end:0x804EFB10
 
 game/pxdvs/GSAPI/GSgfxM/token.cpp:
 	.text       start:0x802AD060 end:0x802AD7A0
+	.bss        start:0x804E66D0 end:0x804E66F0
+	.sbss       start:0x804EBCF8 end:0x804EBD08
 
 game/pxdvs/GSAPI/GSgfxM/project.cpp:
 	.text       start:0x802AD7A0 end:0x802ADCC8
+	.data       start:0x8041CC58 end:0x8041CC70
+	.bss        start:0x804E66F0 end:0x804E6710
+	.sbss       start:0x804EBD08 end:0x804EBD18
+	.sdata2     start:0x804EFB10 end:0x804EFB28
 
 game/pxdvs/GSAPI/GSgfxM/halt.cpp:
 	.text       start:0x802ADCC8 end:0x802AE160
+	.bss        start:0x804E6710 end:0x804E6BA8
+	.sbss       start:0x804EBD18 end:0x804EBD20
 
 game/pxdvs/GSAPI/GSgfxM/video.cpp:
 	.text       start:0x802AE160 end:0x802AF8B0
+	.data       start:0x8041CC70 end:0x8041CD50
+	.bss        start:0x804E6BA8 end:0x804E6C68
+	.sdata      start:0x804E86E8 end:0x804E86F0
+	.sbss       start:0x804EBD20 end:0x804EBD28
+	.sdata2     start:0x804EFB28 end:0x804EFB48
 
 game/pxdvs/GSAPI/GSgfxM/gpu.cpp:
 	.text       start:0x802AF8B0 end:0x802AFF40
+	.bss        start:0x804E6C68 end:0x804E6D68
+	.sbss       start:0x804EBD28 end:0x804EBD50
 
 game/pxdvs/GSAPI/GSgfxM/vf.cpp:
 	.text       start:0x802AFF40 end:0x802B10F4
+	.data       start:0x8041CD50 end:0x8041F3F0
+	.bss        start:0x804E6D68 end:0x804E71A8
+	.sbss       start:0x804EBD50 end:0x804EBD58
 
 game/pxdvs/GSAPI/GSgfxM/dl.cpp:
 	.text       start:0x802B10F4 end:0x802B1D70
+	.rodata     start:0x802FBD30 end:0x802FBD78
+	.data       start:0x8041F3F0 end:0x8041F508
+	.sdata      start:0x804E86F0 end:0x804E86F8
+	.sbss       start:0x804EBD58 end:0x804EBD60
 
 game/pxdvs/GSAPI/GSgfxM/layerState.cpp:
 	.text       start:0x802B1D70 end:0x802B5AFC
+	.rodata     start:0x802FBD78 end:0x802FBDB8
+	.data       start:0x8041F508 end:0x8041F528
+	.sbss       start:0x804EBD60 end:0x804EBD68
+	.sdata2     start:0x804EFB48 end:0x804EFB58
 
 game/pxdvs/GSAPI/GSgfxM/matrixStack.cpp:
 	.text       start:0x802B5AFC end:0x802B5CB4
 
 game/pxdvs/GSAPI/GSgfxM/layerFunc.cpp:
 	.text       start:0x802B5CB4 end:0x802B70C8
+	.data       start:0x8041F528 end:0x8041F548
 
 game/pxdvs/GSAPI/GSgfxM/renderModule.cpp:
 	.text       start:0x802B70C8 end:0x802B7464
+	.bss        start:0x804E71A8 end:0x804E72F0
+	.sbss       start:0x804EBD68 end:0x804EBD70
 
 game/pxdvs/GSAPI/GSgfxM/c_func.cpp:
 	.text       start:0x802B7464 end:0x802B7B98
+	.sdata2     start:0x804EFB58 end:0x804EFB60
 
 game/pxdvs/GSAPI/GSgfxM/layerConfig.cpp:
 	.text       start:0x802B7B98 end:0x802B814C
+	.bss        start:0x804E72F0 end:0x804E7310
 
 game/pxdvs/GSAPI/GSgfxM/light_gfxm.cpp:
 	.text       start:0x802B814C end:0x802B8504
+	.sdata2     start:0x804EFB60 end:0x804EFB70
 
 game/pxdvs/GSAPI/GSgfxM/layerEffect.cpp:
 	.text       start:0x802B8504 end:0x802B96D8
+	.sdata      start:0x804E86F8 end:0x804E8700
+	.sbss       start:0x804EBD70 end:0x804EBD80
+	.sdata2     start:0x804EFB70 end:0x804EFB88
+	.sbss2      start:0x804EFD58 end:0x804EFD60
 
 game/pxdvs/GSAPI/GSgfxM/gamecube.cpp:
 	.text       start:0x802B96D8 end:0x802C0084
+	.data       start:0x8041F548 end:0x8041F808
+	.sdata      start:0x804E8700 end:0x804E8740
+	.sbss       start:0x804EBD80 end:0x804EBD90
+	.sdata2     start:0x804EFB88 end:0x804EFBD8
+	.sbss2      start:0x804EFD60 end:0x804EFD68
 
 game/pxdvs/GSAPI/GSgfxM/screenshot.cpp:
 	.text       start:0x802C0084 end:0x802C0098
+	.sdata2     start:0x804EFBD8 end:0x804EFBE0
 
 game/pxdvs/GSAPI/GSgfxM/capture.cpp:
 	.text       start:0x802C0098 end:0x802C00AC
 
 game/pxdvs/GSAPI/GSgfxM/reset.cpp:
 	.text       start:0x802C00AC end:0x802C0710
+	.sbss       start:0x804EBD90 end:0x804EBDB0
+	.sdata2     start:0x804EFBE0 end:0x804EFC00
 
 game/pxdvs/app/fight/fightTrainerAi.cpp:
 	.text       start:0x802C0710 end:0x802C93D4
+	.rodata     start:0x802FBDB8 end:0x802FBEC8
+	.data       start:0x8041F808 end:0x8041F828
+	.bss        start:0x804E7310 end:0x804E7E10
+	.sbss       start:0x804EBDB0 end:0x804EBDB4
+	.sdata2     start:0x804EFC00 end:0x804EFC48
+	.sbss2      start:0x804EFD68 end:0x804EFD78
 
 game/pxdvs/app/fight/fightTrainerAiCombo.cpp:
 	.text       start:0x802C93D4 end:0x802CAB84
+	.data       start:0x8041F828 end:0x8041F9A0
+	.sdata      start:0x804E8740 end:0x804E87B0
+	.sdata2     start:0x804EFC48 end:0x804EFC58
+	.sbss2      start:0x804EFD78 end:0x804EFD84
 
 game/pxdvs/app/fight/fightTrainerAiItem.cpp:
 	.text       start:0x802CAB84 end:0x802CB068
 
 game/pxdvs/app/fight/fightTrainerAiIrekae.cpp:
 	.text       start:0x802CB068 end:0x802CC6E4
+	.rodata     start:0x802FBEC8 end:0x802FBEE0
 
 game/pxdvs/app/fight/fightTrainerAiComboFunc.cpp:
 	.text       start:0x802CC6E4 end:0x802D8AA8
 
 game/pxdvs/app/fight/fightTrainerAiWaza.cpp:
 	.text       start:0x802D8AA8 end:0x802DA554
+	.rodata     start:0x802FBEE0 end:0x802FBEF8
+	.data       start:0x8041F9A0 end:0x8041FA00
+	.sdata2     start:0x804EFC58 end:0x804EFC60
 
 game/pxdvs/app/fight/fightTrainerAiWazaDamage.cpp:
 	.text       start:0x802DA554 end:0x802DC20C
@@ -2293,6 +3743,11 @@ game/pxdvs/app/fight/fightTrainerAiWazaDamageFightPokemon.cpp:
 
 game/pxdvs/app/fight/fightTrainerAiWazaValue.cpp:
 	.text       start:0x802DDCD0 end:0x802E9808
+	.data       start:0x8041FA00 end:0x8041FA70
+	.sdata2     start:0x804EFC60 end:0x804EFC78
+
+game/pxdvs/app/fight/fightTrainerAi_ExpectWazaDat.c:
+	.data       start:0x8041FA70 end:0x80420594
 
 game/pxdvs/app/fight/fightTrainerAiComboContinueFunc.cpp:
 	.text       start:0x802E9808 end:0x802E9F7C

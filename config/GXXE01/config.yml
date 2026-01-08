@@ -5,3 +5,10 @@ symbols: config/GXXE01/symbols.txt
 splits: config/GXXE01/splits.txt
 mw_comment_version: 10
 ldscript_template: config/GXXE01/module/ldscript.lcf
+
+block_relocations:
+- target: .text:0x80007F00
+- target: .text:0x8000FF00
+- target: .text:0x800A0B00
+- target: .sdata:0x804E85C0
+  end: .sdata:0x804E85C8
