@@ -50,11 +50,11 @@ static GXColor DrawGPXFIColor = { 0x00, 0xC8, 0x00, 0xAA };
 static GXColor DrawGPXFOColor = { 0x00, 0x00, 0xC8, 0xAA };
 static GXColor DrawGPRASIDLEColor = { 0xC8, 0xC8, 0x00, 0xAA };
 
+static BOOL bAutoScale = TRUE;
 static BOOL bDrawBWBar = TRUE;
 static BOOL bDrawCPUBar = TRUE;
 static BOOL bDrawXFBars = TRUE;
 static BOOL bDrawRASBar = TRUE;
-static BOOL bAutoScale = TRUE;
 
 static BOOL bDrawBWBarKey;
 static f32 lastx;
