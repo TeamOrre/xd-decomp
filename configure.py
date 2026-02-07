@@ -242,6 +242,7 @@ cflags_runtime = [
     "-inline auto",
 ]
 
+
 # REL flags
 cflags_rel = [
     *cflags_base,
@@ -719,14 +720,42 @@ config.libs = [
     ),
     {
         "lib": "gba",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
+        "mw_version": "GC/1.2.5n",
+        "cflags": [
+            # Platform Definitions
+            "-nodefaults",
+            "-proc gekko",
+            "-align powerpc",
+            "-enum int",
+            # Multibyte Definitions
+            "-multibyte",
+            "-char unsigned",
+            # Gekko Specific Definitions
+            "-fp hardware",
+            "-Cpp_exceptions off",
+            '-pragma "cats off"',
+            # Default compiler flags (turn off if needed)
+            # "-W all",
+            "-O4,p",
+            "-inline auto",
+            '-pragma "warn_notinlined off"',
+            # Helpful linker flags
+            "-maxerrors 1",
+            "-nosyspath",
+            # dtk-specific includes
+            "-i include",
+            "-i include/dolphin",
+            "-i include/libc",
+            "-i src/static/dolphin",
+            f"-i build/{config.version}/include",
+            f"-DVERSION={version_num}",
+        ],
         "progress_category": "sdk",
         "objects": [
-            Object(NonMatching, "gba/GBA.c"),
-            Object(NonMatching, "gba/GBARead.c"),
-            Object(NonMatching, "gba/GBAWrite.c"),
-            Object(NonMatching, "gba/GBAXfer.c"),
+            Object(Matching, "gba/GBA.c"),
+            Object(Matching, "gba/GBARead.c"),
+            Object(Matching, "gba/GBAWrite.c"),
+            Object(Matching, "gba/GBAXfer.c"),
         ]
     },
     {
