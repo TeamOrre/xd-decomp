@@ -1,6 +1,7 @@
 #include <game/pxdvs/app/pokemon/pokemon.hpp>
 #include <game/pxdvs/app/pokemon/pokemonBios.hpp>
 #include <game/pxdvs/app/pokemon/pokemonDB.hpp>
+#include <game/relglobal.h>
 
 void Pokemon::setConditionTurnNow(u8 data) {
     conditionTurnNow = data;
@@ -267,6 +268,17 @@ PokemonWaza* Pokemon::getPokemonWaza(u16 wazaNum) {
     }
     return nullptr;
 }
+
+void* Pokemon::getPokemonDataPtr() const {
+    u32 num = getPokemonDataId();
+    u32 maxNum = *pokemon_data_number;
+    if (num >= maxNum) {
+        return nullptr;
+    }
+
+    return &pokemon_data[num];
+}
+
 u32 Pokemon::getCatchTrainerRnd() const {
     return catchTrainerRnd;
 }

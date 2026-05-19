@@ -233,6 +233,7 @@ struct Pokemon {
   bool isDarkPokemon() const;
   void initCondition();
   void copyCondition(const Pokemon*);
+  void* getPokemonDataPtr() const;
 };
 
 extern "C" void pokemonSetDp(Pokemon*, f32);
