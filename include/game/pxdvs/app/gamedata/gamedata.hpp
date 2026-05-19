@@ -3,6 +3,8 @@
 
 #include <global.h>
 
-extern "C" bool gamedataAttestCheckValid(s32 * attestPtr);
+struct Attest;
+
+extern "C" bool gamedataAttestCheckValid(Attest* attestPtr);
 
 #endif
