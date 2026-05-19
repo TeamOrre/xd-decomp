@@ -341,7 +341,7 @@ void pokemonBiosSetItemDataId(Pokemon* poke, u16 data) {
     }
 }
 
-void pokemonBiosSetPokemonWazaPp(Pokemon* poke, u8 wazaNum, u8 data) {
+void pokemonBiosSetPokemonWazaPp(Pokemon* poke, u32 wazaNum, u8 data) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 0);
     if (waza) {
         u8 maxPp = pokemonWazaGetMaxPP(poke, wazaNum);
@@ -352,7 +352,7 @@ void pokemonBiosSetPokemonWazaPp(Pokemon* poke, u8 wazaNum, u8 data) {
     }
 }
 
-void pokemonBiosSetPokemonWazaDataId(Pokemon* poke, u8 wazaNum, u32 data) {
+void pokemonBiosSetPokemonWazaDataId(Pokemon* poke, u32 wazaNum, u32 data) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 0);
     if (waza) {
         waza->dataId = data;
@@ -829,21 +829,21 @@ u16 pokemonBiosGetItemDataId(Pokemon* poke) {
     }
     return poke->itemDataID;
 }
-u8 pokemonBiosGetPokemonWazaPpCount(Pokemon* poke, u8 wazaNum) {
+u8 pokemonBiosGetPokemonWazaPpCount(Pokemon* poke, u32 wazaNum) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 1);
     if (waza == nullptr) {
         return 0;
     }
     return waza->ppCount;
 }
-u8 pokemonBiosGetPokemonWazaPp(Pokemon* poke, u8 wazaNum) {
+u8 pokemonBiosGetPokemonWazaPp(Pokemon* poke, u32 wazaNum) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 1);
     if (waza == nullptr) {
         return 0;
     }
     return waza->pp;
 }
-u16 pokemonBiosGetPokemonWazaDataId(Pokemon* poke, u8 wazaNum) {
+u16 pokemonBiosGetPokemonWazaDataId(Pokemon* poke, u32 wazaNum) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 1);
     if (waza == nullptr) {
         return 0;
