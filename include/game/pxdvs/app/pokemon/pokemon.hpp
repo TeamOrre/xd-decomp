@@ -38,7 +38,7 @@ extern "C" u16 pokemonGetStatus(Pokemon*, u32, u16, u32);
 extern "C" u32 pokemonAdjustValueBySeikaku(u32, u16, u32);
 static u8 _pokemonGetSeikaku(Pokemon*);
 extern "C" u8 pokemonGetSeikakuAsRnd(u32);
-static u16 _pokemonGetHinsi(Pokemon*);
+static u8 _pokemonGetHinsi(Pokemon*);
 static void _pokemonSetLevelBasisStatus(Pokemon*, u8);
 static u16 _pokemonGetLevelOneStatus(Pokemon*, u8, u16, u16, u16, u16, long);
 extern "C" u16 pokemonCreateBasisStatus(u16, u8, u16, u8, s32);
