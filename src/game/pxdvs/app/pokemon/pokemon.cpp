@@ -44,12 +44,12 @@ void pokemonInitAry(u32 param_1, u16 param_2)
 //void pokemonInit(u32 param_1){}
 
 //sdata2 mismatch 99.76% match as a result
-void pokemonInitDarkPokemon(u32 param_1)
+void pokemonInitDarkPokemon(Pokemon* poke)
 {
-	pokemon_SetDarkpokemonDataId(param_1,0);
-	pokemonSetDp(param_1, negOne);
-	pokemon_SetPoolExp(param_1,0);
-	pokemon_SetPoolFriend(param_1,0);
+	pokemon_SetDarkpokemonDataId(poke,0);
+	pokemonSetDp(poke, negOne);
+	pokemon_SetPoolExp(poke,0);
+	pokemon_SetPoolFriend(poke,0);
 }
 
 void pokemonInitJoutai(Pokemon* param_1)
@@ -57,23 +57,21 @@ void pokemonInitJoutai(Pokemon* param_1)
 	param_1->initCondition();
 }
 
-void pokemonWazaInitAry(Pokemon* param_1, u32 param_2)
+void pokemonWazaInitAry(Pokemon* poke, u16 wazaCount)
 {
-  u32 uVar1;
-  
-  if (param_1 != 0) {
-    for (uVar1 = 0; (uVar1 & 0xffff) < (param_2 & 0xffff); uVar1 = uVar1 + 1) {
-      pokemonWazaInit(param_1,uVar1);
+  if (poke) {
+    for (u32 wazaNum = 0; (u16)wazaNum  < wazaCount; wazaNum = wazaNum + 1) {
+      pokemonWazaInit(poke, wazaNum);
     }
   }
 }
 
-void pokemonWazaInit(Pokemon* param_1, u32 param_2)
+void pokemonWazaInit(Pokemon* poke, u32 wazaNum)
 {
-  if (param_1 != 0) {
-    pokemon_SetPokemonWazaDataId(param_1,param_2,0);
-    pokemon_SetPokemonWazaPp(param_1,param_2,0);
-    pokemon_SetPokemonWazaPpCount(param_1,param_2,0);
+  if (poke) {
+    pokemon_SetPokemonWazaDataId(poke,wazaNum,0);
+    pokemon_SetPokemonWazaPp(poke,wazaNum,0);
+    pokemon_SetPokemonWazaPpCount(poke,wazaNum,0);
   }
 }
 
@@ -93,11 +91,11 @@ u32 pokemonCheckRare(Pokemon* param_1)
   return uVar1;
 }
 
-void pokemonGrowBasisStatus(Pokemon* param_1)
+void pokemonGrowBasisStatus(Pokemon* poke, u32 exp)
 {
-  if (param_1 != 0) {
-    pokemon_SetExp(param_1);
-    pokemonResetBasisStatus(param_1);
+  if (poke) {
+    pokemon_SetExp(poke, exp);
+    pokemonResetBasisStatus(poke);
   }
 }
 

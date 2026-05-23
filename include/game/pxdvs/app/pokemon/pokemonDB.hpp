@@ -4,17 +4,17 @@
 #include <global.h>
 #include <game/pxdvs/app/pokemon/pokemon.hpp>
 
-extern "C" void pokemon_SetPoolFriend(u32, u32);
-extern "C" void pokemon_SetPoolExp(u32, u32);
-extern "C" void pokemon_SetDarkpokemonDataId(u32, u32);
+extern "C" void pokemon_SetPoolFriend(Pokemon*, u16);
+extern "C" void pokemon_SetPoolExp(Pokemon*, u32);
+extern "C" void pokemon_SetDarkpokemonDataId(Pokemon*, u16);
 extern "C" void pokemon_SetTokuseiFlag(Pokemon* , u32);
-extern "C" void pokemon_SetMaxHp(Pokemon*, u32);
+extern "C" void pokemon_SetMaxHp(Pokemon*, u16);
 extern "C" void pokemon_SetHp(Pokemon*, u16);
-extern "C" void pokemon_SetPokemonWazaPpCount(Pokemon*, u32, u32);
-extern "C" void pokemon_SetPokemonWazaPp(Pokemon*, u32, u32);
-extern "C" void pokemon_SetPokemonWazaDataId(Pokemon*, u32, u32);
+extern "C" void pokemon_SetPokemonWazaPpCount(Pokemon*, u32, u8);
+extern "C" void pokemon_SetPokemonWazaPp(Pokemon*, u32, u8);
+extern "C" void pokemon_SetPokemonWazaDataId(Pokemon*, u32, u16);
 extern "C" void pokemon_SetLevel(Pokemon*, u8);
-extern "C" void pokemon_SetExp(Pokemon*);
+extern "C" void pokemon_SetExp(Pokemon*, u32);
 extern "C" u8 pokemon_GetNowExpToLevel(Pokemon*);
 extern "C" u32 pokemon_GetSeikaku(Pokemon*);
 extern "C" u16 pokemon_GetMaxHp(Pokemon*);
