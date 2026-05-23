@@ -177,16 +177,12 @@ u8 _pokemonGetSeikaku(Pokemon* a)
 
 u8 pokemonGetSeikakuAsRnd(u32 a)
 {
-  return a % 0x19;
+  return a % 25;
 }
 
-u16 _pokemonGetHinsi(Pokemon* a)
+u8 _pokemonGetHinsi(Pokemon* a)
 {
-	uint uVar1;
-  
-	uVar1 = pokemon_GetHp(a);
-	uVar1 = __cntlzw(uVar1 & 0xffff);
-	return uVar1 >> 5 & 0xff;
+	return pokemon_GetHp(a) == 0;
 }
 
 void _pokemonSetLevelBasisStatus(Pokemon* a , u8 b)
