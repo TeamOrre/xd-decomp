@@ -45,10 +45,10 @@ union Ribbon {
     u32 amari : 8;
     u32 unk2 : 8;
   } bits;
-  u32 allBits; // unknown size too
+  u32 allBits;
 };
 struct Attest {
-  u8 unk[4]; // unknown size too
+  u8 unk[4];
 };
 
 #define MAX_EXPAND_STATUS 2
@@ -65,7 +65,7 @@ union PokemonFlags {
     u8 tamago: 1;
     u8 tokusei: 1;
     u8 fusei : 1;
-    u8 unk : 4;
+    u8 unk : 5;
   } bits;
   u8 allBits;
 };
