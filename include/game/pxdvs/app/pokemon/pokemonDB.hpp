@@ -17,7 +17,7 @@ struct BasisStatus {
 struct Sinka {
     u8 kind;
     // padding byte
-    u16 buff;;
+    u16 buff;
     u16 pokemonDataId;
 };
 
