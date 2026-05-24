@@ -1045,9 +1045,9 @@ config.libs = [
         "progress_category": "game",
         "objects": [
             # kaisuu
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuuData.c"),
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuu.cpp"),
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuuBios.cpp"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuuData.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuu.cpp"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuuBios.cpp"),
 
             # menu
             Object(NonMatching, "game/pxdvs/app/menu/winSprite.cpp"),
