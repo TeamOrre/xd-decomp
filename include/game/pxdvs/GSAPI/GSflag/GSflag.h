@@ -4,5 +4,6 @@
 #include <global.h>
 
 extern "C" bool GSflagGet(u32);
+extern "C" void GSflagSet(u32, bool);
 
 #endif

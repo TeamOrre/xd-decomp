@@ -190,7 +190,7 @@ u16 pokemonDataBiosGetBasisSpeAtk(PokemonData*);
 u16 pokemonDataBiosGetBasisPhyDef(PokemonData*);
 u16 pokemonDataBiosGetBasisPhyAtk(PokemonData*);
 u16 pokemonDataBiosGetBasisMaxHp(PokemonData*);
-const BasisStatus* pokemonDataBiosGetBasisStatusPtr(PokemonData*, u16);
+BasisStatus* pokemonDataBiosGetBasisStatusPtr(PokemonData*, u16);
 const char* pokemonDataBiosGetName(PokemonData*);
 PokemonData* pokemonDataBiosGetPtr(u16);
 u8 pokemonBiosGetEventGetFlag(Pokemon*);
