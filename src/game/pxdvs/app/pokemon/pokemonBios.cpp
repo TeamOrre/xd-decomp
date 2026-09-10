@@ -279,6 +279,16 @@ void pokemonBiosSetFuseiFlag(Pokemon* poke, bool data) {
         poke->flags.bits.fusei = data;
     }
 }
+void pokemonBiosSetTokuseiFlag(Pokemon* poke, bool data) {
+    if (poke) {
+        PokemonData* pdata = pokemonDataBiosGetPtr(pokemonBiosGetPokemonDataId(poke));
+        u8 tokuseiId = pokemonDataBiosGetTokuseiDataId(pdata, 1);
+        if (tokuseiId == 0) {
+            data = false;
+        }
+        poke->flags.bits.tokusei = data;
+    }
+}
 void pokemonBiosSetTamagoFlag(Pokemon* poke, bool data) {
     if (poke) {
         poke->flags.bits.tamago = data;
@@ -1054,6 +1064,17 @@ u8 pokemonBiosGetFuseiFlag(Pokemon* poke) {
     }
     return poke->flags.bits.fusei != 0;
 }
+u8 pokemonBiosGetTokuseiFlag(Pokemon* poke) {
+    if (poke == nullptr) {
+        return 0;
+    }
+    PokemonData* pdata = pokemonDataBiosGetPtr(pokemonBiosGetPokemonDataId(poke));
+    u8 tokuseiId = pokemonDataBiosGetTokuseiDataId(pdata, 1);
+    if (tokuseiId == 0) {
+        return 0;
+    }
+    return poke->flags.bits.tokusei != 0;
+}
 u8 pokemonBiosGetTamagoFlag(Pokemon* poke) {
     if (poke == nullptr) {
         return 0;
@@ -1510,7 +1531,7 @@ u32 pokemonBiosGetRnd(Pokemon* poke) {
     }
     return poke->rnd;
 }
-u32 pokemonBiosGetPokemonDataId(Pokemon* poke) {
+u16 pokemonBiosGetPokemonDataId(Pokemon* poke) {
     if (poke == nullptr) {
         return 0;
     }

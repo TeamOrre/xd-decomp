@@ -274,7 +274,7 @@ u8 pokemonBiosGetCatchLevel(Pokemon*);
 u16 pokemonBiosGetCatchFloorId(Pokemon*);
 Attest* pokemonBiosGetAttest(Pokemon*);
 u32 pokemonBiosGetRnd(Pokemon*);
-u32 pokemonBiosGetPokemonDataId(Pokemon*);
+u16 pokemonBiosGetPokemonDataId(Pokemon*);
 void pokemonWazaBiosCopy(PokemonWaza*, const PokemonWaza*);
 void pokemonBiosCopy(Pokemon*, const Pokemon*);
 }
