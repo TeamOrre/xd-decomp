@@ -13,21 +13,81 @@ struct PokemonData;
 struct PokemonDataCgData;
 struct PokemonDataWaza;
 struct PokemonWaza;
-typedef struct PokemonGrowDataBios PokemonGrowDataBios;
-typedef struct PokemonSeikakuDataBios PokemonSeikakuDataBios;
-typedef struct PokemonSeikakuRateBios PokemonSeikakuRateBios;
+struct PokemonSeikakuRateBios {
+    u8 kake;
+    u8 waru;
+};
+
+struct PokemonSeikakuDataBios {
+    s8 reliveFightout;        // 0x0
+    s8 reliveWalk;            // 0x1
+    s8 reliveCall;            // 0x2
+    s8 reliveSodateya;        // 0x3
+    s8 reliveNadenade;        // 0x4
+    u8 phyAtkRateDataId;      // 0x5
+    u8 phyDefRateDataId;      // 0x6
+    u8 speAtkRateDataId;      // 0x7
+    u8 speDefRateDataId;      // 0x8
+    u8 nimblenessRateDataId;  // 0x9
+    u8 unk_a[10];             // 0xa
+    u32 name;                 // 0x14
+    u8 unk_18[16];            // 0x18
+};
+
+struct PokemonGrowDataBios {
+    u32 exp[101];
+};
+
+struct PokemonTokuseiDataBios {
+    u32 unk_0;
+    u32 name;
+    u32 doc;
+};
+
+struct PokemonFriendFilterDataBios {
+    s8 values[3];
+};
 
 extern "C" u32 pokemonSeikakuRateDataBiosGetWaru(PokemonSeikakuRateBios*);
 extern "C" u32 pokemonSeikakuRateDataBiosGetKake(PokemonSeikakuRateBios*);
 extern "C" PokemonSeikakuRateBios* pokemonSeikakuRateDataBiosGetPtr(u32);
+extern "C" u32 pokemonSeikakuDataBiosGetReliveNadenade(PokemonSeikakuDataBios*);
+extern "C" u32 pokemonSeikakuDataBiosGetReliveSodateya(PokemonSeikakuDataBios*);
+extern "C" u32 pokemonSeikakuDataBiosGetReliveCall(PokemonSeikakuDataBios*);
+extern "C" u32 pokemonSeikakuDataBiosGetReliveWalk(PokemonSeikakuDataBios*);
+extern "C" u32 pokemonSeikakuDataBiosGetReliveFightout(PokemonSeikakuDataBios*);
 extern "C" u32 pokemonSeikakuDataBiosGetNimblenessRateDataId(PokemonSeikakuDataBios*);
 extern "C" u32 pokemonSeikakuDataBiosGetSpeDefRateDataId(PokemonSeikakuDataBios*);
 extern "C" u32 pokemonSeikakuDataBiosGetSpeAtkRateDataId(PokemonSeikakuDataBios*);
 extern "C" u32 pokemonSeikakuDataBiosGetPhyDefRateDataId(PokemonSeikakuDataBios*);
 extern "C" u32 pokemonSeikakuDataBiosGetPhyAtkRateDataId(PokemonSeikakuDataBios*);
+extern "C" u32 pokemonSeikakuDataBiosGetName(PokemonSeikakuDataBios*);
 extern "C" PokemonSeikakuDataBios* pokemonSeikakuDataBiosGetPtr(u32);
 extern "C" PokemonGrowDataBios* pokemonGrowDataBiosGetPtr(u8);
 extern "C" int pokemonGrowDataBiosGetExp(PokemonGrowDataBios*, unsigned char);
+extern "C" u32 pokemonTokuseiDataBiosGetDoc(PokemonTokuseiDataBios*);
+extern "C" u32 pokemonTokuseiDataBiosGetName(PokemonTokuseiDataBios*);
+extern "C" PokemonTokuseiDataBios* pokemonTokuseiDataBiosGetPtr(u32);
+extern "C" int pokemonDpFilterDataBiosGetValue(s8*);
+extern "C" s8* pokemonDpFilterDataBiosGetPtr(u32);
+extern "C" int pokemonFriendFilterDataBiosGetValue(PokemonFriendFilterDataBios*, u8);
+extern "C" PokemonFriendFilterDataBios* pokemonFriendFilterDataBiosGetPtr(u32);
+extern "C" u32 pokemonNakigoeDataBiosGetDataAddress(struct PokemonData*);
+
+extern "C" PokemonSeikakuDataBios* pokemon_seikaku_data;
+extern "C" u32* pokemon_seikaku_data_number;
+extern "C" PokemonSeikakuRateBios* pokemon_seikaku_rate_data;
+extern "C" u32* pokemon_seikaku_rate_data_number;
+extern "C" s8* pokemon_dp_filter_data;
+extern "C" u32* pokemon_dp_filter_data_number;
+extern "C" u32 pokemon_grow_data_number;
+extern "C" u32 pokemon_tokusei_data_number;
+extern "C" u32 pokemon_friend_filter_data_number;
+extern "C" u32 pokemon_nakigoe_data_number;
+extern "C" PokemonGrowDataBios pokemon_grow_data[];
+extern "C" PokemonTokuseiDataBios pokemon_tokusei_data[];
+extern "C" PokemonFriendFilterDataBios pokemon_friend_filter_data[];
+extern "C" u32 pokemon_nakigoe_data[];
 
 extern "C" {
 void pokemonDataBiosSetKowaza(PokemonData*, u16, u16);

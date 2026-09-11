@@ -6,6 +6,203 @@
 
 extern "C" {
 
+extern u8 pokemonWazaCheckValid(Pokemon*, u32);
+extern void* wazaDataBiosGetPtr(u16);
+extern u8 wazaDataBiosGetPp(void*);
+extern void GScharLenCpy(void*, const void*, u32);
+extern u8 darkPokemonBiosGetDarkPoint(u16);
+extern u8 darkPokemonBiosGetReliveFlag(u16);
+
+u32 pokemonNakigoeDataBiosGetDataAddress(PokemonData* pdata) {
+    if (pdata == nullptr) {
+        return 0;
+    }
+    u16 id = pdata->nakigoeId;
+    if (id >= pokemon_nakigoe_data_number) {
+        return 0;
+    }
+    return pokemon_nakigoe_data[id];
+}
+
+int pokemonDpFilterDataBiosGetValue(s8* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return *p;
+}
+
+s8* pokemonDpFilterDataBiosGetPtr(u32 idx) {
+    u16 i = (u16)idx;
+    if (i >= *pokemon_dp_filter_data_number) {
+        return nullptr;
+    }
+    return pokemon_dp_filter_data + i;
+}
+
+int pokemonFriendFilterDataBiosGetValue(PokemonFriendFilterDataBios* p, u8 idx) {
+    if (p == nullptr) {
+        return 0;
+    }
+    if (idx >= 3) {
+        return 0;
+    }
+    return p->values[idx];
+}
+
+PokemonFriendFilterDataBios* pokemonFriendFilterDataBiosGetPtr(u32 idx) {
+    u16 i = (u16)idx;
+    if (i >= pokemon_friend_filter_data_number) {
+        return nullptr;
+    }
+    return &pokemon_friend_filter_data[i];
+}
+
+u32 pokemonTokuseiDataBiosGetDoc(PokemonTokuseiDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->doc;
+}
+
+u32 pokemonTokuseiDataBiosGetName(PokemonTokuseiDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->name;
+}
+
+PokemonTokuseiDataBios* pokemonTokuseiDataBiosGetPtr(u32 idx) {
+    u16 i = (u16)idx;
+    if (i >= pokemon_tokusei_data_number) {
+        return nullptr;
+    }
+    return &pokemon_tokusei_data[i];
+}
+
+u32 pokemonSeikakuRateDataBiosGetWaru(PokemonSeikakuRateBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->waru;
+}
+
+u32 pokemonSeikakuRateDataBiosGetKake(PokemonSeikakuRateBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->kake;
+}
+
+PokemonSeikakuRateBios* pokemonSeikakuRateDataBiosGetPtr(u32 idx) {
+    if ((u8)idx >= *pokemon_seikaku_rate_data_number) {
+        return nullptr;
+    }
+    return pokemon_seikaku_rate_data + (u8)idx;
+}
+
+u32 pokemonSeikakuDataBiosGetReliveNadenade(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->reliveNadenade;
+}
+
+u32 pokemonSeikakuDataBiosGetReliveSodateya(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->reliveSodateya;
+}
+
+u32 pokemonSeikakuDataBiosGetReliveCall(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->reliveCall;
+}
+
+u32 pokemonSeikakuDataBiosGetReliveWalk(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->reliveWalk;
+}
+
+u32 pokemonSeikakuDataBiosGetReliveFightout(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->reliveFightout;
+}
+
+u32 pokemonSeikakuDataBiosGetNimblenessRateDataId(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->nimblenessRateDataId;
+}
+
+u32 pokemonSeikakuDataBiosGetSpeDefRateDataId(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->speDefRateDataId;
+}
+
+u32 pokemonSeikakuDataBiosGetSpeAtkRateDataId(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->speAtkRateDataId;
+}
+
+u32 pokemonSeikakuDataBiosGetPhyDefRateDataId(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->phyDefRateDataId;
+}
+
+u32 pokemonSeikakuDataBiosGetPhyAtkRateDataId(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->phyAtkRateDataId;
+}
+
+u32 pokemonSeikakuDataBiosGetName(PokemonSeikakuDataBios* p) {
+    if (p == nullptr) {
+        return 0;
+    }
+    return p->name;
+}
+
+PokemonSeikakuDataBios* pokemonSeikakuDataBiosGetPtr(u32 idx) {
+    u8 i = (u8)idx;
+    if (i >= *pokemon_seikaku_data_number) {
+        return nullptr;
+    }
+    return pokemon_seikaku_data + i;
+}
+
+int pokemonGrowDataBiosGetExp(PokemonGrowDataBios* p, unsigned char level) {
+    if (p == nullptr) {
+        return 0;
+    }
+    if (level >= 101) {
+        return 0;
+    }
+    return p->exp[level];
+}
+
+PokemonGrowDataBios* pokemonGrowDataBiosGetPtr(u8 idx) {
+    if (idx >= pokemon_grow_data_number) {
+        return nullptr;
+    }
+    return &pokemon_grow_data[idx];
+}
+
+
 void pokemonDataBiosSetKowaza(PokemonData* pdata, u16 idx, u16 data) {
     if (pdata && idx < 8) {
         pdata->kowaza[idx] = data;
@@ -583,6 +780,22 @@ void pokemonBiosSetItemDataId(Pokemon* poke, u16 data) {
     }
 }
 
+void pokemonBiosSetPokemonWazaPpCount(Pokemon* poke, u32 wazaNum, u8 data) {
+    PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 0);
+    if (waza == nullptr) {
+        return;
+    }
+    if (data > 3) {
+        data = 3;
+    }
+    if (pokemonWazaCheckValid(poke, wazaNum) == 1) {
+        if (wazaDataBiosGetPp(wazaDataBiosGetPtr(pokemonBiosGetPokemonWazaDataId(poke, wazaNum))) <= 4) {
+            return;
+        }
+    }
+    waza->ppCount = data;
+}
+
 void pokemonBiosSetPokemonWazaPp(Pokemon* poke, u32 wazaNum, u8 data) {
     PokemonWaza* waza = pokemonBiosGetPokemonWazaPtr(poke, wazaNum, 0);
     if (waza) {
@@ -629,6 +842,25 @@ void pokemonBiosSetPoolExp(Pokemon* poke, u32 data) {
 void pokemonBiosSetExp(Pokemon* poke, u32 data) {
     if (poke) {
         poke->exp = data;
+    }
+}
+
+void pokemonBiosSetNicknameOrgPtr(Pokemon* poke, void* src) {
+    if (poke && src) {
+        GScharLenCpy(&poke->nicknameOrg[0], src, 11);
+    }
+}
+
+void pokemonBiosSetNicknamePtr(Pokemon* poke, void* src) {
+    if (poke && src) {
+        GScharLenCpy(&poke->nickname[0], src, 11);
+        pokemonBiosSetNicknameOrgPtr(poke, src);
+    }
+}
+
+void pokemonBiosSetCatchTrainerNamePtr(Pokemon* poke, void* src) {
+    if (poke && src) {
+        GScharLenCpy(&poke->catchTrainerName[0], src, 11);
     }
 }
 void pokemonBiosSetCatchTrainerRnd(Pokemon* poke, u32 data) {
@@ -1275,6 +1507,27 @@ ExpandStatus* pokemonBiosGetExpandStatusPtr(Pokemon* poke, u16 statusNum) {
         return nullptr;
     }
     return &poke->expandStatus[statusNum];
+}
+
+u8 pokemonBiosGetInitDp(Pokemon* poke) {
+    if (poke == nullptr) {
+        return 0;
+    }
+    u16 id = pokemonBiosGetDarkpokemonDataId(poke);
+    if (id == 0) {
+        return 0;
+    }
+    return darkPokemonBiosGetDarkPoint(id);
+}
+
+u8 pokemonBiosGetDarkFlag(Pokemon* poke) {
+    if (poke == nullptr) {
+        return 0;
+    }
+    if (pokemonBiosGetDarkpokemonDataId(poke) == 0) {
+        return 0;
+    }
+    return darkPokemonBiosGetReliveFlag(pokemonBiosGetDarkpokemonDataId(poke)) == 0;
 }
 
 u8 pokemonBiosGetPoolFriend(Pokemon* poke) {

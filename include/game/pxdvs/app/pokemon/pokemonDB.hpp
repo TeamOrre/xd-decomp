@@ -45,7 +45,8 @@ struct PokemonData {
     u16 height; // 0x8
     u16 weight; // 0xa
     u16 voice; // 0xc
-    u8 unk1[4];
+    u16 nakigoeId; // 0xe
+    u16 shout; // 0x10
     u16 numPokemon; // 0x12
     u16 numZukan; // 0x14
     u8 unk2[2];

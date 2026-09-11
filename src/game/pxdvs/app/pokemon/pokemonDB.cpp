@@ -1,8 +1,152 @@
 #include <game/pxdvs/app/pokemon/pokemon.hpp>
 #include <game/pxdvs/app/pokemon/pokemonBios.hpp>
 #include <game/pxdvs/app/pokemon/pokemonDB.hpp>
+#include <game/pxdvs/GSAPI/GSflag/GSflag.h>
 
 extern "C" {
+
+void pokemonDB_SetTukamaetaFlag(u16 pokeNum, bool data) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p != nullptr) {
+        GSflagSet(p->tukamaetaFlag, data);
+    }
+}
+
+void pokemonDB_SetMitaFlag(u16 pokeNum, bool data) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p != nullptr) {
+        GSflagSet(p->mitaFlag, data);
+    }
+}
+
+u32 pokemonDB_GetPkxDataId(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->pkxDataId;
+}
+
+bool pokemonDB_GetTukamaetaFlag(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return false;
+    return GSflagGet(p->tukamaetaFlag);
+}
+
+u16 pokemonDB_GetShout(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->shout;
+}
+
+u16 pokemonDB_GetVoice(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->voice;
+}
+
+u16 pokemonDB_GetWeight(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->weight;
+}
+
+u32 pokemonDB_GetPokebodyId(u16 pokeNum, u16 cgIdx) {
+    PokemonDataCgData* cg = pokemonDataBiosGetCgDataPtr(pokemonDataBiosGetPtr(pokeNum), cgIdx);
+    if (cg == nullptr) return 0;
+    return cg->pokebodyId;
+}
+
+u16 pokemonDB_GetGetWazaDataId(u16 pokeNum, u16 wazaIdx) {
+    PokemonDataWaza* w = pokemonDataBiosGetGetWazaPtr(pokemonDataBiosGetPtr(pokeNum), wazaIdx);
+    if (w == nullptr) return 0;
+    return w->dataId;
+}
+
+u8 pokemonDB_GetGetWazaLevel(u16 pokeNum, u16 wazaIdx) {
+    PokemonDataWaza* w = pokemonDataBiosGetGetWazaPtr(pokemonDataBiosGetPtr(pokeNum), wazaIdx);
+    if (w == nullptr) return 0;
+    return w->level;
+}
+
+u8 pokemonDB_GetZokuseiDataId(u16 pokeNum, u16 idx) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    if (idx >= 2) return 0;
+    return p->zokuseiDataId[idx];
+}
+
+u16 pokemonDB_GetItemDataId(u16 pokeNum, u16 idx) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    if (idx >= 2) return 0;
+    return p->itemDataId[idx];
+}
+
+u16 pokemonDB_GetInitFriend(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->initFriend;
+}
+
+u8 pokemonDB_GetSexRatio(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->sexRatio;
+}
+
+u8 pokemonDB_GetGet(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->get;
+}
+
+u16 pokemonDB_GetGiveExp(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return 0;
+    return p->giveExp;
+}
+
+u16 pokemonDB_GetBasisNimbleness(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->nimbleness;
+}
+
+u16 pokemonDB_GetBasisSpeDef(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->speDef;
+}
+
+u16 pokemonDB_GetBasisSpeAtk(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->speAtk;
+}
+
+u16 pokemonDB_GetBasisPhyDef(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->phyDef;
+}
+
+u16 pokemonDB_GetBasisPhyAtk(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->phyAtk;
+}
+
+u16 pokemonDB_GetBasisMaxHp(u16 pokeNum) {
+    BasisStatus* s = pokemonDataBiosGetBasisStatusPtr(pokemonDataBiosGetPtr(pokeNum), 0);
+    if (s == nullptr) return 0;
+    return s->maxHp;
+}
+
+const char* pokemonDB_GetName(u16 pokeNum) {
+    PokemonData* p = pokemonDataBiosGetPtr(pokeNum);
+    if (p == nullptr) return nullptr;
+    return p->name;
+}
+
 
 void pokemon_SetComboPartnerAll(Pokemon* poke, u8 data) {
     if (poke != nullptr)
