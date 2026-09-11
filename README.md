@@ -104,3 +104,11 @@ Once the initial build succeeds, an `objdiff.json` should exist in the project r
 Download the latest release from [encounter/objdiff](https://github.com/encounter/objdiff). Under project settings, set `Project directory`. The configuration should be loaded automatically.
 
 Select an object from the left sidebar to begin diffing. Changes to the project will rebuild automatically: changes to source files, headers, `configure.py`, `splits.txt` or `symbols.txt`.
+
+## Contributing
+
+Contributions are welcome! Before making a pull request, please read our [contributing guidelines](CONTRIBUTING.md).
+
+Also, consider joining our `#pokemon-xd` discussion channel on Discord.
+
+[![Gamecube/Wii Decompilation Discord](https://discordapp.com/api/guilds/727908905392275526/widget.png?style=banner2)](https://discord.gg/hKx3FJJgrV)
