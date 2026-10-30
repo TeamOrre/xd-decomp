@@ -242,6 +242,18 @@ cflags_runtime = [
     "-inline auto",
 ]
 
+#pokemon object
+cflags_xd_app_pokemon = [
+    *cflags_base,
+    "-use_lmw_stmw on",
+    "-str reuse,pool,readonly",
+    "-gccinc",
+    "-common off",
+    "-O4",
+    "-inline noauto",
+]
+cflags_xd_app_pokemon.remove("-O4,p")
+cflags_xd_app_pokemon.remove("-inline auto")
 
 # REL flags
 cflags_rel = [
@@ -1061,9 +1073,9 @@ config.libs = [
         "progress_category": "game",
         "objects": [
             # kaisuu
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuuData.c"),
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuu.cpp"),
-            Object(NonMatching, "game/pxdvs/app/kaisuu/kaisuuBios.cpp"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuuData.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuu.cpp"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "game/pxdvs/app/kaisuu/kaisuuBios.cpp"),
 
             # menu
             Object(NonMatching, "game/pxdvs/app/menu/winSprite.cpp"),
@@ -1105,23 +1117,6 @@ config.libs = [
             Object(NonMatching, "game/pxdvs/app/waza/wazaFuncData.c"),
             Object(NonMatching, "game/pxdvs/app/waza/wazaBios.cpp"),
             Object(NonMatching, "game/pxdvs/app/waza/wazaDB.cpp"),
-
-            # pokemon
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonGrowData.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonTokuseiData.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonFriendFilterData.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonNakigoeData.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonWaveDispData.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemon.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonBios.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonDB.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonEvolution.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusFightoutPokemon.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusFightPokemon.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusPokemon.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemon.cpp"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemonList.c"),
-            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemonBios.cpp"),
 
             # hero
             Object(NonMatching, "game/pxdvs/app/hero/hero.cpp"),
@@ -1394,6 +1389,30 @@ config.libs = [
             Object(NonMatching, "game/pxdvs/app/fight/fightTrainerAiWazaValue.cpp"),
             Object(NonMatching, "game/pxdvs/app/fight/fightTrainerAi_ExpectWazaDat.c"),
             Object(NonMatching, "game/pxdvs/app/fight/fightTrainerAiComboContinueFunc.cpp"),
+        ]
+    },
+    {
+        "lib": "xd_app_pokemon",
+        "mw_version": config.linker_version,
+        "cflags": cflags_xd_app_pokemon,
+        "progress_category": "game",
+        "objects": [
+            # pokemon
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonGrowData.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonTokuseiData.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonFriendFilterData.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonNakigoeData.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonWaveDispData.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemon.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonBios.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonDB.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonEvolution.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusFightoutPokemon.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusFightPokemon.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/pokemonStatusPokemon.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemon.cpp"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemonList.c"),
+            Object(NonMatching, "game/pxdvs/app/pokemon/darkPokemonBios.cpp"),
         ]
     },
     {

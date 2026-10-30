@@ -70,11 +70,10 @@ Tool guidelines:
 
 If you want to begin contributing:
 
-1. Join the TeamOrre discussion channel.
-2. Check the Projects tab for files to work on (coming soon), or help others stuck on an issue in the discussion channel.
-3. Request access to the shared Ghidra project (instructions below).
-4. Ask before adding new C source files or changing the project structure.
-5. For symbols/splits work, open a PR with your proposed changes.
+1. Check the Projects tab for files to work on (coming soon), or help others stuck on an issue in the discussion channel.
+2. Request access to the shared Ghidra project (instructions below).
+3. Ask before adding new C source files or changing the project structure.
+4. For symbols/splits work, open a PR with your proposed changes.
 
 Thank you for contributing to TeamOrre and helping preserve and understand these games.
 
@@ -100,3 +99,7 @@ Once an admin has approved your request, you can set up the Ghidra project throu
     * Password: (the password that you chose earlier)
 
 The files in the project should now be viewable.
+
+## AI Assistance Policy
+
+Due to the early nature of this project, **AI assisted contributions are banned until further notice.** This policy will be revisited once coding standards are finalized and further decomp progress is made. Any attempt to circumvent this ban by passing off AI work as human work will result in an immediate ban.
