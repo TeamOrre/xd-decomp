@@ -764,7 +764,7 @@ config.libs = [
         ],
         "progress_category": "sdk",
         "objects": [
-            Object(Matching, "gba/GBA.c"),
+            Object(MatchingFor("GXXE01"), "gba/GBA.c"),
             Object(Matching, "gba/GBARead.c"),
             Object(Matching, "gba/GBAWrite.c"),
             Object(Matching, "gba/GBAXfer.c"),
