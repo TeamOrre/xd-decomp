@@ -3,6 +3,180 @@
 #include <game/pxdvs/app/pokemon/pokemonDB.hpp>
 #include <game/relglobal.h>
 
+u32 DarkPokemon::getWalkCount() const {
+    return walkCount;
+}
+void DarkPokemon::setWalkCount(u32 data) {
+    walkCount = data;
+}
+void DarkPokemon::setReversPattern(u8 data) {
+    reversPattern = data;
+}
+u8 DarkPokemon::getReversPattern() const {
+    return reversPattern;
+}
+void DarkPokemon::setCatchBallID(u16 data) {
+    bits0x4.catchBallID = data;
+}
+u16 DarkPokemon::getCatchBallID() const {
+    return bits0x4.catchBallID;
+}
+void DarkPokemon::setDarkPokemonID(u16 data) {
+    darkPokemonID = data;
+}
+u16 DarkPokemon::getDarkPokemonID() const {
+    return darkPokemonID;
+}
+void DarkPokemon::setPokemonID(u16 data) {
+    pokemonID = data;
+}
+u16 DarkPokemon::getPokemonID() const {
+    return pokemonID;
+}
+bool DarkPokemon::isSnatch() const {
+    return (s32)getStatus() >= darkPokemonStatusSnatch;
+}
+bool DarkPokemon::isRelive() const {
+    return getStatus() == darkPokemonStatusRelive;
+}
+void DarkPokemon::setTrainerName(const u16* data) {
+    for (u32 dataIdx = 0; dataIdx < 10; dataIdx++) {
+        trainerName[dataIdx] = data[dataIdx];
+    }
+    trainerName[10] = 0;
+}
+const u16* DarkPokemon::getTrainerName() const {
+    return &trainerName[0];
+}
+void DarkPokemon::setStatusRnd(u8 idx, u8 data) {
+    if (idx < 6) {
+        statusRnd[idx] = data;        
+    }
+}
+u8 DarkPokemon::getStatusRnd(u8 idx) const {
+    if (idx < 6) {
+        return statusRnd[idx];
+    }
+    return 0;
+}
+void DarkPokemon::setInformation(bool data) {
+    bits0x4.information = data;
+}
+bool DarkPokemon::isInformation() const {
+    return bits0x4.information != 0;
+}
+void DarkPokemon::setUpdate(bool data) {
+    bits0x0.update = data;
+}
+bool DarkPokemon::isUpdate() const {
+    return bits0x0.update != 0;
+}
+void DarkPokemon::setEscapeTime(u32 data) {
+    if (bits0x0.status >= darkPokemonStatusSnatch) {
+        return;
+    }
+    escapeOrSnatchTime = data;
+}
+u32 DarkPokemon::getEscapeTime() const {
+    if (bits0x0.status < darkPokemonStatusSnatch) {
+        return escapeOrSnatchTime;
+    }
+    return 0;
+}
+void DarkPokemon::setSnatchTime(u32 data) {
+    if (bits0x0.status < darkPokemonStatusSnatch) {
+        return;
+    }
+    escapeOrSnatchTime = data;
+}
+void DarkPokemon::setRnd(u32 data) {
+    rnd = data;
+}
+u32 DarkPokemon::getRnd() const {
+    return rnd;
+}
+void DarkPokemon::setCatchFloorId(u16 data) {
+    catchFloorId = data;
+}
+u16 DarkPokemon::getCatchFloorId() const {
+    return catchFloorId;
+}
+void DarkPokemon::setOrgTrainer(u16 data) {
+    orgTrainer = data;
+}
+u16 DarkPokemon::getOrgTrainer() const {
+    return orgTrainer;
+}
+void DarkPokemon::setSnatchIndex(u8 data) {
+    snatchIndex = data;
+}
+u8 DarkPokemon::getSnatchIndex() const {
+    return snatchIndex;
+}
+void DarkPokemon::setWazaNew(u8 idx, bool data) {
+    if (idx >= 3) {
+        return;
+    }
+    if (data != 0) {
+        bits0x0.wazaNew |= (1 << idx);
+    } else {
+        bits0x0.wazaNew &= ~(1 << idx);
+    }
+}
+bool DarkPokemon::isWazaNew(u8 idx) const { 
+    if (idx >= 3) {
+        return false;
+    }
+    return (bits0x0.wazaNew & (1 << idx)) != 0;
+}
+void DarkPokemon::setPoolFriendLevel(u16 data) {
+    poolFriendLevel = data;
+}
+u16 DarkPokemon::getPoolFriendLevel() const {
+    return poolFriendLevel;
+}
+void DarkPokemon::setPoolExp(u32 data) {
+    bits0x4.poolExp = data;
+}
+u32 DarkPokemon::getPoolExp() const {
+    return bits0x4.poolExp;
+}
+void DarkPokemon::setDarkPointDirect(s32 data) {
+    darkPoint = data;
+}
+s32 DarkPokemon::getDarkPointDirect() const {
+    return darkPoint;
+}
+void DarkPokemon::setReversMode(bool data) {
+    bits0x0.reversMode = data;
+}
+bool DarkPokemon::isReversMode() const {
+    return bits0x0.reversMode != 0;
+}
+void DarkPokemon::setSnatchFromWho(darkPokemonSnatchWho data) {
+    bits0x0.snatchWho = data;
+}
+darkPokemonSnatchWho DarkPokemon::getSnatchFromWho() const {
+    return (darkPokemonSnatchWho)bits0x0.snatchWho;
+}
+void DarkPokemon::setSnatchInfoLevel(u8 data) {
+    bits0x0.snatchInfoLevel = data;
+}
+darkPokemonStatus DarkPokemon::getStatus() const {
+    return (darkPokemonStatus)bits0x0.status;
+}
+void DarkPokemon::addStatus(darkPokemonStatus data) {
+    if ((u32)bits0x0.status < (u32)data) {
+        bits0x0.status = data;
+    }
+}
+void DarkPokemon::setStatus(darkPokemonStatus data) {
+    bits0x0.status = data;
+}
+void DarkPokemon::init() {
+    memset(this, 0, sizeof(DarkPokemon));
+}
+
 void Pokemon::setConditionTurnNow(u8 data) {
     conditionTurnNow = data;
 }
