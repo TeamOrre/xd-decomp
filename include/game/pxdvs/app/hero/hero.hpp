@@ -57,7 +57,7 @@ public:
   void itemSort(u8);
   void setBattleResumeFloorIndex(u8);
   u8 getBattleResumeFloorIndex() const;
-  void setBattleResumeFloorID(uint);
+  void setBattleResumeFloorID(u32);
   u16 getBattleResumeFloorID() const;
   u32 getHeroObjID(s32, s32);
   void setHeroStyle(u8, bool);

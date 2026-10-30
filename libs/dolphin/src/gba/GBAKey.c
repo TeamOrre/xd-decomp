@@ -1,4 +1,4 @@
-#include "dolphin/GBAPriv.h"
+#include <dolphin/gba/GBAPriv.h>
 #include <string.h>
 
 static volatile u8 D35[] = {

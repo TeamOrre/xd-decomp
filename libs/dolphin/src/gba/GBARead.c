@@ -1,4 +1,4 @@
-#include "dolphin/GBAPriv.h"
+#include <dolphin/gba/GBAPriv.h>
 #include <string.h>
 
 static void ReadProc(s32 chan) {

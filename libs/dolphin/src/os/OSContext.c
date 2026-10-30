@@ -273,13 +273,13 @@ asm u32 OSSaveContext(register OSContext* context) {
 asm void OSLoadContext(register OSContext* context) {
     nofralloc
 
-    lis      r4,__RAS_OSDisableInterrupts_begin@ha
+    lis      r4,OSDisableInterrupts@ha
     lwz      r6,context->srr0
-    addi     r5,r4,__RAS_OSDisableInterrupts_begin@l
+    addi     r5,r4,OSDisableInterrupts@l
     cmplw    r6,r5
     ble      _notInRAS
-    lis      r4,__RAS_OSDisableInterrupts_end@ha
-    addi     r0,r4,__RAS_OSDisableInterrupts_end@l
+    lis      r4,OSDisableInterrupts+0xC@ha
+    addi     r0,r4,OSDisableInterrupts+0xC@l
     cmplw    r6,r0
     bge      _notInRAS
     stw      r5,context->srr0
@@ -342,8 +342,8 @@ notexc:
 }
 
 asm u32 OSGetStackPointer() {
-    nofralloc 
-    mr r3, r1 
+    nofralloc
+    mr r3, r1
     blr
 }
 
@@ -501,7 +501,7 @@ static asm void OSSwitchFPUContext(register __OSException exception, register OS
     ori     r5, r5, 0x2000
     mtsrr1  r5
     addis   r3, r0, OS_CACHED_REGION_PREFIX
-    lwz     r5, 0x00D8(r3) 
+    lwz     r5, 0x00D8(r3)
     stw     context, 0x00D8(r3)
     cmpw    r5, r4
     beq     _restoreAndExit

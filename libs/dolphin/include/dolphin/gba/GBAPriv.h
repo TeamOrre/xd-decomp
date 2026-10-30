@@ -1,9 +1,9 @@
 #ifndef _DOLPHIN_GBAPRIV
 #define _DOLPHIN_GBAPRIV
 
-#include "types.h"
+#include <dolphin/types.h>
 
-#include <dolphin/gba.h>
+#include <dolphin/gba/gba.h>
 #include <dolphin/os.h>
 #include <dolphin/dsp.h>
 

@@ -45,7 +45,7 @@
 
 
 */
-#include "dolphin/GBAPriv.h"
+#include <dolphin/gba/GBAPriv.h>
 
 /*
 

@@ -385,35 +385,35 @@ char * __OSExceptionNames[17] = {
 static void OSExceptionInit(void) {
     __OSException exception;
     void* destAddr;
-    
+
     // These two vars help us change the exception number embedded
     // in the exception handler code.
     u32* opCodeAddr;
     u32 oldOpCode;
-    
+
     // Address range of the actual code to be copied.
     u8* handlerStart;
     u32 handlerSize;
-    
+
     ASSERTMSGLINE(1063, ((u32)&__OSEVEnd - (u32)&__OSEVStart) <= 0x100, "OSExceptionInit(): too big exception vector code.");
-      
+
     // Install the first level exception vector.
     opCodeAddr = (u32*)__OSEVSetNumber;
     oldOpCode = *opCodeAddr;
     handlerStart = (u8*)__OSEVStart;
     handlerSize = (u32)((u8*)__OSEVEnd - (u8*)__OSEVStart);
-    
+
     // Install the DB integrator, only if we are the first OSInit to be run
     destAddr = (void*)OSPhysicalToCached(OS_DBJUMPPOINT_ADDR);
     if (*(u32*)destAddr == 0) // Lomem should be zero cleared only once by BS2
     {
         DBPrintf("Installing OSDBIntegrator\n");
-        memcpy(destAddr, (void*)__OSDBINTSTART, (u32)__OSDBINTEND - (u32)__OSDBINTSTART);
-        DCFlushRangeNoSync(destAddr, (u32)__OSDBINTEND - (u32)__OSDBINTSTART);
+        memcpy(destAddr, (void*)__OSDBINTSTART, (u32)__OSDBJUMPSTART - (u32)__OSDBINTSTART);
+        DCFlushRangeNoSync(destAddr, (u32)__OSDBJUMPSTART - (u32)__OSDBINTSTART);
         __sync();
-        ICInvalidateRange(destAddr, (u32)__OSDBINTEND - (u32)__OSDBINTSTART);
+        ICInvalidateRange(destAddr, (u32)__OSDBJUMPSTART - (u32)__OSDBINTSTART);
     }
-    
+
     // Copy the right vector into the table
     for (exception = 0; exception < __OS_EXCEPTION_MAX; exception++) {
         if (BI2DebugFlag && (*BI2DebugFlag >= 2) && __DBIsExceptionMarked(exception)) {
@@ -421,11 +421,11 @@ static void OSExceptionInit(void) {
             DBPrintf(">>> OSINIT: exception %d commandeered by TRK\n", exception);
             continue;
         }
-        
+
         // Modify the copy of code in text before transferring
         // to the exception table.
         *opCodeAddr = oldOpCode | exception;
-        
+
         // Modify opcodes at __DBVECTOR if necessary
         if (__DBIsExceptionMarked(exception)) {
             DBPrintf(">>> OSINIT: exception %d vectored to debugger\n", exception);
@@ -434,12 +434,12 @@ static void OSExceptionInit(void) {
             // make sure the opcodes are still nop
             u32* ops = (u32*)__DBVECTOR;
             int cb;
-            
+
             for (cb = 0; cb < (u32)__OSDBJUMPEND - (u32)__OSDBJUMPSTART; cb += sizeof(u32)) {
                 *ops++ = NOP;
             }
         }
-        
+
         // Install the modified handler.
         destAddr = (void*)OSPhysicalToCached(__OSExceptionLocations[(u32)exception]);
         memcpy(destAddr, handlerStart, handlerSize);
@@ -449,16 +449,16 @@ static void OSExceptionInit(void) {
     }
     // initialize pointer to exception table
     OSExceptionTable = (void*)OSPhysicalToCached(OS_EXCEPTIONTABLE_ADDR);
-    
+
     // install default exception handlers
     for (exception = 0; exception < __OS_EXCEPTION_MAX; exception++) {
         __OSSetExceptionHandler(exception, OSDefaultExceptionHandler);
     }
-    
+
     // restore the old opcode, so that we can re-start an application without
     // downloading the text segments
     *opCodeAddr = oldOpCode;
-    
+
     DBPrintf("Exceptions initialized...\n");
 }
 
@@ -490,9 +490,9 @@ entry __OSDBJUMPEND
 
 __OSExceptionHandler __OSSetExceptionHandler(__OSException exception, __OSExceptionHandler handler) {
     __OSExceptionHandler oldHandler;
-    
-    ASSERTMSGLINE(1205, exception < __OS_EXCEPTION_MAX, "__OSSetExceptionHandler(): unknown exception."); 
-    
+
+    ASSERTMSGLINE(1205, exception < __OS_EXCEPTION_MAX, "__OSSetExceptionHandler(): unknown exception.");
+
     oldHandler = OSExceptionTable[exception];
     OSExceptionTable[exception] = handler;
     return oldHandler;

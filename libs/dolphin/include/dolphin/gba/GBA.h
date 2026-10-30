@@ -1,7 +1,7 @@
 #ifndef _DOLPHIN_GBA
 #define _DOLPHIN_GBA
 
-#include <types.h>
+#include <dolphin/types.h>
 
 #ifdef __cplusplus
 extern "C" {

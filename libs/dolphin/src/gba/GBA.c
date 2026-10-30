@@ -38,7 +38,7 @@
 
 
 */
-#include "dolphin/GBAPriv.h"
+#include <dolphin/gba/GBAPriv.h>
 
 ATTRIBUTE_ALIGN_DECL(32, static GBASecParam SecParams[4]);
 GBAControl __GBA[4];

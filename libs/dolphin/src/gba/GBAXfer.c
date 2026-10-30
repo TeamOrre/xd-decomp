@@ -1,5 +1,7 @@
-#include "dolphin/GBAPriv.h"
-#include "dolphin/sipriv.h"
+#include <dolphin/gba/GBAPriv.h>
+#include <dolphin/si.h>
+
+#include "__os.h"
 
 static void __GBAHandler(s32 chan, u32 error, OSContext* context) {
   GBAControl* gba;

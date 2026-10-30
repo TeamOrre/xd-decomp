@@ -157,12 +157,12 @@ if not config.non_matching:
     config.asm_dir = None
 
 # Tool versions
-config.binutils_tag = "2.42-1"
-config.compilers_tag = "20250812"
-config.dtk_tag = "v1.7.4"
-config.objdiff_tag = "v3.4.0"
+config.binutils_tag = "2.42-2"
+config.compilers_tag = "20251118"
+config.dtk_tag = "v1.8.3"
+config.objdiff_tag = "v3.6.1"
 config.sjiswrap_tag = "v1.2.2"
-config.wibo_tag = "1.0.0-beta.4"
+config.wibo_tag = "1.0.3"
 
 # Project
 config.config_path = Path("config") / config.version / "config.yml"
@@ -502,7 +502,12 @@ config.libs = [
     ),
     DolphinLib(
         "gba",
-        [*cflags_dolphin, "-i libs/dolphin/src/gba"],
+        [
+            *cflags_dolphin,
+            "-i libs/dolphin/src/gba",
+            "-i libs/dolphin/src/os",
+            "-i libs/dolphin/src/dsp"
+        ],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBA.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAGetProcessStatus.c"),
@@ -598,7 +603,6 @@ config.libs = [
         [
             *cflags_dolphin,
             "-i libs/dolphin/src/si",
-            "-i libs/dolphin/src/perf",
         ],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/pad/Pad.c"),
@@ -606,10 +610,14 @@ config.libs = [
     ),
     DolphinLib(
         "perf",
-        [*cflags_dolphin, "-i libs/dolphin/src/gx"],
+        [
+            *cflags_dolphin,
+            "-i libs/dolphin/src/gx",
+            "-i libs/dolphin/src/perf"
+        ],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/perf/perf.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/perf/perfdraw.c"),
+            Object(Equivalent, "dolphin/perf/perfdraw.c"),
         ],
     ),
     DolphinLib(
@@ -767,21 +775,21 @@ config.libs = [
         minor=0,
         patch=3,
         objects=[
-            Object(NonMatching, "musyx/runtime/seq.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/seq.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synth.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/seq_api.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/snd_synthapi.c"),
-            Object(NonMatching, "musyx/runtime/stream.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/stream.c"),
             Object(NonMatching, "musyx/runtime/synthdata.c"),
-            Object(NonMatching, "musyx/runtime/synthmacros.c"),
-            Object(NonMatching, "musyx/runtime/synthvoice.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synthmacros.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synthvoice.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synth_ac.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synth_dbtab.c"),
-            Object(NonMatching, "musyx/runtime/synth_adsr.c"),
-            Object(NonMatching, "musyx/runtime/synth_vsamples.c"),
-            Object(NonMatching, "musyx/runtime/s_data.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synth_adsr.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/synth_vsamples.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/s_data.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/hw_dspctrl.c"),
-            Object(NonMatching, "musyx/runtime/hw_volconv.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/hw_volconv.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/snd3d.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/snd_init.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/snd_math.c"),
@@ -793,7 +801,7 @@ config.libs = [
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/hw_dolphin.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/hw_memory.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/StdReverb/reverb_fx.c"),
-            Object(NonMatching, "musyx/runtime/StdReverb/reverb.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "musyx/runtime/StdReverb/reverb.c"),
         ]
     ),
     {
