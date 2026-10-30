@@ -1,6 +1,6 @@
 CompileFlags:
   Add: [
     "-fdeclspec",
-    "-Iinclude/libc",
+    "-Ilibs/dolphin/include/libc",
     "-Ilibs/musyx/include"
   ]

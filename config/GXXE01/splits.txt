@@ -1480,7 +1480,7 @@ dolphin/amcstubs/AmcExi2Stubs.c:
 dolphin/odenotstub/odenotstub.c:
 	.text       start:0x800E7038 end:0x800E7040
 
-dolphin/OdemuExi2Lib/DebuggerDriver.c:
+dolphin/OdemuExi2/DebuggerDriver.c:
 	.text       start:0x800E7040 end:0x800E7AC0
 	.sdata      start:0x804E8318 end:0x804E8320
 	.sbss       start:0x804EAE90 end:0x804EAEA8

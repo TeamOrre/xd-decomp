@@ -215,6 +215,8 @@ cflags_base = [
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
+    "-i libs/dolphin/include",
+    "-i libs/dolphin/include/libc",
 ]
 
 # Debug flags
@@ -283,8 +285,8 @@ cflags_dolphin = [
     "-warn pragmas",
     "-requireprotos",
     "-D__GEKKO__",
-    "-i include/libc",
-    "-ir src/dolphin",
+    "-i libs/dolphin/include",
+    "-i libs/dolphin/include/libc",
 ]
 
 cflags_dolphin_exibios = cflags_dolphin[:]
@@ -296,7 +298,8 @@ cflags_musyx = [
     "-nosyspath",
     "-i include",
     "-i libs/musyx/include",
-    "-i include/libc",
+    "-i libs/dolphin/include",
+    "-i libs/dolphin/include/libc",
     "-inline auto,depth=4",
     "-O4,p",
     "-fp hard",
@@ -315,7 +318,8 @@ cflags_musyx_debug = [
     "-nosyspath",
     "-i include",
     "-i libs/musyx/include",
-    "-i include/libc",
+    "-i libs/dolphin/include",
+    "-i libs/dolphin/include/libc",
     "-g",
     "-sym on",
     "-D_DEBUG=1",
@@ -329,11 +333,13 @@ config.linker_version = "GC/2.6"
 
 
 # Helper function for Dolphin libraries
-def DolphinLib(lib_name: str, objects: List[Object], patch=2 if config.version == "NXXJ01" else 1) -> Dict[str, Any]:
+def DolphinLib(lib_name: str, cflags: Any, objects: List[Object], patch=2 if config.version == "NXXJ01" else 1) -> Dict[str, Any]:
     return {
         "lib": lib_name,
+        "src_dir": "libs/dolphin/src",
+        "strip_prefix": "dolphin/",
         "mw_version": "GC/1.2.5n",
-        "cflags": [*cflags_dolphin, f"-DSDK_REVISION={patch}"],
+        "cflags": [*cflags, "-DDOLPHIN_SDK", f"-DSDK_REVISION={patch}"],
         "progress_category": "sdk",
         "objects": objects,
     }
@@ -383,13 +389,170 @@ config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
     DolphinLib(
+        "ai",
+        [*cflags_dolphin, "-i libs/dolphin/src/gx"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ai/ai.c"),
+        ],
+    ),
+    DolphinLib(
+        "amcstubs",
+        cflags_dolphin,
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/amcstubs/AmcExi2Stubs.c"),
+        ],
+    ),
+    DolphinLib(
+        "ar",
+        [*cflags_dolphin, "-i libs/dolphin/src/ar"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ar/ar.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ar/arq.c"),
+        ],
+    ),
+    DolphinLib(
         "base",
+        cflags_dolphin,
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/base/PPCArch.c"),
         ],
     ),
     DolphinLib(
+        "card",
+        [
+            *cflags_dolphin,
+            "-char signed",
+            "-i libs/dolphin/src",
+            "-i libs/dolphin/src/card",
+            "-i libs/dolphin/src/os",
+        ],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDBios.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDUnlock.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDRdwr.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDBlock.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDDir.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDCheck.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDMount.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDFormat.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDOpen.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDCreate.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDRead.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDWrite.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDDelete.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDStat.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDStatEx.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDNet.c"),
+        ],
+    ),
+    DolphinLib(
+        "db",
+        cflags_dolphin,
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/db/db.c"),
+        ],
+    ),
+    DolphinLib(
+        "dsp",
+        [*cflags_dolphin, "-i libs/dolphin/src/dsp"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp_debug.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp_task.c"),
+        ],
+    ),
+    DolphinLib(
+        "dvd",
+        [
+            *cflags_dolphin,
+            "-char signed",
+            "-i libs/dolphin/src",
+            "-i libs/dolphin/src/dvd",
+            "-i libs/dolphin/src/os",
+        ],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdlow.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdfs.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvd.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdqueue.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvderror.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdidutils.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdFatal.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/fstload.c", extra_cflags=["-char signed"]),
+        ],
+    ),
+    {
+        "lib": "Dolphin EXIBios",
+        "src_dir": "libs/dolphin/src",
+        "strip_prefix": "dolphin/",
+        "mw_version": "GC/1.2.5n",
+        "cflags": [*cflags_dolphin_exibios, "-i libs/dolphin/src/os"],
+        "progress_category": "sdk",
+        "objects": [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/exi/EXIBios.c", extra_cflags=["-O3,p"]),
+        ],
+    },
+    DolphinLib(
+        "exi",
+        [*cflags_dolphin, "-i libs/dolphin/src/os"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/exi/EXIUart.c"),
+        ],
+    ),
+    DolphinLib(
+        "gx",
+        [*cflags_dolphin, "-i libs/dolphin/src/gx"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXInit.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXFifo.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXAttr.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXMisc.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXGeometry.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXFrameBuf.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXLight.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTexture.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXBump.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTev.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXPixel.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXDraw.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXDisplayList.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTransform.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXPerf.c"),
+        ], patch=2
+    ),
+    DolphinLib(
+        "mtx",
+        cflags_dolphin,
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtx.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtxvec.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtx44.c", extra_cflags=["-char signed"]),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/vec.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/quat.c"),
+        ],
+    ),
+    DolphinLib(
+        "OdemuExi2",
+        cflags_dolphin,
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/OdemuExi2/DebuggerDriver.c", extra_cflags=["-inline auto,deferred"]),
+        ],
+    ),
+    DolphinLib(
+        "odenotstub",
+        cflags_dolphin,
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/odenotstub/odenotstub.c"),
+        ],
+    ),
+    DolphinLib(
         "os",
+        [
+            *cflags_dolphin,
+            "-D__GEKKO__",
+            "-i libs/dolphin/src/dvd",
+            "-i libs/dolphin/src/os",
+        ],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/os/OS.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/os/OSAlarm.c"),
@@ -417,153 +580,42 @@ config.libs = [
         ],
     ),
     DolphinLib(
-        "db",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/db/db.c"),
-        ],
-    ),
-    DolphinLib(
-        "mtx",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtx.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtxvec.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/mtx44.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/vec.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/mtx/quat.c"),
-        ],
-    ),
-    DolphinLib(
-        "dvd",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdlow.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdfs.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvd.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdqueue.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvderror.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdidutils.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/dvdFatal.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dvd/fstload.c", extra_cflags=["-char signed"]),
-        ],
-    ),
-    DolphinLib(
-        "vi",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/vi/vi.c"),
-        ],
-    ),
-    DolphinLib(
         "pad",
+        [
+            *cflags_dolphin,
+            "-i libs/dolphin/src/si",
+            "-i libs/dolphin/src/perf",
+        ],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/pad/Pad.c"),
         ],
     ),
     DolphinLib(
-        "ai",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ai/ai.c"),
-        ],
-    ),
-    DolphinLib(
-        "ar",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ar/ar.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/ar/arq.c"),
-        ],
-    ),
-    DolphinLib(
-        "dsp",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp_debug.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/dsp/dsp_task.c"),
-        ],
-    ),
-    DolphinLib(
-        "card",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDBios.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDUnlock.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDRdwr.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDBlock.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDDir.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDCheck.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDMount.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDFormat.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDOpen.c", extra_cflags=["-char signed"]),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDCreate.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDRead.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDWrite.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDDelete.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDStat.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDStatEx.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/card/CARDNet.c"),
-        ],
-    ),
-    DolphinLib(
-        "gx",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXInit.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXFifo.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXAttr.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXMisc.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXGeometry.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXFrameBuf.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXLight.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTexture.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXBump.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTev.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXPixel.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXDraw.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXDisplayList.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXTransform.c"),
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gx/GXPerf.c"),
-        ], patch=2
-    ),
-    DolphinLib(
         "perf",
+        [*cflags_dolphin, "-i libs/dolphin/src/gx"],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/perf/perf.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/perf/perfdraw.c"),
         ],
     ),
     DolphinLib(
-        "amcstubs",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/amcstubs/AmcExi2Stubs.c"),
-        ],
-    ),
-    DolphinLib(
-        "odenotstub",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/odenotstub/odenotstub.c"),
-        ],
-    ),
-    DolphinLib(
-        "OdemuExi2",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/OdemuExi2Lib/DebuggerDriver.c", extra_cflags=["-inline auto,deferred"]),
-        ],
-    ),
-    DolphinLib(
-        "exi",
-        [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/exi/EXIUart.c"),
-        ],
-    ),
-    {
-        "lib": "Dolphin EXIBios",
-        "mw_version": "GC/1.2.5n",
-        "cflags": cflags_dolphin_exibios,
-        "progress_category": "sdk",
-        "objects": [
-            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/exi/EXIBios.c", extra_cflags=["-O3,p"]),
-        ],
-    },
-    DolphinLib(
         "si",
+        [*cflags_dolphin, "-i libs/dolphin/src/os"],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/si/SIBios.c"),
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/si/SISamplingRate.c"),
+        ],
+    ),
+    DolphinLib(
+        "vi",
+        [
+            *cflags_dolphin,
+            "-i libs/dolphin/src/gx",
+            "-i libs/dolphin/src/os",
+            "-i libs/dolphin/src/vi",
+        ],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/vi/vi.c"),
         ],
     ),
     {
@@ -756,7 +808,7 @@ config.libs = [
             "-nosyspath",
             # dtk-specific includes
             "-i include",
-            "-i include/dolphin",
+            "-i libs/dolphin/include",
             "-i include/libc",
             "-i src/static/dolphin",
             f"-i build/{config.version}/include",
