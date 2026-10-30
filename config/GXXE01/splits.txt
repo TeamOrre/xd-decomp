@@ -3048,19 +3048,19 @@ game/pxdvs/app/pokemon/pokemonWazaSequenceDisplay.cpp:
 	.text       start:0x80233B20 end:0x80233C8C
 	.sdata2     start:0x804EEBE0 end:0x804EEBE8
 
-gba/GBA.c:
+dolphin/gba/GBA.c:
 	.text       start:0x80233C8C end:0x80233F7C
 	.data       start:0x804187A8 end:0x804187B8
 	.bss        start:0x804B0A40 end:0x804B0F40
 	.sbss       start:0x804EB9A8 end:0x804EB9B0
 
-gba/GBARead.c:
+dolphin/gba/GBARead.c:
 	.text       start:0x80233F7C end:0x802340DC
 
-gba/GBAWrite.c:
+dolphin/gba/GBAWrite.c:
 	.text       start:0x802340DC end:0x80234264
 
-gba/GBAXfer.c:
+dolphin/gba/GBAXfer.c:
 	.text       start:0x80234264 end:0x80234578
 
 game/pxdvs/app/memo/memo.cpp:

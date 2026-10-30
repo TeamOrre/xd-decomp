@@ -285,6 +285,7 @@ cflags_dolphin = [
     "-warn pragmas",
     "-requireprotos",
     "-D__GEKKO__",
+    "-DDOLPHIN_SDK",
     "-i libs/dolphin/include",
     "-i libs/dolphin/include/libc",
 ]
@@ -339,7 +340,7 @@ def DolphinLib(lib_name: str, cflags: Any, objects: List[Object], patch=2 if con
         "src_dir": "libs/dolphin/src",
         "strip_prefix": "dolphin/",
         "mw_version": "GC/1.2.5n",
-        "cflags": [*cflags, "-DDOLPHIN_SDK", f"-DSDK_REVISION={patch}"],
+        "cflags": [*cflags, f"-DSDK_REVISION={patch}"],
         "progress_category": "sdk",
         "objects": objects,
     }
@@ -497,6 +498,19 @@ config.libs = [
         [*cflags_dolphin, "-i libs/dolphin/src/os"],
         [
             Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/exi/EXIUart.c"),
+        ],
+    ),
+    DolphinLib(
+        "gba",
+        [*cflags_dolphin, "-i libs/dolphin/src/gba"],
+        [
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBA.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAGetProcessStatus.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAJoyBoot.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBARead.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAWrite.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAXfer.c"),
+            Object(MatchingFor("GXXE01", "NXXJ01"), "dolphin/gba/GBAKey.c"),
         ],
     ),
     DolphinLib(
@@ -782,46 +796,6 @@ config.libs = [
             Object(NonMatching, "musyx/runtime/StdReverb/reverb.c"),
         ]
     ),
-    {
-        "lib": "gba",
-        "mw_version": "GC/1.2.5n",
-        "cflags": [
-            # Platform Definitions
-            "-nodefaults",
-            "-proc gekko",
-            "-align powerpc",
-            "-enum int",
-            # Multibyte Definitions
-            "-multibyte",
-            "-char unsigned",
-            # Gekko Specific Definitions
-            "-fp hardware",
-            "-Cpp_exceptions off",
-            '-pragma "cats off"',
-            # Default compiler flags (turn off if needed)
-            # "-W all",
-            "-O4,p",
-            "-inline auto",
-            '-pragma "warn_notinlined off"',
-            # Helpful linker flags
-            "-maxerrors 1",
-            "-nosyspath",
-            # dtk-specific includes
-            "-i include",
-            "-i libs/dolphin/include",
-            "-i include/libc",
-            "-i src/static/dolphin",
-            f"-i build/{config.version}/include",
-            f"-DVERSION={version_num}",
-        ],
-        "progress_category": "sdk",
-        "objects": [
-            Object(MatchingFor("GXXE01"), "gba/GBA.c"),
-            Object(Matching, "gba/GBARead.c"),
-            Object(Matching, "gba/GBAWrite.c"),
-            Object(Matching, "gba/GBAXfer.c"),
-        ]
-    },
     {
         "lib": "dbgMenu",
         "mw_version": config.linker_version,
