@@ -295,7 +295,7 @@ cflags_musyx = [
     "-nodefaults",
     "-nosyspath",
     "-i include",
-    "-i extern/musyx/include",
+    "-i libs/musyx/include",
     "-i include/libc",
     "-inline auto,depth=4",
     "-O4,p",
@@ -314,7 +314,7 @@ cflags_musyx_debug = [
     "-nodefaults",
     "-nosyspath",
     "-i include",
-    "-i extern/musyx/include",
+    "-i libs/musyx/include",
     "-i include/libc",
     "-g",
     "-sym on",
@@ -344,7 +344,7 @@ def MusyX(objects, mw_version="GC/1.3.2", debug=False, major=2, minor=0, patch=3
     return {
         "lib": "musyx",
         "mw_version": mw_version,
-        "src_dir": "extern/musyx/src",
+        "src_dir": "libs/musyx/src",
         "host": False,
         "cflags": [
             *cflags,
