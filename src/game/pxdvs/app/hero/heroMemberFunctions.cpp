@@ -36,7 +36,7 @@ u8 Hero::getBattleResumeFloorIndex() const { return battleResumeFloorIndex; }
  * Address:	80150164
  * Size:	000008
  */
-void Hero::setBattleResumeFloorID(uint floorID) {
+void Hero::setBattleResumeFloorID(u32 floorID) {
   battleResumeFloorID = floorID;
 }
 

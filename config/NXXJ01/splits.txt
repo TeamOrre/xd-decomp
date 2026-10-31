@@ -1486,7 +1486,7 @@ dolphin/amcstubs/AmcExi2Stubs.c:
 dolphin/odenotstub/odenotstub.c:
 	.text       start:0x800E5838 end:0x800E5840
 
-dolphin/OdemuExi2Lib/DebuggerDriver.c:
+dolphin/OdemuExi2/DebuggerDriver.c:
 	.text       start:0x800E5840 end:0x800E62C0
 	.sdata      start:0x804C90D0 end:0x804C90D8
 	.sbss       start:0x804CBC48 end:0x804CBC60
@@ -2394,13 +2394,13 @@ game/pxdvs/GSAPI/GSfilter/GSfilter.cpp:
 	.sbss       start:0x804CC2F8 end:0x804CC300
 	.sdata2     start:0x804CED18 end:0x804CED30
 
-game/maximum/GSAPI/particle/pslist.cpp:
+sysdolphin_baselib/pslist.c:
 	.text       start:0x8018668C end:0x80186D8C
 	.rodata     start:0x802F0C28 end:0x802F0C90
 	.bss        start:0x80455BA0 end:0x80455C60
 	.sbss       start:0x804CC300 end:0x804CC308
 
-game/maximum/GSAPI/particle/particle.cpp:
+sysdolphin_baselib/particle.c:
 	.text       start:0x80186D8C end:0x801883A4
 	.rodata     start:0x802F0C90 end:0x802F0D28
 	.data       start:0x803EBEC0 end:0x803EBF00
@@ -2408,12 +2408,12 @@ game/maximum/GSAPI/particle/particle.cpp:
 	.sbss       start:0x804CC308 end:0x804CC318
 	.sdata2     start:0x804CED30 end:0x804CED40
 
-game/maximum/GSAPI/particle/psappsrt.cpp:
+sysdolphin_baselib/psappsrt.c:
 	.text       start:0x801883A4 end:0x801888F4
 	.sbss       start:0x804CC318 end:0x804CC320
 	.sdata2     start:0x804CED40 end:0x804CED48
 
-game/maximum/GSAPI/particle/psdisp.cpp:
+sysdolphin_baselib/psdisp.c:
 	.text       start:0x801888F4 end:0x8018CC38
 	.rodata     start:0x802F0D28 end:0x802F0E10
 	.data       start:0x803EBF00 end:0x803EBF20
@@ -2422,18 +2422,18 @@ game/maximum/GSAPI/particle/psdisp.cpp:
 	.sbss       start:0x804CC320 end:0x804CC368
 	.sdata2     start:0x804CED48 end:0x804CEDA8
 
-game/maximum/GSAPI/particle/psdisptev.cpp:
+sysdolphin_baselib/psdisptev.c:
 	.text       start:0x8018CC38 end:0x8018D44C
 	.sbss       start:0x804CC368 end:0x804CC370
 
-game/maximum/GSAPI/particle/psinterpret.cpp:
+sysdolphin_baselib/psinterpret.c:
 	.text       start:0x8018D44C end:0x801916D0
 	.rodata     start:0x802F0E10 end:0x802F0E20
 	.data       start:0x803EBF20 end:0x803EC120
 	.sbss       start:0x804CC370 end:0x804CC378
 	.sdata2     start:0x804CEDA8 end:0x804CEE30
 
-game/maximum/GSAPI/particle/generator.cpp:
+sysdolphin_baselib/generator.c:
 	.text       start:0x801916D0 end:0x80194030
 	.rodata     start:0x802F0E20 end:0x802F0E70
 	.data       start:0x803EC120 end:0x803EC188
@@ -3054,19 +3054,19 @@ game/pxdvs/app/pokemon/pokemonWazaSequenceDisplay.cpp:
 	.text       start:0x80230CA8 end:0x80230E18
 	.sdata2     start:0x804CF930 end:0x804CF938
 
-gba/GBA.c:
+dolphin/gba/GBA.c:
 	.text       start:0x80230E18 end:0x80231108
 	.data       start:0x803F9670 end:0x803F9680
 	.bss        start:0x80491820 end:0x80491D20
 	.sbss       start:0x804CC738 end:0x804CC740
 
-gba/GBARead.c:
+dolphin/gba/GBARead.c:
 	.text       start:0x80231108 end:0x80231268
 
-gba/GBAWrite.c:
+dolphin/gba/GBAWrite.c:
 	.text       start:0x80231268 end:0x802313F0
 
-gba/GBAXfer.c:
+dolphin/gba/GBAXfer.c:
 	.text       start:0x802313F0 end:0x80231704
 
 game/pxdvs/app/memo/memo.cpp:
@@ -3136,79 +3136,79 @@ game/pxdvs/app/effectEditor/effectEditor.cpp:
 	.text       start:0x80240654 end:0x80240660
 	.bss        start:0x80492B78 end:0x80492BA8
 
-game/maximum/GSAPI/baselib/wobj.cpp:
+sysdolphin_baselib/wobj.c:
 	.text       start:0x80240660 end:0x80240F9C
 	.rodata     start:0x802F64A0 end:0x802F64E0
 	.data       start:0x803F99D0 end:0x803F9A18
 	.sbss       start:0x804CC768 end:0x804CC770
 	.sdata2     start:0x804CFAD0 end:0x804CFB00
 
-game/maximum/GSAPI/baselib/archive.cpp:
+sysdolphin_baselib/archive.c:
 	.text       start:0x80240F9C end:0x802411AC
 	.rodata     start:0x802F64E0 end:0x802F6528
 
-game/maximum/GSAPI/baselib/bytecode.cpp:
+sysdolphin_baselib/bytecode.c:
 	.text       start:0x802411AC end:0x802427EC
 	.rodata     start:0x802F6528 end:0x802F65C8
 	.sdata2     start:0x804CFB00 end:0x804CFB48
 
-game/maximum/GSAPI/baselib/class.cpp:
+sysdolphin_baselib/class.c:
 	.text       start:0x802427EC end:0x80242C1C
 	.rodata     start:0x802F65C8 end:0x802F6660
 	.data       start:0x803F9A18 end:0x803F9A58
 	.sbss       start:0x804CC770 end:0x804CC780
 	.sdata2     start:0x804CFB48 end:0x804CFB50
 
-game/maximum/GSAPI/baselib/cobj.cpp:
+sysdolphin_baselib/cobj.c:
 	.text       start:0x80242C1C end:0x80244E6C
 	.rodata     start:0x802F6660 end:0x802F66B8
 	.data       start:0x803F9A58 end:0x803F9AF8
 	.sbss       start:0x804CC780 end:0x804CC788
 	.sdata2     start:0x804CFB50 end:0x804CFBB0
 
-game/maximum/GSAPI/baselib/debug.cpp:
+sysdolphin_baselib/debug.c:
 	.text       start:0x80244E6C end:0x80245040
 	.rodata     start:0x802F66B8 end:0x802F66E8
 	.bss        start:0x80492BA8 end:0x80492E70
 	.sbss       start:0x804CC788 end:0x804CC790
 	.sdata2     start:0x804CFBB0 end:0x804CFBB8
 
-game/maximum/GSAPI/baselib/displayfunc.cpp:
+sysdolphin_baselib/displayfunc.c:
 	.text       start:0x80245040 end:0x80246654
 	.rodata     start:0x802F66E8 end:0x802F6720
 	.sbss       start:0x804CC790 end:0x804CC798
 	.sdata2     start:0x804CFBB8 end:0x804CFBF0
 
-game/maximum/GSAPI/baselib/dobj.cpp:
+sysdolphin_baselib/dobj.c:
 	.text       start:0x80246654 end:0x80246E40
 	.rodata     start:0x802F6720 end:0x802F6770
 	.data       start:0x803F9AF8 end:0x803F9B40
 	.sbss       start:0x804CC798 end:0x804CC7A0
 	.sdata2     start:0x804CFBF0 end:0x804CFC08
 
-game/maximum/GSAPI/baselib/fobj.cpp:
+sysdolphin_baselib/fobj.c:
 	.text       start:0x80246E40 end:0x80248F28
 	.rodata     start:0x802F6770 end:0x802F67D0
 	.bss        start:0x80492E70 end:0x80492EA0
 	.sdata2     start:0x804CFC08 end:0x804CFC38
 
-game/maximum/GSAPI/baselib/fog.cpp:
+sysdolphin_baselib/fog.c:
 	.text       start:0x80248F28 end:0x802491EC
 	.rodata     start:0x802F67D0 end:0x802F67F0
 	.sdata2     start:0x804CFC38 end:0x804CFC60
 	.sbss2      start:0x804D0A90 end:0x804D0A98
 
-game/maximum/GSAPI/baselib/hash.cpp:
+sysdolphin_baselib/hash.c:
 	.text       start:0x802491EC end:0x802492EC
 	.rodata     start:0x802F67F0 end:0x802F6808
 	.sdata2     start:0x804CFC60 end:0x804CFC68
 
-game/maximum/GSAPI/baselib/id.cpp:
+sysdolphin_baselib/id.c:
 	.text       start:0x802492EC end:0x802495A0
 	.bss        start:0x80492EA0 end:0x80493060
 	.sdata2     start:0x804CFC68 end:0x804CFC78
 
-game/maximum/GSAPI/baselib/initialize.cpp:
+sysdolphin_baselib/initialize.c:
 	.text       start:0x802495A0 end:0x80249B48
 	.rodata     start:0x802F6808 end:0x802F69C0
 	.bss        start:0x80493060 end:0x80493078
@@ -3216,19 +3216,19 @@ game/maximum/GSAPI/baselib/initialize.cpp:
 	.sbss       start:0x804CC7A0 end:0x804CC7C0
 	.sdata2     start:0x804CFC78 end:0x804CFCE0
 
-game/maximum/GSAPI/baselib/jobj.cpp:
+sysdolphin_baselib/jobj.c:
 	.text       start:0x80249B48 end:0x8025049C
 	.rodata     start:0x802F69C0 end:0x802F6C78
 	.data       start:0x803F9B40 end:0x803F9C80
 	.sbss       start:0x804CC7C0 end:0x804CC7D8
 	.sdata2     start:0x804CFCE0 end:0x804CFD60
 
-game/maximum/GSAPI/baselib/list.cpp:
+sysdolphin_baselib/list.c:
 	.text       start:0x8025049C end:0x802506F8
 	.bss        start:0x80493078 end:0x804930D0
 	.sdata2     start:0x804CFD60 end:0x804CFD78
 
-game/maximum/GSAPI/baselib/lobj.cpp:
+sysdolphin_baselib/lobj.c:
 	.text       start:0x802506F8 end:0x80252F10
 	.rodata     start:0x802F6C78 end:0x802F6D30
 	.data       start:0x803F9C80 end:0x803F9D68
@@ -3236,12 +3236,12 @@ game/maximum/GSAPI/baselib/lobj.cpp:
 	.sbss       start:0x804CC7D8 end:0x804CC7F8
 	.sdata2     start:0x804CFD78 end:0x804CFDC8
 
-game/maximum/GSAPI/baselib/memory.cpp:
+sysdolphin_baselib/memory.c:
 	.text       start:0x80252F10 end:0x8025301C
 	.rodata     start:0x802F6D30 end:0x802F6D58
 	.bss        start:0x804930F8 end:0x80493110
 
-game/maximum/GSAPI/baselib/mobj.cpp:
+sysdolphin_baselib/mobj.c:
 	.text       start:0x8025301C end:0x80254994
 	.rodata     start:0x802F6D58 end:0x802F6DB0
 	.data       start:0x803F9D68 end:0x803F9DF8
@@ -3249,26 +3249,26 @@ game/maximum/GSAPI/baselib/mobj.cpp:
 	.sbss       start:0x804CC7F8 end:0x804CC808
 	.sdata2     start:0x804CFDC8 end:0x804CFDF8
 
-game/maximum/GSAPI/baselib/mtx_base.cpp:
+sysdolphin_baselib/mtx.c:
 	.text       start:0x80254994 end:0x80256624
 	.data       start:0x803F9DF8 end:0x803F9E28
 	.bss        start:0x80493110 end:0x80493168
 	.sdata2     start:0x804CFDF8 end:0x804CFE48
 
-game/maximum/GSAPI/baselib/objalloc.cpp:
+sysdolphin_baselib/objalloc.c:
 	.text       start:0x80256624 end:0x80256808
 	.rodata     start:0x802F6DB0 end:0x802F6DE8
 	.data       start:0x803F9E28 end:0x803F9E38
 	.sbss       start:0x804CC808 end:0x804CC810
 	.sdata2     start:0x804CFE48 end:0x804CFE50
 
-game/maximum/GSAPI/baselib/object.cpp:
+sysdolphin_baselib/object.c:
 	.text       start:0x80256808 end:0x8025684C
 	.rodata     start:0x802F6DE8 end:0x802F6E00
 	.data       start:0x803F9E38 end:0x803F9E78
 	.sdata2     start:0x804CFE50 end:0x804CFE58
 
-game/maximum/GSAPI/baselib/pobj.cpp:
+sysdolphin_baselib/pobj.c:
 	.text       start:0x8025684C end:0x802596B0
 	.rodata     start:0x802F6E00 end:0x802F7088
 	.data       start:0x803F9E78 end:0x803F9F30
@@ -3276,16 +3276,16 @@ game/maximum/GSAPI/baselib/pobj.cpp:
 	.sbss       start:0x804CC810 end:0x804CC830
 	.sdata2     start:0x804CFE58 end:0x804CFEB8
 
-game/maximum/GSAPI/baselib/quatlib.cpp:
+sysdolphin_baselib/quatlib.c:
 	.text       start:0x802596B0 end:0x80259AA4
 	.sdata2     start:0x804CFEB8 end:0x804CFEE0
 
-game/maximum/GSAPI/baselib/random.cpp:
+sysdolphin_baselib/random.c:
 	.text       start:0x80259AA4 end:0x80259B9C
 	.sdata      start:0x804C93C8 end:0x804C93D0
 	.sdata2     start:0x804CFEE0 end:0x804CFEF0
 
-game/maximum/GSAPI/baselib/robj.cpp:
+sysdolphin_baselib/robj.c:
 	.text       start:0x80259B9C end:0x8025BFCC
 	.rodata     start:0x802F7088 end:0x802F71E0
 	.data       start:0x803F9F30 end:0x803F9F70
@@ -3293,7 +3293,7 @@ game/maximum/GSAPI/baselib/robj.cpp:
 	.sbss       start:0x804CC830 end:0x804CC838
 	.sdata2     start:0x804CFEF0 end:0x804CFF58
 
-game/maximum/GSAPI/baselib/shadow_base.cpp:
+sysdolphin_baselib/shadow.c:
 	.text       start:0x8025BFCC end:0x8025D35C
 	.rodata     start:0x802F71E0 end:0x802F72B0
 	.data       start:0x803F9F70 end:0x803FA060
@@ -3301,11 +3301,11 @@ game/maximum/GSAPI/baselib/shadow_base.cpp:
 	.sbss       start:0x804CC838 end:0x804CC840
 	.sdata2     start:0x804CFF58 end:0x804CFFA8
 
-game/maximum/GSAPI/baselib/spline.cpp:
+sysdolphin_baselib/spline.c:
 	.text       start:0x8025D35C end:0x8025DF9C
 	.sdata2     start:0x804CFFA8 end:0x804CFFF8
 
-game/maximum/GSAPI/baselib/state.cpp:
+sysdolphin_baselib/state.c:
 	.text       start:0x8025DF9C end:0x8025E8F4
 	.data       start:0x803FA060 end:0x803FA1C0
 	.bss        start:0x80493200 end:0x80493218
@@ -3313,44 +3313,44 @@ game/maximum/GSAPI/baselib/state.cpp:
 	.sbss       start:0x804CC840 end:0x804CC880
 	.sdata2     start:0x804CFFF8 end:0x804D0008
 
-game/maximum/GSAPI/baselib/tev.cpp:
+sysdolphin_baselib/tev.c:
 	.text       start:0x8025E8F4 end:0x8025F96C
 	.data       start:0x803FA1C0 end:0x803FA430
 	.bss        start:0x80493218 end:0x804932C0
 	.sbss       start:0x804CC880 end:0x804CC8A0
 	.sdata2     start:0x804D0008 end:0x804D0018
 
-game/maximum/GSAPI/baselib/texp.cpp:
+sysdolphin_baselib/texp.c:
 	.text       start:0x8025F96C end:0x80262BE8
 	.rodata     start:0x802F72B0 end:0x802F74F8
 	.data       start:0x803FA430 end:0x803FA558
 	.sdata2     start:0x804D0018 end:0x804D0050
 
-game/maximum/GSAPI/baselib/texpdag.cpp:
+sysdolphin_baselib/texpdag.c:
 	.text       start:0x80262BE8 end:0x80263BF8
 	.rodata     start:0x802F74F8 end:0x802F7540
 	.data       start:0x803FA558 end:0x803FA588
 	.sdata2     start:0x804D0050 end:0x804D0058
 	.sbss2      start:0x804D0A98 end:0x804D0AA0
 
-game/maximum/GSAPI/baselib/texpopt.cpp:
+sysdolphin_baselib/texpopt.c:
 	.text       start:0x80263BF8 end:0x80266644
 	.data       start:0x803FA588 end:0x803FA5C8
 	.sdata      start:0x804C93D8 end:0x804C93E0
 
-game/maximum/GSAPI/baselib/tobj.cpp:
+sysdolphin_baselib/tobj.c:
 	.text       start:0x80266644 end:0x80269BC4
 	.rodata     start:0x802F7540 end:0x802F7600
 	.data       start:0x803FA5C8 end:0x803FA970
 	.sbss       start:0x804CC8A0 end:0x804CC8A8
 	.sdata2     start:0x804D0058 end:0x804D00C8
 
-game/maximum/GSAPI/baselib/util.cpp:
+sysdolphin_baselib/util.c:
 	.text       start:0x80269BC4 end:0x80269D90
 	.data       start:0x803FA970 end:0x803FA998
 	.sdata2     start:0x804D00C8 end:0x804D00D8
 
-game/maximum/GSAPI/baselib/aobj.cpp:
+sysdolphin_baselib/aobj.c:
 	.text       start:0x80269D90 end:0x8026C5DC
 	.rodata     start:0x802F7600 end:0x802F7670
 	.data       start:0x803FA998 end:0x803FAE80

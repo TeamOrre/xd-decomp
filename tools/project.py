@@ -68,6 +68,7 @@ class Object:
             "shift_jis": None,
             "source": name,
             "src_dir": None,
+            "strip_prefix": None,
         }
         self.options.update(options)
 
@@ -115,7 +116,10 @@ class Object:
 
         # Resolve paths
         build_dir = config.out_path()
-        obj.src_path = Path(obj.options["src_dir"]) / obj.options["source"]
+        source = obj.options["source"]
+        if obj.options["strip_prefix"]:
+            source = source.removeprefix(obj.options["strip_prefix"])
+        obj.src_path = Path(obj.options["src_dir"]) / source
         if obj.options["asm_dir"] is not None:
             obj.asm_path = (
                 Path(obj.options["asm_dir"]) / obj.options["source"]
