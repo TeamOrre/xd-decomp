@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/mtx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 void C_QUATAdd(const Quaternion* p, const Quaternion* q, Quaternion* r) {
     ASSERTMSGLINE(77, p, "QUATAdd():  NULL QuaternionPtr 'p' ");
@@ -72,7 +72,7 @@ void C_QUATMultiply(const Quaternion* p, const Quaternion* q, Quaternion* pq) {
     r->x = (p->w * q->x) + (p->x * q->w) + (p->y * q->z) - (p->z * q->y);
     r->y = (p->w * q->y) + (p->y * q->w) + (p->z * q->x) - (p->x * q->z);
     r->z = (p->w * q->z) + (p->z * q->w) + (p->x * q->y) - (p->y * q->x);
-    
+
     if (r == &pqTmp) {
         *pq = pqTmp;
     }
@@ -84,7 +84,7 @@ void PSQUATMultiply(const register Quaternion* p, const register Quaternion* q, 
     register f32 pnxy, pnzw, pnxny, pnznw;
     register f32 rxy, rzw;
     register f32 sxy, szw;
-    
+
     asm {
         psq_l pxy, 0x0(p), 0, 0
         psq_l pzw, 0x8(p), 0, 0
@@ -123,7 +123,7 @@ void C_QUATScale(const Quaternion* q, Quaternion* r, f32 scale) {
 
 void PSQUATScale(const register Quaternion* q, register Quaternion* r, register f32 scale) {
     register f32 rxy, rzw;
-    
+
     asm {
         psq_l rxy, 0(q), 0, 0
         psq_l rzw, 8(q), 0, 0
@@ -165,13 +165,13 @@ void C_QUATNormalize(const Quaternion* src, Quaternion* unit) {
     mag = (src->x * src->x) + (src->y * src->y) + (src->z * src->z) + (src->w * src->w);
     if (mag >= 0.00001f) {
         mag = 1.0f / sqrtf(mag);
-    
+
         unit->x = src->x * mag;
         unit->y = src->y * mag;
         unit->z = src->z * mag;
         unit->w = src->w * mag;
     } else {
-        unit->x = unit->y = unit->z = unit->w = 0.0f;    
+        unit->x = unit->y = unit->z = unit->w = 0.0f;
     }
 }
 
@@ -291,7 +291,7 @@ void C_QUATExp(const Quaternion* q, Quaternion* r)  {
     if (theta > 0.00001f) {
         scale = sinf(theta) / theta;
     }
-    
+
     r->x = scale * q->x;
     r->y = scale * q->y;
     r->z = scale * q->z;
@@ -328,7 +328,7 @@ void C_QUATMakeClosest(const Quaternion* q, const Quaternion* qto, Quaternion* r
     ASSERTMSGLINE(722, q, "QUATMakeClosest():  NULL QuaternionPtr 'q' ");
     ASSERTMSGLINE(723, qto, "QUATMakeClosest():  NULL QuaternionPtr 'qto' ");
     ASSERTMSGLINE(724, r, "QUATMakeClosest():  NULL QuaternionPtr 'r' ");
-    
+
     dot = (q->x * qto->x) + (q->y * qto->y) + (q->z * qto->z) + (q->w * qto->w);
     if (dot < 0.0f) {
         r->x = -q->x;
@@ -392,11 +392,11 @@ void C_QUATMtx(Quaternion* r, const Mtx m) {
 
         s = sqrtf((m[i][i] - (m[j][j] + m[k][k])) + 1.0f);
         q[i] = s * 0.5f;
-        
+
         if (s != 0.0f) {
             s = 0.5f / s;
         }
-        
+
         r->w = (m[k][j] - m[j][k]) * s;
         q[j] = (m[i][j] + m[j][i]) * s;
         q[k] = (m[i][k] + m[k][i]) * s;
@@ -425,7 +425,7 @@ void C_QUATSlerp(const Quaternion* p, const Quaternion* q, Quaternion* r, f32 t)
     ASSERTMSGLINE(869, p, "QUATSlerp():  NULL QuaternionPtr 'p' ");
     ASSERTMSGLINE(870, q, "QUATSlerp():  NULL QuaternionPtr 'q' ");
     ASSERTMSGLINE(871, r, "QUATSlerp():  NULL QuaternionPtr 'r' ");
-    
+
     cos_th = p->x * q->x + p->y * q->y + p->z * q->z + p->w * q->w;
     tq = 1.0f;
 

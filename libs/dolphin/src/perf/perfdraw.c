@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/perf.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 #include "__perf.h"
 
@@ -91,14 +91,14 @@ static f32 FramePts[28] = {
 };
 
 static f32 CPUPts[4] = {
-    0.0f,  
+    0.0f,
     0.0f,
     616.0f,
     0.0f,
 };
 
 static f32 GPPts[4] = {
-    0.0f,  
+    0.0f,
     0.0f,
     616.0f,
     0.0f,
@@ -145,7 +145,7 @@ void PERFPreDraw(void) {
     }
 
     mProj[0][0] = 0.003125f;
-    mProj[1][1] = 0.004166667f; 
+    mProj[1][1] = 0.004166667f;
     mProj[2][2] = 1.0f;
     mProj[3][3] = 1.0f;
     mProj[0][3] = -0.95f;
@@ -328,68 +328,68 @@ static void DrawKey(void) {
     height = HEIGHT(delta, bwscale);
     if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawCPColor);
-        lastY += height; 
+        lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
     if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawTCColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawCPURDColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawCPUWRColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawDSPColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawIOColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawVIColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawPEColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawRFColor);
         lastY += height;
     }
-    
+
     delta = (foo[1] - foo[0]);
     height = HEIGHT(delta, bwscale);
-    if (height > 1.0f) { 
+    if (height > 1.0f) {
         DRAW_RECT(x1, x2, lastY, lastY + height, DrawFIColor);
         lastY += height;
     }
@@ -409,11 +409,11 @@ void PERFDumpScreen(void) {
 
     if (GameDrawInit) {
         samples = PERFFrames[PERFCurrFrame].samples;
-        
+
         if (bAutoScale) {
             DrawNumFrames = PERFFrames[PERFCurrFrame].end / (OS_CORE_CLOCK / 60) + 1;
         }
-        
+
         DrawFrameMax = (OS_CORE_CLOCK / 60) * DrawNumFrames;
         DrawFrameW = 616.0f / DrawNumFrames;
         allX = COORD(PERFFrames[PERFCurrFrame].end);
@@ -456,7 +456,7 @@ void PERFDumpScreen(void) {
 
         GXBegin(GX_LINES, GX_VTXFMT0, 2);
         GXPosition3f32(0.0f, 0.0f, -1.0f);
-        GXPosition3f32(COORD(PERFFrames[PERFCurrFrame].cachemisscycles), 0.0f, -1.0f); 
+        GXPosition3f32(COORD(PERFFrames[PERFCurrFrame].cachemisscycles), 0.0f, -1.0f);
         GXEnd();
 
         if (bDrawBWBar) {
@@ -466,7 +466,7 @@ void PERFDumpScreen(void) {
             GXBegin(GX_QUADS, GX_VTXFMT0, 4);
             GXPosition3f32(0.0f, lastY, -1.0f);
             GXPosition3f32(0.0f, 140.0f + lastY, -1.0f);
-            GXPosition3f32(allX, 140.0f + lastY, -1.0f); 
+            GXPosition3f32(allX, 140.0f + lastY, -1.0f);
             GXPosition3f32(allX, lastY, -1.0f);
             GXEnd();
         }
@@ -503,7 +503,7 @@ void PERFDumpScreen(void) {
         if (bDrawRASBar) {
             lastY = 50.0f + (21.0f + (50.0f + (140.0f + (7.0f + DrawFrameH))));
             GXSetChanMatColor(GX_COLOR0A0, DrawGPUBarColor);
-            GXBegin(GX_QUADS, GX_VTXFMT0, 4); 
+            GXBegin(GX_QUADS, GX_VTXFMT0, 4);
             GXPosition3f32(0.0f, lastY, -1.0f);
             GXPosition3f32(0.0f, 50.0f + lastY, -1.0f);
             GXPosition3f32(allX, 50.0f + lastY, -1.0f);
@@ -522,7 +522,7 @@ void PERFDumpScreen(void) {
                         GXSetLineWidth(32, GX_TO_ZERO);
                         GXBegin(GX_LINES, GX_VTXFMT0, 2);
                         GXPosition3f32(COORD(samples[s].cpuTimeStampStart), (f32) ((id + 1) * 7), -1.0f);
-                        GXPosition3f32(COORD(samples[s].cpuTimeStampEnd), (f32) ((id + 1) * 7), -1.0f); 
+                        GXPosition3f32(COORD(samples[s].cpuTimeStampEnd), (f32) ((id + 1) * 7), -1.0f);
                         GXEnd();
                         delta = samples[s].cacheMisses[3] - samples[s].cacheMisses[2];
                         if (delta) {
@@ -545,7 +545,7 @@ void PERFDumpScreen(void) {
                                 GXEnd();
 
                                 DrawBWBar(&samples[s]);
-                                
+
                                 GXSetChanMatColor(GX_COLOR0A0, DrawConnectColor);
                                 GXSetLineWidth(6, GX_TO_ZERO);
                                 GXBegin(GX_LINES, GX_VTXFMT0, 4);
@@ -563,7 +563,7 @@ void PERFDumpScreen(void) {
                                 GXEnd();
 
                                 DrawBWBar(&samples[s]);
-                                
+
                                 GXSetChanMatColor(GX_COLOR0A0, DrawConnectColor);
                                 GXSetLineWidth(6, GX_TO_ZERO);
                                 GXBegin(GX_LINES, GX_VTXFMT0, 4);
@@ -666,23 +666,23 @@ void PERFSetDrawRASBar(BOOL tf) {
 }
 
 void PERFToggleDrawBWBarKey(void) {
-    bDrawBWBarKey = (bDrawBWBarKey) ? FALSE : TRUE; 
+    bDrawBWBarKey = (bDrawBWBarKey) ? FALSE : TRUE;
 }
 
 void PERFToggleDrawBWBar(void) {
-    bDrawBWBar = (bDrawBWBar) ? FALSE : TRUE; 
+    bDrawBWBar = (bDrawBWBar) ? FALSE : TRUE;
 }
 
 void PERFToggleDrawCPUBar(void) {
-    bDrawCPUBar = (bDrawCPUBar) ? FALSE : TRUE; 
+    bDrawCPUBar = (bDrawCPUBar) ? FALSE : TRUE;
 }
 
 void PERFToggleDrawXFBars(void) {
-    bDrawXFBars = (bDrawXFBars) ? FALSE : TRUE; 
+    bDrawXFBars = (bDrawXFBars) ? FALSE : TRUE;
 }
 
 void PERFToggleDrawRASBar(void) {
-    bDrawRASBar = (bDrawRASBar) ? FALSE : TRUE; 
+    bDrawRASBar = (bDrawRASBar) ? FALSE : TRUE;
 }
 
 void PERFSetDrawFrames(u32 frames) {

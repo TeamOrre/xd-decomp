@@ -1,7 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/ax.h>
 #include <dolphin/syn.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 #include "__syn.h"
 
@@ -140,7 +140,7 @@ static void __SYNSetupPcm16(SYNVOICE* voice) {
         sampleStart = voice->synth->aramBaseWord + voice->sample->offset;
         sampleLoop = voice->synth->zeroBaseWord;
         sampleEnd = sampleStart + voice->sample->length - 1;
-        
+
         p = (u32*)&axvpb->pb.addr;
         *(p) = 0x0000A; p += 1;
         *(p) = sampleLoop; p += 1;

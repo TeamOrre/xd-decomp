@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/mtx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 static f32 Unit01[2] = {
     0.0f,
@@ -356,11 +356,11 @@ u32 C_MTXInverse(const Mtx src, Mtx inv) {
     } else {
         m = inv;
     }
-    det = ((((src[2][1] * (src[0][2] * src[1][0])) 
-          + ((src[2][2] * (src[0][0] * src[1][1])) 
-           + (src[2][0] * (src[0][1] * src[1][2])))) 
-           - (src[0][2] * (src[2][0] * src[1][1]))) 
-           - (src[2][2] * (src[1][0] * src[0][1]))) 
+    det = ((((src[2][1] * (src[0][2] * src[1][0]))
+          + ((src[2][2] * (src[0][0] * src[1][1]))
+           + (src[2][0] * (src[0][1] * src[1][2]))))
+           - (src[0][2] * (src[2][0] * src[1][1])))
+           - (src[2][2] * (src[1][0] * src[0][1])))
            - (src[1][2] * (src[0][0] * src[2][1]));
     if (0 == det) {
         return 0;
@@ -466,11 +466,11 @@ u32 C_MTXInvXpose(const Mtx src, Mtx invX) {
     } else {
         m = invX;
     }
-    det = ((((src[2][1] * (src[0][2] * src[1][0])) 
-          + ((src[2][2] * (src[0][0] * src[1][1])) 
-          +  (src[2][0] * (src[0][1] * src[1][2])))) 
-          -  (src[0][2] * (src[2][0] * src[1][1]))) 
-          -  (src[2][2] * (src[1][0] * src[0][1]))) 
+    det = ((((src[2][1] * (src[0][2] * src[1][0]))
+          + ((src[2][2] * (src[0][0] * src[1][1]))
+          +  (src[2][0] * (src[0][1] * src[1][2]))))
+          -  (src[0][2] * (src[2][0] * src[1][1])))
+          -  (src[2][2] * (src[1][0] * src[0][1])))
           -  (src[1][2] * (src[0][0] * src[2][1]));
     if (0 == det) {
         return 0;

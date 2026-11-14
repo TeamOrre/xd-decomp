@@ -1,0 +1,24 @@
+#ifndef MSL_CSTDIO_H_
+#define MSL_CSTDIO_H_
+
+#include <stdio.h>
+
+#ifdef __cplusplus
+
+namespace std {
+    using ::fputs;
+    using ::fflush;
+    using ::fclose;
+    using ::fprintf;
+    using ::printf;
+    using ::sprintf;
+    using ::snprintf;
+    using ::vsnprintf;
+    using ::vprintf;
+    using ::vswprintf;
+    using ::sscanf;
+}
+
+#endif
+
+#endif

@@ -1,5 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/os.h>
+#include <string.h>
 
 #include "__os.h"
 
@@ -122,7 +123,7 @@ _restore:
 
 __OSInterruptHandler __OSSetInterruptHandler(__OSInterrupt interrupt, __OSInterruptHandler handler) {
     __OSInterruptHandler oldHandler;
- 
+
     ASSERTMSGLINE(411, InterruptHandlerTable, "__OSSetInterruptHandler(): OSInit() must be called in advance.");
     ASSERTMSGLINE(413, interrupt < 0x20, "__OSSetInterruptHandler(): unknown interrupt.");
 
@@ -294,7 +295,7 @@ static u32 SetInterruptMask(OSInterruptMask mask, OSInterruptMask current) {
     return mask;
 }
 
-OSInterruptMask OSGetInterruptMask(void) { 
+OSInterruptMask OSGetInterruptMask(void) {
     return *(OSInterruptMask *)OSPhysicalToCached(0x00C8);
 }
 
@@ -500,7 +501,7 @@ void __OSDispatchInterrupt(__OSException exception, OSContext* context) {
 static asm void ExternalInterruptHandler(register __OSException exception,
                                          register OSContext* context) {
 #pragma unused(exception)
-    nofralloc 
+    nofralloc
     OS_EXCEPTION_SAVE_GPRS(context)
 
     stwu r1, -0x8(r1)

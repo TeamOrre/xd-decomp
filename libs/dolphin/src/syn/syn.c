@@ -3,7 +3,7 @@
 #include <dolphin/ax.h>
 #include <dolphin/mix.h>
 #include <dolphin/syn.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 #include "__syn.h"
 
@@ -34,7 +34,7 @@ static void __SYNRemoveSynthFromList(SYNSYNTH* synth) {
     old = OSDisableInterrupts();
     tempHead = NULL;
     tempTail = NULL;
-    
+
     for (tempSynth = __SYNSynthList; tempSynth; tempSynth = tempSynth->next) {
         if (tempSynth != synth) {
             if (tempHead) {

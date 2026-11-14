@@ -1,5 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/card.h>
+#include <string.h>
 
 #include "__card.h"
 
@@ -20,7 +21,7 @@ s32 __CARDGetStatusEx(s32 chan, s32 fileNo, CARDDir* dirent) {
         if (result < 0) {
             return result;
         }
-    
+
         dir = __CARDGetDirBlock(card);
         ent = &dir[fileNo];
         result = __CARDIsReadable(card, ent);
@@ -85,9 +86,9 @@ s32 __CARDSetStatusExAsync(s32 chan, s32 fileNo, CARDDir* dirent, CARDCallback c
         for(i = 0; i < CARD_MAX_FILE; i++) {
             if (i != fileNo) {
                 CARDDir* ent = &dir[i]; // sure, just redeclare ent again...
-                if (((u8) ent->gameName[0] != 0xFF) 
-                    && (memcmp(&ent->gameName, &dirent->gameName, 4) == 0) 
-                    && (memcmp(&ent->company, &dirent->company, 2) == 0) 
+                if (((u8) ent->gameName[0] != 0xFF)
+                    && (memcmp(&ent->gameName, &dirent->gameName, 4) == 0)
+                    && (memcmp(&ent->company, &dirent->company, 2) == 0)
                     && (memcmp(&ent->fileName, &dirent->fileName, 0x20) == 0)) {
                         return __CARDPutControlBlock(card, -7);
                 }

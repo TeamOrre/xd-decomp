@@ -1,7 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/ax.h>
 #include <dolphin/axfx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 #include "__axfx.h"
 
@@ -60,10 +60,10 @@ static int ReverbSTDCreate(AXFX_REVSTD_WORK* rv, f32 coloration, f32 time, f32 m
 				  predelay >= 0.0f && predelay <= 0.1f,
 				  "The value of specified parameter is out of range.");
 
-    if ((coloration < 0.0f ) || (coloration > 1.0f ) 
-     || (time       < 0.01f) || (time       > 10.0f) 
-     || (mix        < 0.0f ) || (mix        > 1.0f ) 
-     || (damping    < 0.0f ) || (damping    > 1.0f ) 
+    if ((coloration < 0.0f ) || (coloration > 1.0f )
+     || (time       < 0.01f) || (time       > 10.0f)
+     || (mix        < 0.0f ) || (mix        > 1.0f )
+     || (damping    < 0.0f ) || (damping    > 1.0f )
      || (predelay   < 0.0f ) || (predelay   > 0.1f )) {
         return 0;
     }
@@ -107,7 +107,7 @@ static int ReverbSTDCreate(AXFX_REVSTD_WORK* rv, f32 coloration, f32 time, f32 m
 				ReverbSTDFree(rv);
 				return 0;
 			}
-			
+
 			memset(rv->preDelayLine[i], 0, rv->preDelayTime * 4);
             rv->preDelayPtr[i] = rv->preDelayLine[i];
         }
@@ -133,10 +133,10 @@ static int ReverbSTDModify(AXFX_REVSTD_WORK* rv, f32 coloration, f32 time, f32 m
 				  "The value of specified parameter is out of range.");
 
 
-    if ((coloration < 0.0f ) || (coloration > 1.0f ) 
-     || (time       < 0.01f) || (time       > 10.0f) 
-     || (mix        < 0.0f ) || (mix        > 1.0f ) 
-     || (damping    < 0.0f ) || (damping    > 1.0f ) 
+    if ((coloration < 0.0f ) || (coloration > 1.0f )
+     || (time       < 0.01f) || (time       > 10.0f)
+     || (mix        < 0.0f ) || (mix        > 1.0f )
+     || (damping    < 0.0f ) || (damping    > 1.0f )
      || (predelay   < 0.0f ) || (predelay   > 0.1f )) {
         return 0;
     }

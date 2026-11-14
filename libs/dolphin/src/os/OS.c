@@ -3,6 +3,7 @@
 #include <dolphin/os.h>
 #include <dolphin/si.h>
 #include <dolphin/db.h>
+#include <string.h>
 
 #include "__os.h"
 

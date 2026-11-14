@@ -1,6 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/pad.h>
 #include <dolphin/si.h>
+#include <string.h>
 
 #include "__si.h"
 
@@ -122,7 +123,7 @@ static void DoReset() {
         ASSERTLINE(559, 0 <= ResettingChan && ResettingChan < SI_MAX_CHAN);
         chanBit = (PAD_CHAN0_BIT >> ResettingChan);
         ResettingBits &= ~chanBit;
-        
+
         memset(&Origin[ResettingChan], 0, sizeof(PADStatus));
         SIGetTypeAsync(ResettingChan, PADTypeAndStatusCallback);
     }
@@ -200,7 +201,7 @@ static void PADProbeCallback(s32 chan, u32 error, OSContext* context) {
     ASSERTLINE(710, 0 <= ResettingChan && ResettingChan < SI_MAX_CHAN);
     ASSERTLINE(711, chan == ResettingChan);
     ASSERTLINE(713, (Type[chan] & SI_WIRELESS_CONT_MASK) == SI_WIRELESS_CONT && !(Type[chan] & SI_WIRELESS_LITE));
-    
+
     if (!(error & (SI_ERROR_UNDER_RUN | SI_ERROR_OVER_RUN | SI_ERROR_NO_RESPONSE | SI_ERROR_COLLISION)))
     {
         PADEnable(ResettingChan);
@@ -360,7 +361,7 @@ BOOL PADInit() {
     if (Initialized) {
         return 1;
     }
-    
+
     OSRegisterVersion(__PADVersion);
 
     if (__PADSpec)
@@ -373,7 +374,7 @@ BOOL PADInit() {
         __OSWirelessPadFixMode
             = (u16)((((time)&0xffff) + ((time >> 16) & 0xffff) + ((time >> 32) & 0xffff) + ((time >> 48) & 0xffff))
                     & 0x3fffu);
-    
+
         RecalibrateBits = PAD_CHAN0_BIT | PAD_CHAN1_BIT | PAD_CHAN2_BIT | PAD_CHAN3_BIT;
     }
 
@@ -438,7 +439,7 @@ u32 PADRead(PADStatus* status) {
                 if (!(SIGetType(chan) & SI_GC_NOMOTOR)) {
                     motor |= chanBit;
                 }
-    
+
                 if (!SIGetResponse(chan, &data)) {
                     status->err = PAD_ERR_TRANSFER;
                     memset(status, 0, offsetof(PADStatus, err));
@@ -447,19 +448,19 @@ u32 PADRead(PADStatus* status) {
                     memset(status, 0, offsetof(PADStatus, err));
                 } else {
                     MakeStatus(chan, status, data);
-    
+
                     // Check and clear PAD_ORIGIN bit
                     if (status->button & 0x2000) {
                         status->err = PAD_ERR_TRANSFER;
                         memset(status, 0, offsetof(PADStatus, err));
-        
+
                         // Get origin. It is okay if the following transfer fails
                         // since the PAD_ORIGIN bit remains until the read origin
                         // command complete.
                         SITransfer(chan, &CmdReadOrigin, 1, &Origin[chan], 10, PADOriginUpdateCallback, 0);
                     } else {
                         status->err = PAD_ERR_NONE;
-        
+
                         // Clear PAD_INTERFERE bit
                         status->button &= ~0x0080;
                     }
@@ -836,6 +837,6 @@ BOOL PADIsBarrel(s32 chan) {
     if (BarrelBits & (PAD_CHAN0_BIT >> chan)) {
         return TRUE;
     }
-    
+
     return FALSE;
 }

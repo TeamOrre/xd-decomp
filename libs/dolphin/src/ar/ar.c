@@ -1,6 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/ar.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
+#include <string.h>
 
 #include "__ar.h"
 
@@ -41,7 +42,7 @@ ARQCallback ARRegisterDMACallback(ARQCallback callback) {
 u32 ARGetDMAStatus(void) {
     BOOL old;
     u32 val;
-    
+
     old = OSDisableInterrupts();
     val = __DSPRegs[5] & 0x200;
     OSRestoreInterrupts(old);
@@ -55,7 +56,7 @@ void ARStartDMA(u32 type, u32 mainmem_addr, u32 aram_addr, u32 length) {
     ASSERTMSGLINE(376, !(__DSPRegs[5] & 0x200), "ARAM DMA already in progress\n");
     ASSERTMSGLINE(377, !(mainmem_addr & 0x1F), "AR: Main memory address is not a multiple of 32 bytes!\n");
     ASSERTMSGLINE(378, !(length & 0x1F), "AR: DMA transfer length is not a multiple of 32 bytes!\n");
-    __DSPRegs[16] = (__DSPRegs[16] & 0xFFFFFC00 | (mainmem_addr >> 0x10)); 
+    __DSPRegs[16] = (__DSPRegs[16] & 0xFFFFFC00 | (mainmem_addr >> 0x10));
     __DSPRegs[17] = (__DSPRegs[17] & 0xFFFF001F | ((u16)mainmem_addr));
     __DSPRegs[18] = (__DSPRegs[18] & 0xFFFFFC00 | (aram_addr >> 0x10));
     __DSPRegs[19] = (__DSPRegs[19] & 0xFFFF001F | ((u16)aram_addr));
@@ -438,7 +439,7 @@ static void __ARClearArea(u32 start_addr, u32 length) {
 
     while (curr_addr < end_addr) {
         remainder = end_addr - curr_addr;
- 
+
         curr_len = OSRoundUp32B(remainder < 0x800 ? remainder : 0x800);
         __ARWriteDMA((u32)ptr, curr_addr, curr_len);
         curr_addr += curr_len;

@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/mtx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 asm void PSMTXReorder(const register Mtx src, register ROMtx dest) {
     psq_l f0, 0(src), 0, 0

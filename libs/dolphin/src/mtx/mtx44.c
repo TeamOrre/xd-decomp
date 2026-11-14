@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/mtx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 static f32 mtxUnit[] = {0.0f, 1.0f, 0.5f, 3.0f};
 
@@ -467,11 +467,11 @@ void C_MTX44TransApply(const Mtx44 src, Mtx44 dst, f32 xT, f32 yT, f32 zT) {
         dst[0][0] = src[0][0];
         dst[0][1] = src[0][1];
         dst[0][2] = src[0][2];
-    
+
         dst[1][0] = src[1][0];
         dst[1][1] = src[1][1];
         dst[1][2] = src[1][2];
-    
+
         dst[2][0] = src[2][0];
         dst[2][1] = src[2][1];
         dst[2][2] = src[2][2];
@@ -759,7 +759,7 @@ void PSMTX44RotTrig(register Mtx44 m, register char axis, register f32 sinA, reg
         psq_st ftmp2, 0x28(m), 0, 0
         psq_st ftmp3, 0x38(m), 0, 0
         psq_st ftmp4, 0x0(m), 0, 0
-    L_00001B54:    
+    L_00001B54:
     }
 }
 

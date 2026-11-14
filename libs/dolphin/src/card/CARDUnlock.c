@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include <dolphin.h>
 #include <dolphin/card.h>
 
@@ -320,7 +321,7 @@ static void InitCallback(void* _task) {
     }
 
     ASSERTLINE(514, 0 <= chan && chan < 2);
-    
+
     param = (CARDDecParam*)card->workArea;
 
     DSPSendMailToDSP(0xff000000);
