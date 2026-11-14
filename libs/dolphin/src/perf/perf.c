@@ -1,7 +1,8 @@
 #include <dolphin.h>
 #include <dolphin/gx.h>
 #include <dolphin/perf.h>
-#include "fake_tgmath.h"
+#include <string.h>
+#include <dolphin/sdk_math.h>
 
 #include "__perf.h"
 #include "../gx/__gx.h"
@@ -202,11 +203,11 @@ u32 PERFInit(u32 numSamples, u32 numFramesHistory, u32 numTypes, PERFAllocator a
     PERFNumFrames = numFramesHistory;
     PERFNumEvents = numTypes;
     PERFNumSamples = numSamples;
-    
+
     size = (numFramesHistory * 0x10);
     size += (numFramesHistory * (numSamples * 0xB0));
     size += (numTypes* 0x10);
-    
+
     PERFFrames = (Frame*)PerfAlloc(numFramesHistory * 0x10);
 
     for (i = 0; i < PERFNumFrames; i++) {
@@ -237,7 +238,7 @@ void PERFSetEvent(u8 id, char* name, PerfType type) {
 }
 
 void PERFSetEventColor(u8 id, GXColor color) {
-    PERFEvents[id].color = color; 
+    PERFEvents[id].color = color;
 }
 
 void PERFStartFrame(void) {
@@ -248,7 +249,7 @@ void PERFStartFrame(void) {
     GXSetDrawSyncCallback(PERFTokenCallback);
     PERFFrames[PERFCurrFrame].lastSample = 0;
     PERFResetAllMemMetrics();
-    GXClearGPMetric(); 
+    GXClearGPMetric();
     PPCMtpmc1(0);
     PPCMtpmc2(0);
     PPCMtpmc3(0);

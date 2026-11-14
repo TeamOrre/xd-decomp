@@ -1,4 +1,4 @@
-#include <math.h>
+#include <dolphin/sdk_math.h>
 #include <dolphin/gx.h>
 #include <dolphin/os.h>
 
@@ -242,7 +242,7 @@ void GXInitSpecularDir(GXLightObj* lt_obj, f32 nx, f32 ny, f32 nz) {
     if (mag != 0.0f) {
         mag = 1.0f / sqrtf(mag);
     }
-    
+
     obj->ldir[0] = vx * mag;
     obj->ldir[1] = vy * mag;
     obj->ldir[2] = vz * mag;
@@ -553,7 +553,7 @@ void GXSetChanCtrl(GXChannelID chan, GXBool enable, GXColorSrc amb_src, GXColorS
     SET_REG_FIELD(907, reg, 1, 1, enable);
     SET_REG_FIELD(908, reg, 1, 0, mat_src);
     SET_REG_FIELD(909, reg, 1, 6, amb_src);
-    
+
     SET_REG_FIELD(911, reg, 2, 7, (attn_fn == 0) ? 0 : diff_fn);
     SET_REG_FIELD(912, reg, 1, 9, (attn_fn != 2));
     SET_REG_FIELD(913, reg, 1, 10, (attn_fn != 0));
@@ -562,7 +562,7 @@ void GXSetChanCtrl(GXChannelID chan, GXBool enable, GXColorSrc amb_src, GXColorS
     SET_REG_FIELD(926, reg, 4, 11, (light_mask >> 4) & 0xF);
 
     GX_WRITE_XF_REG(idx + 14, reg);
-    
+
     if (chan == GX_COLOR0A0) {
         GX_WRITE_XF_REG(16, reg);
     } else if (chan == GX_COLOR1A1) {

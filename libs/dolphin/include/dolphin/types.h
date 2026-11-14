@@ -21,6 +21,7 @@ typedef volatile unsigned long long int vu64;
 
 typedef float  f32;
 typedef double f64;
+typedef long double f128;
 
 typedef char *Ptr;
 
@@ -58,16 +59,15 @@ typedef int BOOL;
 #endif
 #endif
 
-#define INT_MAX 2147483647
-
 #ifndef NULL
 #define NULL ((void*)0)
 #endif
 
-#include "libc/stdio.h"
-#include "libc/stdarg.h"
-#include "libc/string.h"
-#include "libc/ctype.h"
+#ifdef __MWERKS__
+#define __REGISTER register
+#else
+#define __REGISTER
+#endif
 
 #include "cmath.h"
 

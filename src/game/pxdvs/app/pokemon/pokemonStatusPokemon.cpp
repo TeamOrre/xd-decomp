@@ -1,3 +1,4 @@
+#include <string.h>
 #include <game/pxdvs/app/pokemon/pokemon.hpp>
 #include <game/pxdvs/app/pokemon/pokemonBios.hpp>
 #include <game/pxdvs/app/pokemon/pokemonDB.hpp>
@@ -50,7 +51,7 @@ const u16* DarkPokemon::getTrainerName() const {
 }
 void DarkPokemon::setStatusRnd(u8 idx, u8 data) {
     if (idx < 6) {
-        statusRnd[idx] = data;        
+        statusRnd[idx] = data;
     }
 }
 u8 DarkPokemon::getStatusRnd(u8 idx) const {
@@ -123,7 +124,7 @@ void DarkPokemon::setWazaNew(u8 idx, bool data) {
         bits0x0.wazaNew &= ~(1 << idx);
     }
 }
-bool DarkPokemon::isWazaNew(u8 idx) const { 
+bool DarkPokemon::isWazaNew(u8 idx) const {
     if (idx >= 3) {
         return false;
     }

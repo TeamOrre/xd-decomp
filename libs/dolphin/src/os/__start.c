@@ -1,5 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/os.h>
+#include <string.h>
 
 #include "__os.h"
 
@@ -59,11 +60,11 @@ static void __check_pad3(void) {
 	}
 }
 
-static void __set_debug_bba(void) { 
+static void __set_debug_bba(void) {
     Debug_BBA = 1;
 }
 
-static u8 __get_debug_bba(void) { 
+static u8 __get_debug_bba(void) {
     return Debug_BBA;
 }
 
@@ -122,7 +123,7 @@ _goto_inittrk:
 	addi r6, r6, InitMetroTRK@l
 	mtlr r6
 	blrl
-	
+
 _goto_main:
 	lis r6, BOOTINFO2_ADDR@ha
 	addi r6, r6, BOOTINFO2_ADDR@l

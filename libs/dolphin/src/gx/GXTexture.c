@@ -1,5 +1,6 @@
 #include <dolphin/gx.h>
 #include <dolphin/os.h>
+#include <string.h>
 
 #include "__gx.h"
 
@@ -208,7 +209,7 @@ void GXInitTexObj(GXTexObj* obj, void* image_ptr, u16 width, u16 height, GXTexFm
         } else {
             maxLOD = 31 - __cntlzw(height);
         }
-    
+
         lmax = 16.0f * maxLOD;
         SET_REG_FIELD(632, t->mode1, 8, 8, lmax);
     } else {
@@ -961,7 +962,7 @@ GXTlutRegionCallback GXSetTlutRegionCallback(GXTlutRegionCallback f) {
 
 void GXPreLoadEntireTexture(GXTexObj* tex_obj, GXTexRegion* region) {
     GXBool isMipMap;
-    GXBool is32bit; 
+    GXBool is32bit;
     u32 wd;
     u32 ht;
     u32 maxLevelIndex;
@@ -969,20 +970,20 @@ void GXPreLoadEntireTexture(GXTexObj* tex_obj, GXTexRegion* region) {
     u32 loadImage1;
     u32 loadImage2;
     u32 loadImage3;
-    u32 base; 
-    u32 tmem1; 
-    u32 tmem2; 
+    u32 base;
+    u32 tmem1;
+    u32 tmem2;
     u32 tmemAR;
     u32 tmemGB;
     u32 nTiles;
 #if DEBUG
-    u32 totalOdd; 
+    u32 totalOdd;
     u32 totalEven;
-    u32 count; 
+    u32 count;
 #endif
-    u32 rowTiles; 
-    u32 colTiles; 
-    u32 cmpTiles; 
+    u32 rowTiles;
+    u32 colTiles;
+    u32 cmpTiles;
     u32 i;
     __GXTexObjInt* t = (__GXTexObjInt*)tex_obj;
     __GXTexRegionInt* r = (__GXTexRegionInt*)region;

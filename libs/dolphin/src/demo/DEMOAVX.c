@@ -1,7 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/gx.h>
 #include <demo.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 static s16 __AVX_internal_buffer[3200] ATTRIBUTE_ALIGN(32);
 
@@ -105,7 +105,7 @@ void DEMOAVXAttach(void* buffer, u32 num_frames) {
     __AVX_num_frames = num_frames;
     __AVX_num_filled = 0;
     __AVX_curr_frame = 0;
-    
+
     for (i = 0; i < num_frames * 320; i++) {
         __AVX_buffer[i] = 0;
     }

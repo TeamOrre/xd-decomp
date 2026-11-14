@@ -1,4 +1,4 @@
-#include <math.h>
+#include <dolphin/sdk_math.h>
 #include <dolphin/gx.h>
 #include <dolphin/os.h>
 
@@ -38,7 +38,7 @@ void GXSetFog(GXFogType type, f32 startz, f32 endz, f32 nearz, f32 farz, GXColor
 
     fsel = type & 7;
     proj = (type >> 3) & 1;
-    
+
     if (proj) {
         if (farz == nearz || endz == startz) {
             a = 0.0f;

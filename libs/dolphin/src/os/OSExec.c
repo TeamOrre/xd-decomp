@@ -1,5 +1,7 @@
 #include <dolphin.h>
 #include <dolphin/os.h>
+#include <string.h>
+#include <stdio.h>
 
 #include "__os.h"
 #include "__dvd.h"
@@ -61,7 +63,7 @@ static asm void Run(register void* entryPoint) {
     mr r31, entryPoint
     bl ICFlashInvalidate
     sync
-    isync 
+    isync
     mtlr r31
     blr
 
@@ -91,7 +93,7 @@ static void ReadDisc(void* addr, s32 length, s32 offset) {
 
     DVDReadAbsAsyncPrio(&block, addr, length, offset, NULL, 0);
 
-#if SDK_REVISION < 1    
+#if SDK_REVISION < 1
     start = OSGetTime();
 #endif
 

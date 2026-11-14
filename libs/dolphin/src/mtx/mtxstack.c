@@ -1,6 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/mtx.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 void MTXInitStack(MTXStack* sPtr, u32 numMtx) {
     ASSERTMSGLINE(74, sPtr, "MTXInitStack():  NULL MtxStackPtr 'sPtr' ");
@@ -87,7 +87,7 @@ MtxPtr MTXPushInvXpose(MTXStack* sPtr, const Mtx m) {
 MtxPtr MTXPop(MTXStack* sPtr) {
     ASSERTMSGLINE(328, sPtr, "MTXPop():  NULL MtxStackPtr 'sPtr' ");
     ASSERTMSGLINE(329, sPtr->stackBase, "MTXPop():  'sPtr' contains a NULL ptr to stack memory ");
-    
+
     if (sPtr->stackPtr == NULL) {
         return NULL;
     }

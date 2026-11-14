@@ -2,7 +2,7 @@
 #include <dolphin/ax.h>
 #include <dolphin/mix.h>
 #include <dolphin/syn.h>
-#include "fake_tgmath.h"
+#include <dolphin/sdk_math.h>
 
 #include "__syn.h"
 
@@ -386,7 +386,7 @@ static void __SYNNoteOn(SYNSYNTH* synth, u8 midiChannel, u8 keyNum, u8 keyVel) {
         }
 
         axvpb = AXAcquireVoice(synth->priorityVoiceAlloc, &__SYNClearVoiceReferences, (u32)synth);
-        
+
         if (axvpb) {
             voice = &__SYNVoice[axvpb->index];
             voice->axvpb = axvpb;

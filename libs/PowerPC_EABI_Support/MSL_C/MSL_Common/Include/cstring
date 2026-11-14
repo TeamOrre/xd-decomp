@@ -1,0 +1,35 @@
+#ifndef _MSL_CSTRING_H
+#define _MSL_CSTRING_H
+
+#include <string.h>
+
+#ifdef __cplusplus
+namespace std {
+using ::memcpy;
+using ::memset;
+using ::memcmp;
+using ::memchr;
+using ::memmove;
+
+using ::strlen;
+using ::strncmp;
+using ::strcmp;
+using ::strcat;
+using ::strncpy;
+using ::strcpy;
+
+using ::strnicmp;
+using ::stricmp;
+using ::wcslen;
+
+inline char* strchr(char* str, int c) {
+    return ::strchr(str, c);
+}
+
+inline char* strrchr(char* str, int c) {
+    return ::strrchr(str, c);
+}
+}
+#endif
+
+#endif /* _MSL_COMMON_STRING_H */

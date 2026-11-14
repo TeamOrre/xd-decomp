@@ -1,5 +1,6 @@
 #include <dolphin.h>
 #include <dolphin/dvd.h>
+#include <string.h>
 
 #include "__dvd.h"
 

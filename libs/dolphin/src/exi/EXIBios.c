@@ -1,4 +1,5 @@
 #include <dolphin.h>
+#include <string.h>
 
 #define REG_MAX 5
 #define REG(chan, idx) (__EXIRegs[((chan) * REG_MAX) + (idx)])
@@ -123,7 +124,7 @@ int EXIImm(s32 chan, void* buf, s32 len, u32 type, EXICallback callback) {
     }
 
     exi->immBuf = buf;
-    exi->immLen = (type != 1) ? len : 0; 
+    exi->immLen = (type != 1) ? len : 0;
     __EXIRegs[(chan * 5) + 3] = (type << 2) | 1 | ((len - 1) << 4);
     OSRestoreInterrupts(enabled);
     return 1;
@@ -310,7 +311,7 @@ int EXIProbe(s32 chan) {
     EXIControl* exi = &Ecb[chan];
     int rc;
     u32 id;
-    
+
     rc = __EXIProbe(chan);
     if (rc && !exi->idTime) {
         rc = EXIGetID(chan, 0, &id) ? 1 : 0;
@@ -582,7 +583,7 @@ static void EXTIntrruptHandler(__OSInterrupt interrupt, OSContext* context) {
 
     if (callback) {
         OSContext exceptionContext;
-        
+
         OSClearContext(&exceptionContext);
         OSSetCurrentContext(&exceptionContext);
         exi->extCallback = NULL;
@@ -753,7 +754,7 @@ s32 EXIGetID(s32 chan, u32 dev, u32* id) {
         EXIDetach(chan);
         enabled = OSDisableInterrupts();
         err |= __gUnknown800030C0[chan] != startTime;
-        
+
         if (!err) {
             exi->id = *id;
             exi->idTime = startTime;
@@ -804,13 +805,13 @@ s32 EXIGetType(s32 chan, u32 dev, u32* type) {
                 case EXI_MEMORY_CARD_1019:
                 case EXI_MEMORY_CARD_2043:
                     *type = _type & 0xFC;
-                    return probe;    
+                    return probe;
                 }
             }
             break;
         case EXI_IS_VIEWER:
             *type = EXI_IS_VIEWER;
-            return probe;                
+            return probe;
         }
 
         *type = _type;

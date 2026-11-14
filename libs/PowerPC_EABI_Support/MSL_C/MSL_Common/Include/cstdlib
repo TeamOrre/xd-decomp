@@ -1,0 +1,20 @@
+#ifndef MSL_CSTDLIB_H_
+#define MSL_CSTDLIB_H_
+
+#include <stdlib.h>
+
+#ifdef __cplusplus
+
+namespace std {
+    using ::strtol;
+    using ::strtoul;
+    using ::div;
+    using ::exit;
+    using ::abort;
+    using ::atoi;
+    using ::atof;
+}
+
+#endif
+
+#endif

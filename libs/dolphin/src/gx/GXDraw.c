@@ -1,4 +1,4 @@
-#include <math.h>
+#include <dolphin/sdk_math.h>
 
 #include <dolphin/gx.h>
 #include <dolphin/os.h>
