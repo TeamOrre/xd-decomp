@@ -288,21 +288,21 @@ Pokemon * Hero::getPokemon(s32 partySlot, bool &isHatena) {
   isHatena = false;
 
   if (!pokemon) {
-    return nullptr;
+    return NULL;
   }
 
   pokemonDataID = pokemon->getPokemonDataId();
   if (!pokemonDataID) {
-    return nullptr;
+    return NULL;
   }
 
   isValidPokemon = gamedataAttestCheckValid(pokemon->getAttest());
   if (!isValidPokemon) {
-    return nullptr;
+    return NULL;
   }
 
   if (pokemon->isFuseiFlag()) {
-    return nullptr;
+    return NULL;
   }
 
   isHatena = pokemon->isHatena();
@@ -316,7 +316,7 @@ Pokemon * Hero::getPokemon(s32 partySlot, bool &isHatena) {
  */
 const Pokemon *Hero::getPokemon(s32 partySlot) const {
   if (partySlot < 0 || partySlot >= 6) {
-    return nullptr;
+    return NULL;
   }
 
   return &partyPokemon[partySlot];
@@ -329,7 +329,7 @@ const Pokemon *Hero::getPokemon(s32 partySlot) const {
  */
 Pokemon *Hero::getPokemon(s32 partySlot) {
   if (partySlot < 0 || partySlot >= 6) {
-    return nullptr;
+    return NULL;
   }
 
   return &partyPokemon[partySlot];

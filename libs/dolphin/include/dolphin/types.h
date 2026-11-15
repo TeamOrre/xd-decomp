@@ -29,7 +29,6 @@ typedef int BOOL;
 
 #define FALSE 0
 #define TRUE 1
-#define nullptr 0
 
 #if defined(__MWERKS__)
 #define AT_ADDRESS(addr) : (addr)
@@ -60,7 +59,11 @@ typedef int BOOL;
 #endif
 
 #ifndef NULL
+#ifdef __cplusplus
+#define NULL 0
+#else
 #define NULL ((void*)0)
+#endif
 #endif
 
 #ifdef __MWERKS__

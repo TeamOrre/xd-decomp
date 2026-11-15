@@ -441,14 +441,14 @@ PokemonWaza* Pokemon::getPokemonWaza(u16 wazaNum) {
     {
         return &wazas[wazaNum];
     }
-    return nullptr;
+    return NULL;
 }
 
 void* Pokemon::getPokemonDataPtr() const {
     u32 num = getPokemonDataId();
     u32 maxNum = *pokemon_data_number;
     if (num >= maxNum) {
-        return nullptr;
+        return NULL;
     }
 
     return &pokemon_data[num];
