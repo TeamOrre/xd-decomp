@@ -72,6 +72,5 @@ typedef int BOOL;
 #define __REGISTER
 #endif
 
-#include "cmath.h"
 
 #endif

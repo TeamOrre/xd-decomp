@@ -159,7 +159,7 @@ if not config.non_matching:
 # Tool versions
 config.binutils_tag = "2.42-2"
 config.compilers_tag = "20251118"
-config.dtk_tag = "v1.8.3"
+config.dtk_tag = "v1.9.1"
 config.objdiff_tag = "v3.6.1"
 config.sjiswrap_tag = "v1.2.2"
 config.wibo_tag = "1.0.3"
@@ -726,7 +726,7 @@ config.libs = [
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/alloc.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/errno.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/ansi_files.c"),
-            Object(NonMatching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Src/ansi_fp.c"),
+            Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Src/ansi_fp.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/arith.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/buffer_io.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/critical_regions.gamecube.c"),
@@ -741,7 +741,7 @@ config.libs = [
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/misc_io.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/printf.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/float.c"),
-            Object(NonMatching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/qsort.c"),
+            Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/qsort.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/scanf.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/string.c"),
             Object(Equivalent, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/strtold.c"),
@@ -778,7 +778,7 @@ config.libs = [
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_log.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_pow.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/e_sqrt.c"),
-            Object(NonMatching, "PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/math_ppc.c"),
+            Object(Matching, "PowerPC_EABI_Support/MSL_C/PPC_EABI/Src/math_ppc.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common_Embedded/Math/Double_precision/w_sqrt.c"),
             Object(Matching, "PowerPC_EABI_Support/MSL_C/MSL_Common/Src/extras.c"),
         ],

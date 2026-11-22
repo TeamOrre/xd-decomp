@@ -2,6 +2,8 @@
 #include <dolphin/mtx.h>
 #include <dolphin/sdk_math.h>
 
+extern float atan2f(float, float);
+
 void C_QUATAdd(const Quaternion* p, const Quaternion* q, Quaternion* r) {
     ASSERTMSGLINE(77, p, "QUATAdd():  NULL QuaternionPtr 'p' ");
     ASSERTMSGLINE(78, q, "QUATAdd():  NULL QuaternionPtr 'q' ");

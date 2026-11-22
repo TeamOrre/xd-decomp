@@ -4,6 +4,10 @@
 #include <fdlibm.h>
 #include "global.h"
 
+#define NAN (*(float*) __float_nan)
+#define HUGE_VALF (*(float*) __float_huge)
+#define HUGE_VAL (*(double*)__double_huge)
+
 #define FP_SNAN 0
 #define FP_QNAN 1
 #define FP_INFINITE 2
@@ -36,55 +40,6 @@ extern int __float_max[];
 extern int __float_epsilon[];
 extern int __extended_min[];
 extern int __extended_max[];
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-inline int __fpclassifyf(float __value) {
-    switch (*(int*)&__value & 0x7f800000) {
-    case 0x7f800000:
-        if ((*(int*)&__value & 0x7fffff) != 0) {
-            return FP_QNAN;
-        }
-        return FP_INFINITE;
-
-    case 0:
-        if ((*(int*)&__value & 0x7fffff) != 0) {
-            return FP_SUBNORMAL;
-        }
-        return FP_ZERO;
-    }
-
-    return FP_NORMAL;
-}
-
-inline int __fpclassifyd(double __value) {
-    switch (__HI(__value) & 0x7ff00000) {
-	case 0x7ff00000: {
-		if ((__HI(__value) & 0x000fffff) || (__LO(__value) & 0xffffffff))
-			return FP_QNAN;
-		else
-			return FP_INFINITE;
-		break;
-	}
-	case 0: {
-		if ((__HI(__value) & 0x000fffff) || (__LO(__value) & 0xffffffff))
-			return FP_SUBNORMAL;
-		else
-			return FP_ZERO;
-		break;
-	}
-	}
-	return FP_NORMAL;
-}
-
-// Stripped function.
-int __fpclassifyl(long double __value);
-
-#ifdef __cplusplus
-}; // extern "C"
-#endif
 
 #define FLT_MANT_DIG   24
 #define FLT_DIG        6
