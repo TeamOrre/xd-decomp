@@ -4,5 +4,6 @@
 #include <abort_exit.h>
 #include <arith.h>
 #include <strtoul.h>
+#include <qsort.h>
 
 #endif

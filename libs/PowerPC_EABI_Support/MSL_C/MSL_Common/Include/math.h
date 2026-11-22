@@ -4,10 +4,6 @@
 #include <float.h>
 #include <arith.h>
 
-#define NAN (*(float*) __float_nan)
-#define HUGE_VALF (*(float*) __float_huge)
-#define HUGE_VAL (*(double*)__double_huge)
-
 #define M_PI 3.14159265358979323846f
 #define M_SQRT3 1.73205f
 
@@ -47,6 +43,44 @@ double sqrt(double);
 double tan(double);
 float tanf(float);
 double log10(double);
+
+inline int __fpclassifyf(float __value) {
+    switch (*(int*)&__value & 0x7f800000) {
+    case 0x7f800000:
+        if ((*(int*)&__value & 0x7fffff) != 0) {
+            return FP_QNAN;
+        }
+        return FP_INFINITE;
+
+    case 0:
+        if ((*(int*)&__value & 0x7fffff) != 0) {
+            return FP_SUBNORMAL;
+        }
+        return FP_ZERO;
+    }
+
+    return FP_NORMAL;
+}
+
+inline int __fpclassifyd(double __value) {
+    switch (__HI(__value) & 0x7ff00000) {
+	case 0x7ff00000: {
+		if ((__HI(__value) & 0x000fffff) || (__LO(__value) & 0xffffffff))
+			return FP_QNAN;
+		else
+			return FP_INFINITE;
+		break;
+	}
+	case 0: {
+		if ((__HI(__value) & 0x000fffff) || (__LO(__value) & 0xffffffff))
+			return FP_SUBNORMAL;
+		else
+			return FP_ZERO;
+		break;
+	}
+	}
+	return FP_NORMAL;
+}
 
 inline double fabs(double f) {
     return __fabs(f);
@@ -101,39 +135,6 @@ MSL_INLINE float log10f(float x) {
 }
 
 #include "global.h"
-#ifdef DECOMPCTX
-// Hack to mitigate fake mismatches when building from decompctx output
-// (which doesn't support precompiled headers).
-//
-// When built without a PCH, these constants would end up .rodata instead of .data
-// which causes a variety of knock-on effects in individual functions' assembly.
-//
-// Making them into globals is a bit of a hack, but it generally fixes later
-// .data and .rodata offsets and allows individual functions to match.
-static double _half = 0.5;
-static double _three = 3.0;
-#endif
-MSL_INLINE float sqrtf(float mag) {
-#ifndef DECOMPCTX
-    // part of the same hack, these are defined outside of the function when using decompctx
-    static const double _half = 0.5;
-    static const double _three = 3.0;
-#endif
-    if (mag > 0.0f) {
-        double dmag = (double)mag;
-        double tmpd = __frsqrte(dmag);
-        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
-        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
-        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
-        return (float)(dmag * tmpd);
-    } else if (mag < 0.0) {
-        return NAN;
-    } else if (isnan(mag)) {
-        return NAN;
-    } else {
-        return mag;
-    }
-}
 
 MSL_INLINE float tanf(float x) {
     return tan(x);

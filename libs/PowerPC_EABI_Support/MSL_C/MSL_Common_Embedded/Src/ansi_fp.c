@@ -605,7 +605,7 @@ double __dec2num(const decimal* d)
 				if (isdigit(c)) {
 					c -= '0';
 				} else {
-					c = (u8)(tolower(c) - 'a' + 10);
+					c = (u8)(_tolower(c) - 'a' + 10);
 				}
 
 				if (c != 0) {

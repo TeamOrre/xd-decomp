@@ -49,3 +49,41 @@ DECL_WEAK float sinf(float x) {
 DECL_WEAK float tanf(float x) {
     return tan(x);
 }
+
+#ifdef DECOMPCTX
+// Hack to mitigate fake mismatches when building from decompctx output
+// (which doesn't support precompiled headers).
+//
+// When built without a PCH, these constants would end up .rodata instead of .data
+// which causes a variety of knock-on effects in individual functions' assembly.
+//
+// Making them into globals is a bit of a hack, but it generally fixes later
+// .data and .rodata offsets and allows individual functions to match.
+static double _half = 0.5;
+static double _three = 3.0;
+#endif
+DECL_WEAK float sqrtf(float mag) {
+#ifndef DECOMPCTX
+    // part of the same hack, these are defined outside of the function when using decompctx
+    static const double _half = 0.5;
+    static const double _three = 3.0;
+#endif
+    if (mag > 0.0f) {
+        double dmag = (double)mag;
+        double tmpd = __frsqrte(dmag);
+        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
+        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
+        tmpd = _half * tmpd * (_three - tmpd * tmpd * dmag);
+        return (float)(dmag * tmpd);
+    } else if (mag < 0.0) {
+        return NAN;
+    } else if (isnan(mag)) {
+        return NAN;
+    } else {
+        return mag;
+    }
+}
+
+DECL_WEAK double fabs(double f) {
+    return __fabs(f);
+}

@@ -1,6 +1,5 @@
 #include <locale>
 #include <ctype.h>
-#include <wctype_api.h>
 #include <mbstring.h>
 
 #pragma options align=native
