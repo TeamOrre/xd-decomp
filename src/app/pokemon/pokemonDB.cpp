@@ -1,6 +1,6 @@
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
-#include <game/pxdvs/app/pokemon/pokemonBios.hpp>
-#include <game/pxdvs/app/pokemon/pokemonDB.hpp>
+#include <app/pokemon/pokemon.hpp>
+#include <app/pokemon/pokemonBios.hpp>
+#include <app/pokemon/pokemonDB.hpp>
 
 extern "C" {
 

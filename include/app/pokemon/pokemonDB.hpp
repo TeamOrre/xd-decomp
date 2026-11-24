@@ -2,7 +2,7 @@
 #define POKEMONDB_H
 
 #include <global.h>
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
+#include <app/pokemon/pokemon.hpp>
 
 struct BasisStatus {
     u16 maxHp; // 0x0

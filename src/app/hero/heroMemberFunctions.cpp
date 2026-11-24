@@ -1,10 +1,10 @@
-#include <game/pxdvs/app/hero/hero.hpp>
-#include <game/pxdvs/app/hero/heroMove.hpp>
-#include <game/pxdvs/app/memcard/savedata.hpp>
-#include <game/pxdvs/app/gamedata/gamedata.hpp>
-#include <game/pxdvs/app/people/people.hpp>
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
-#include <game/pxdvs/app/pokemon/pokemonBios.hpp>
+#include <app/hero/hero.hpp>
+#include <app/hero/heroMove.hpp>
+#include <app/memcard/savedata.hpp>
+#include <app/gamedata/gamedata.hpp>
+#include <app/people/people.hpp>
+#include <app/pokemon/pokemon.hpp>
+#include <app/pokemon/pokemonBios.hpp>
 
 const f32 unkFloat = 57.29578;
 

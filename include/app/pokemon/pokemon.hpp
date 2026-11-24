@@ -2,7 +2,7 @@
 #define POKEMON_H
 
 #include <global.h>
-#include <game/pxdvs/app/pokemon/darkPokemon.hpp>
+#include <app/pokemon/darkPokemon.hpp>
 
 class Hero;
 

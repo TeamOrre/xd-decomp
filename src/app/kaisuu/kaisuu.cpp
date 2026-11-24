@@ -1,6 +1,6 @@
-#include "game/pxdvs/app/kaisuu/kaisuu.hpp"
-#include "game/pxdvs/app/kaisuu/kaisuuBios.hpp"
-#include <random.h>
+#include "app/kaisuu/kaisuu.hpp"
+#include "app/kaisuu/kaisuuBios.hpp"
+#include <GSAPI/GSsysdolphin_baselib/baselib/random.h>
 
 extern "C" s32 kaisuuGetKaisuu(u32 idx) {
     s32 maxVal = kaisuuBiosGetMax(idx);

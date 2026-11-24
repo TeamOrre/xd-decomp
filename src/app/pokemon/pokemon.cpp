@@ -1,6 +1,6 @@
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
-#include <game/pxdvs/app/pokemon/pokemonBios.hpp>
-#include <game/pxdvs/app/pokemon/pokemonDB.hpp>
+#include <app/pokemon/pokemon.hpp>
+#include <app/pokemon/pokemonBios.hpp>
+#include <app/pokemon/pokemonDB.hpp>
 
 //TODO this is simply a first pass through this class many things might need changed and or cleaned up even if the function already matches
 const f32 zero = 0.0f;
@@ -19,7 +19,7 @@ void pokemonSetTokuseiFlag(Pokemon* param_1, u32 param_2)
 {
   u32 uVar1;
   u8 cVar2;
-  
+
   if (param_1 != 0) {
     uVar1 = pokemon_GetPokemonDataId(param_1);
     cVar2 = pokemonDB_GetTokuseiDataId(uVar1,1);
@@ -32,7 +32,7 @@ void pokemonSetTokuseiFlag(Pokemon* param_1, u32 param_2)
 }
 
 void pokemonInitAry(u32 param_1, u16 param_2)
-{  
+{
   if (param_1 != 0) {
     for (u16 uVar1 = 0; uVar1 < param_2; uVar1++) {
       pokemonInit(param_1 + uVar1 * 0xc4);
@@ -79,7 +79,7 @@ u32 pokemonCheckRare(Pokemon* param_1)
 {
   u32 uVar1;
   u32 uVar2;
-  
+
   if (param_1 == 0) {
     uVar1 = 0;
   }
@@ -102,7 +102,7 @@ void pokemonGrowBasisStatus(Pokemon* poke, u32 exp)
 void pokemonResetBasisStatus(Pokemon* param_1)
 {
   u8 uVar1;
-  
+
   if (param_1 != 0) {
     uVar1 = pokemon_GetNowExpToLevel(param_1);
     _pokemonSetLevelBasisStatus(param_1, uVar1);
@@ -190,16 +190,16 @@ void _pokemonSetLevelBasisStatus(Pokemon* a , u8 b)
 	u16 sVar3;
 	u16 sVar4;
 	u16 sVar5;
-  
+
 	sVar2 = pokemon_GetPokemonDataId(a);
 	sVar3 = pokemon_GetMaxHp(a);
 	pokemon_SetLevel(a,b);
-	if ((u16)sVar2 == 0x12f) 
+	if ((u16)sVar2 == 0x12f)
 	{
 		sVar4 = 1;
 		pokemon_SetMaxHp(a,1);
 	}
-	else 
+	else
 	{
 		sVar4 = _pokemonGetLevelOneStatus(a,b,0x87,3,0x93,0x8d,(b & 0xff) + 10);
 	}
@@ -209,10 +209,10 @@ void _pokemonSetLevelBasisStatus(Pokemon* a , u8 b)
 	_pokemonGetLevelOneStatus(a,b,0x8a,6,0x96,0x90,5);
 	_pokemonGetLevelOneStatus(a,b,0x8b,7,0x97,0x91,5);
 	sVar5 = pokemon_GetHp(a);
-	if ((sVar5 != 0) || (sVar3 == 0)) 
+	if ((sVar5 != 0) || (sVar3 == 0))
 	{
 		sVar1 = 1;
-		if ((u16)sVar2 != 0x12f) 
+		if ((u16)sVar2 != 0x12f)
 		{
 			sVar1 = sVar5 + (sVar4 - sVar3);
 		}
@@ -225,10 +225,10 @@ u16 _pokemonGetLevelOneStatus(Pokemon* a, u8 b, u16 c, u16 d, u16 e, u16 f, long
 	u32 h;
 	u32 k;
 	u32 i;
-	
+
     h = pokemon_GetPokemonDataId(a);
 	i = pokemon_GetSeikaku(a);
-	
+
     h  = pokemonGetStatus(0, h, d, 0);
     k = pokemonGetStatus(a, 0, e, 0);
     u32 l = pokemonGetStatus(a, 0, f, 0);
@@ -250,7 +250,7 @@ u8 _pokemonGetNowExpToLevel(Pokemon* a)
 {
   u8 growDataId;
   u32 exp;
-  
+
   growDataId = pokemonDB_GetGrowDataId(pokemon_GetPokemonDataId(a));
   exp = pokemon_GetExp(a);
   return pokemonGetExpToLevel(growDataId,exp);
@@ -259,7 +259,7 @@ u8 _pokemonGetNowExpToLevel(Pokemon* a)
 u8 pokemonGetExpToLevel(u8 a, u32 b)
 {
     s32 level = 0;
-	
+
     PokemonGrowDataBios* ptr = pokemonGrowDataBiosGetPtr(a);
     if (!ptr)
         return level;

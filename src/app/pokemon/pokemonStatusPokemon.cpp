@@ -1,8 +1,8 @@
 #include <string.h>
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
-#include <game/pxdvs/app/pokemon/pokemonBios.hpp>
-#include <game/pxdvs/app/pokemon/pokemonDB.hpp>
-#include <game/relglobal.h>
+#include <app/pokemon/pokemon.hpp>
+#include <app/pokemon/pokemonBios.hpp>
+#include <app/pokemon/pokemonDB.hpp>
+#include <relglobal.h>
 
 u32 DarkPokemon::getWalkCount() const {
     return walkCount;

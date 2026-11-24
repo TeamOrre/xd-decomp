@@ -1,9 +1,9 @@
 #ifndef HERO_MEMBER_FUNCTIONS_H
 #define HERO_MEMBER_FUNCTIONS_H
 
-#include <game/pxdvs/GSAPI/GSmath/GSvec.hpp>
-#include <game/pxdvs/app/hero/heroPokemonGet.hpp>
-#include <game/pxdvs/app/pokemon/pokemon.hpp>
+#include <GSAPI/GSmath/GSvec.hpp>
+#include <app/hero/heroPokemonGet.hpp>
+#include <app/pokemon/pokemon.hpp>
 
 class Item;
 

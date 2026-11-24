@@ -1,5 +1,5 @@
-#include "game/pxdvs/app/kaisuu/kaisuuBios.hpp"
-#include "game/pxdvs/app/kaisuu/kaisuuData.h"
+#include "app/kaisuu/kaisuuBios.hpp"
+#include "app/kaisuu/kaisuuData.h"
 
 extern "C" s32 kaisuuBiosGetMax(u32 idx) {
     if (idx >= kaisuu_data_number) {

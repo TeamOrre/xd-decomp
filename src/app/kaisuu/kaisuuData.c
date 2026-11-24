@@ -1,4 +1,4 @@
-#include "game/pxdvs/app/kaisuu/kaisuuData.h"
+#include "app/kaisuu/kaisuuData.h"
 
 KaisuuData kaisuu_data[] = {
     {-1, -1},
