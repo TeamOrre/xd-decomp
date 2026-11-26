@@ -31,8 +31,13 @@ typedef long        int32_t;
 typedef unsigned long long uint64_t;
 typedef long long          int64_t;
 
-typedef uint32_t uintptr_t;
-typedef int32_t  intptr_t;
+#ifdef __MWERKS__
+typedef signed int intptr_t;
+typedef unsigned int uintptr_t;
+#else
+typedef __INTPTR_TYPE__ intptr_t;
+typedef __UINTPTR_TYPE__ uintptr_t;
+#endif
 
 typedef long long intmax_t;
 

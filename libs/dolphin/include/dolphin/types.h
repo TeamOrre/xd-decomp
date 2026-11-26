@@ -23,6 +23,8 @@ typedef float  f32;
 typedef double f64;
 typedef long double f128;
 
+typedef volatile f32 vf32;
+
 typedef char *Ptr;
 
 typedef int BOOL;

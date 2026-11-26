@@ -12,6 +12,7 @@ extern "C" {
 #endif
 
 typedef unsigned long size_t;
+typedef signed int ssize_t;
 typedef long ptrdiff_t;
 
 #ifndef __cplusplus

@@ -1,0 +1,49 @@
+#ifndef GALE01_391580
+#define GALE01_391580
+
+#include <GSAPI/GSsysdolphin_baselib/platform.h>
+
+#include <GSAPI/GSsysdolphin_baselib/baselib/forward.h>
+
+#include <GSAPI/GSsysdolphin_baselib/baselib/jobj.h>
+#include <GSAPI/GSsysdolphin_baselib/particle/psstructs.h>
+
+/* 3983A4 */ void hsd_803983A4(HSD_Generator*);
+/* 3984F4 */ void psInitDataBankLoad(int bank, const int* cmdBank,
+                                     const int* texBank, const u32* ref,
+                                     const int* formBank);
+/* 398614 */ void psInitDataBankLocate(int* cmdBank, int* texBank,
+                                       int* formBank);
+/* 3989A0 */ void psInitDataBankRelocate(int* cmdBank, int* texBank,
+                                         int* formBank, int* newCmdBank,
+                                         int* newTexBank, int* newFormBank);
+/* 398A08 */ void hsd_80398A08(u32);
+/* 398C04 */ HSD_Particle*
+psGenerateParticle0(HSD_Particle** head, int linkNo, int bank, u32 kind,
+                    u16 texGroup, u8* list, int life, int palflag, f32 x,
+                    f32 y, f32 z, f32 vx, f32 vy, f32 vz, f32 size, f32 grav,
+                    f32 fric, HSD_Generator* gp, int flgInterpret);
+/* 398F0C */ void hsd_80398F0C(s32, s32, s32, u16, u8*, s32, s32,
+                               HSD_Generator*, f32, f32, f32, f32, f32, f32,
+                               f32, f32, f32);
+/* 398F8C */ void hsd_80398F8C(HSD_Particle*, f32);
+/* 3991D8 */ s32 applyForceJObj(HSD_Generator*, HSD_JObj*, f32, f32);
+/* 39930C */ void* hsd_8039930C(HSD_Particle*, HSD_Particle*);
+/* 39CEAC */ void hsd_8039CEAC(u32);
+/* 39CF4C */ void psSetPointJObj(int, HSD_JObj*);
+/* 39D048 */ void psClearPointJObj(HSD_Particle* particle);
+/* 4D0A4C */ extern int psFormGroupArray[65];
+/* 4D0B50 */ extern HSD_PSTexGroup** psTexGroupArray[65];
+/* 4D0C54 */ extern HSD_PSFormGroup** psCmdListArray[65];
+/* 4D0D58 */ extern int psNumCmdList[65];
+/* 4D0E5C */ extern HSD_PSCmdList** ptclref_804D0E5C[65];
+/* 4D78D8 */ extern u16 numPeakPSAppSRT;
+/* 4D78DA */ extern u16 numPeakGenerators;
+/* 4D78DE */ extern u16 numActivePSAppSRT;
+/* 4D78E0 */ extern u16 numActiveGenerators;
+/* 4D78E8 */ extern void (*hsd_804D78E8)(HSD_Generator*, Mtx);
+/* 4D78EC */ extern void (*hsd_804D78EC)(HSD_Generator*);
+/* 4D78F0 */ extern HSD_CObj* psCamera;
+/* 4D78F4 */ extern HSD_SList* hsd_804D78F4;
+
+#endif

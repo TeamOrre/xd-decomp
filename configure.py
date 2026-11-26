@@ -347,8 +347,8 @@ def SysdolphinLib(objects: List[Object]):
     return {
         "lib": "sysdolphin",
         "src_dir": "src",
-        "mw_version": "GC/1.2.5",
-        "cflags": cflags_base,
+        "mw_version": "GC/1.3.2",
+        "cflags": [*cflags_base, "-inline deferred", "-str readonly"],
         "progress_category": "GSAPI",
         "objects": objects,
     }
@@ -1479,7 +1479,7 @@ config.libs = [
             # hsdbase_gs
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/wobj.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/archive.c"),
-            Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/bytecode.c"),
+            Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/bytecode.c", extra_cflags=["-use_lmw_stmw=on"]),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/class.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/cobj.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/debug.c"),
@@ -1497,7 +1497,7 @@ config.libs = [
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/mobj.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/mtx.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/objalloc.c"),
-            Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/object.c"),
+            Object(Matching, "GSAPI/GSsysdolphin_baselib/baselib/object.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/pobj.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/quatlib.c"),
             Object(NonMatching, "GSAPI/GSsysdolphin_baselib/baselib/random.c"),

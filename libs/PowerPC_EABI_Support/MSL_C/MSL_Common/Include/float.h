@@ -36,6 +36,7 @@ extern int __float_huge[];
 extern int __double_huge[];
 extern int __double_min[];
 extern int __double_max[];
+extern int __float_min[];
 extern int __float_max[];
 extern int __float_epsilon[];
 extern int __extended_min[];
@@ -48,6 +49,7 @@ extern int __extended_max[];
 #define FLT_MAX_EXP    128
 #define FLT_MAX_10_EXP 38
 
+#define FLT_MIN (*(float*) __float_min)
 #define FLT_MAX (*(float*) __float_max)
 #define FLT_EPSILON 1.1920928955078125e-07f
 
