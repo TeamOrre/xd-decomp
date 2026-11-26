@@ -1,0 +1,164 @@
+#ifndef RUNTIME_PLATFORM_H
+#define RUNTIME_PLATFORM_H
+
+#include <stdbool.h> // IWYU pragma: export
+#include <stddef.h>  // IWYU pragma: export
+#include <stdint.h>
+
+#include <dolphin/types.h> // IWYU pragma: export
+
+/// The underlying type of an @c enum, used as a placeholder
+typedef int enum_t;
+
+/// A @c void callback with no arguments.
+typedef void (*Event)(void);
+
+typedef bool (*Predicate)(void);
+
+#if defined(__MWERKS__) && defined(__PPCGEKKO__)
+#define MWERKS_GEKKO
+#endif
+
+#if defined(__MWERKS__) && !defined(M2CTX)
+#define ASM asm
+#else
+#define ASM
+#endif
+
+#ifndef UNUSED
+#if defined(__clang__) || defined(__GNUC__)
+#define UNUSED __attribute__((unused))
+#define ATTRIBUTE_NORETURN __attribute__((noreturn))
+#define ATTRIBUTE_NONSTRING __attribute__((nonstring))
+#else
+#define UNUSED
+#define ATTRIBUTE_NORETURN
+#define ATTRIBUTE_NONSTRING
+#endif
+#endif
+
+#ifndef ATTRIBUTE_ALIGN
+#if defined(__MWERKS__) || defined(__GNUC__)
+#define ATTRIBUTE_ALIGN(num) __attribute__((aligned(num)))
+#elif defined(_MSC_VER)
+#define ATTRIBUTE_ALIGN(num)
+#else
+#error unknown compiler
+#endif
+#endif
+
+#ifndef AT_ADDRESS
+#ifdef PERMUTER
+#define AT_ADDRESS(x) = FIXEDADDR(x)
+#elif defined(__MWERKS__) && !defined(M2CTX)
+#define AT_ADDRESS(x) : (x)
+#else
+#define AT_ADDRESS(x)
+#endif
+#endif
+
+#ifdef MWERKS_GEKKO
+#define qr0 0
+#define qr1 1
+#define qr2 2
+#define qr3 3
+#define qr4 4
+#define qr5 5
+#define qr6 6
+#define qr7 7
+#endif
+
+#define U8_MAX 0xFF
+#define U16_MAX 0xFFFF
+#define U32_MAX 0xFFFFFFFF
+#define U64_MAX 0xFFFFFFFFFFFFFFFF
+#define S8_MAX 0x7F
+#define S16_MAX 0x7FFF
+#define S32_MAX 0x7FFFFFFF
+#define F32_MAX 3.4028235e38f
+
+#define SQ(x) ((x) * (x))
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+/// Add @p b to @p a, saturating at @p max.
+#define SAT_ADD(a, b, max) (((a) + (b) > (max)) ? (max) : (a) + (b))
+
+#ifdef __cplusplus
+#ifndef _Static_assert
+#define _Static_assert static_assert
+#endif
+#endif
+#ifdef M2CTX
+#define STATIC_ASSERT(cond)
+#elif defined(__MWERKS__)
+#define STATIC_ASSERT(cond)                                                   \
+    struct {                                                                  \
+        int x[1 - 2 * !(cond)];                                               \
+    };
+#elif defined(LINT)
+#define STATIC_ASSERT(cond) _Static_assert((cond), "(" #cond ") failed")
+#else
+#define STATIC_ASSERT(cond)
+#endif
+
+#if defined(MUST_MATCH) || defined(LINT)
+#define ASSERT_SIZE(expr, size) STATIC_ASSERT(sizeof(expr) == size)
+#define ASSERT_OFFSET(type, member, offset)                                   \
+    STATIC_ASSERT(offsetof(type, member) == offset)
+#else
+#define ASSERT_SIZE(expr, size)
+#define ASSERT_OFFSET(expr, member, offset)
+#endif
+
+#define RETURN_IF(cond)                                                       \
+    do {                                                                      \
+        if ((cond)) {                                                         \
+            return;                                                           \
+        }                                                                     \
+    } while (0)
+
+#if defined(__MWERKS__) && !defined(M2CTX)
+#define SDATA __declspec(section ".sdata")
+#define DATA __declspec(section ".data")
+#define WEAK __declspec(weak)
+#define SECTION_INIT __declspec(section ".init")
+#define SECTION_CTORS __declspec(section ".ctors")
+#define SECTION_DTORS __declspec(section ".dtors")
+#define ATTRIBUTE_RESTRICT __restrict
+#else
+#define SDATA
+#define DATA
+#define WEAK
+#define SECTION_INIT
+#define SECTION_CTORS
+#define SECTION_DTORS
+#define ATTRIBUTE_RESTRICT
+#endif
+
+#define M_PI_I 3.14159265358979323846
+#define M_PI_2 (M_PI_I / 2)
+
+#define M_TAU 6.283185307179586
+#define M_PI_3 (M_PI_I / 3)
+
+#define M_PI_F 3.14159265358979323846F
+#define M_TAU_F 6.283185307179586F
+#define M_PI_2_F (M_PI_F / 2.0F)
+#define M_PI_3_F (M_PI_F / 3.0F)
+
+#define M_PI_L 3.14159265358979323846L
+#define M_TAU_L 6.283185307179586L
+#define M_PI_2_L (M_PI_L / 2.0L)
+#define M_PI_3_L (M_PI_L / 3.0L)
+
+#define SIGNF(x) ((x) > 0.0f ? 1.0f : -1.0f)
+
+#define EPSILON (1.0e-10f)
+
+#define ABS(x) ((x) < 0 ? -(x) : (x))
+
+#ifndef ARRAY_SIZE
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+#endif
+
+#endif

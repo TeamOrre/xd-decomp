@@ -575,6 +575,14 @@ typedef enum _GXTevBias {
     GX_MAX_TEVBIAS
 } GXTevBias;
 
+typedef enum _GXTevClampMode {
+    GX_TC_LINEAR,
+    GX_TC_GE,
+    GX_TC_EQ,
+    GX_TC_LE,
+    GX_MAX_TEVCLAMPMODE
+} GXTevClampMode;
+
 typedef enum _GXTevScale {
     GX_CS_SCALE_1,
     GX_CS_SCALE_2,
